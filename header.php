@@ -13,7 +13,7 @@
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<!-- mobile meta (hooray!) -->
+		<!-- mobile meta  -->
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -28,7 +28,7 @@
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
-  	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -39,25 +39,20 @@
 
 	</head>
 
-	<body <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
-		<div id="container">
-
-			<header class="header" role="banner">
-
-				<div id="inner-header" class="wrap clearfix">
-
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
-
-				</div> <!-- end #inner-header -->
-
-			</header> <!-- end header -->
+<!-- menu -->
+<header role="banner">
+<div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">
+<div id="idot" onclick = "window.location.href = '<?php echo site_url(); ?>'"></div>
+<div id="sun"></div>
+</div> <!-- / .logo -->
+<a href="<?php echo site_url(); ?>">
+<div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
+</a> <!-- / .slogan -->
+		<nav role="navigation">
+			<?php oasis_main_nav(); ?>
+		</nav>
+			<?php oasis_blog_subnav();?>
+</header>
+<div class="wrap">

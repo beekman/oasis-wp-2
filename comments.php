@@ -1,6 +1,6 @@
 <?php
 /*
-The comments page for Bones
+The comments page for oasis
 */
 
 // Do not delete these lines
@@ -9,7 +9,7 @@ The comments page for Bones
 
   if ( post_password_required() ) { ?>
   	<div class="alert help">
-    	<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "bonestheme"); ?></p>
+    	<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "oasistheme"); ?></p>
   	</div>
   <?php
     return;
@@ -18,8 +18,8 @@ The comments page for Bones
 
 <!-- You can start editing here. -->
 
-<?php if ( have_comments() ) : ?>
-	<h3 id="comments" class="h2"><?php comments_number(__('<span>No</span> Responses', 'bonestheme'), __('<span>One</span> Response', 'bonestheme'), _n('<span>%</span> Response', '<span>%</span> Responses', get_comments_number(),'bonestheme') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+<?php if ( have_comments() ) { ?>
+	<h3 id="comments" class="h2"><?php comments_number(__('<span>No</span> Responses', 'oasistheme'), __('<span>One</span> Response', 'oasistheme'), _n('<span>%</span> Response', '<span>%</span> Responses', get_comments_number(),'oasistheme') );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<nav id="comment-nav">
 		<ul class="clearfix">
@@ -27,95 +27,95 @@ The comments page for Bones
 	  		<li><?php next_comments_link() ?></li>
 	 	</ul>
 	</nav>
-	
+
 	<ol class="commentlist">
-		<?php wp_list_comments('type=comment&callback=bones_comments'); ?>
+		<?php wp_list_comments('type=comment&callback=oasis_comments'); ?>
 	</ol>
-	
+
 	<nav id="comment-nav">
 		<ul class="clearfix">
 	  		<li><?php previous_comments_link() ?></li>
 	  		<li><?php next_comments_link() ?></li>
 		</ul>
 	</nav>
-  
-	<?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ( comments_open() ) : ?>
-    	<!-- If comments are open, but there are no comments. -->
+	<?php } else { // this is displayed if there are no comments so far ?>
 
-	<?php else : // comments are closed ?>
-	
-	<!-- If comments are closed. -->
-	<!--p class="nocomments"><?php _e("Comments are closed.", "bonestheme"); ?></p-->
+		<?php if ( comments_open() ) { ?>
+	    	<!-- If comments are open, but there are no comments. -->
 
-	<?php endif; ?>
+		<?php } else { // comments are closed ?>
 
-<?php endif; ?>
+		<!-- If comments are closed. -->
+		<!--p class="nocomments"><?php _e("Comments are closed.", "oasistheme"); ?></p-->
+
+		<?php } //endif ?>
+
+	<?php } //endif ?>
 
 
-<?php if ( comments_open() ) : ?>
+<?php if ( comments_open() ) { ?>
 
-<section id="respond" class="respond-form">
+	<section id="respond" class="respond-form">
 
-	<h3 id="comment-form-title" class="h2"><?php comment_form_title( __('Leave a Reply', 'bonestheme'), __('Leave a Reply to %s', 'bonestheme' )); ?></h3>
+		<h3 id="comment-form-title" class="h2"><?php comment_form_title( __('Leave a Reply', 'oasistheme'), __('Leave a Reply to %s', 'oasistheme' )); ?></h3>
 
-	<div id="cancel-comment-reply">
-		<p class="small"><?php cancel_comment_reply_link(); ?></p>
-	</div>
+		<div id="cancel-comment-reply">
+			<p class="small"><?php cancel_comment_reply_link(); ?></p>
+		</div>
 
-	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-  	<div class="alert help">
-  		<p><?php printf( __('You must be %1$slogged in%2$s to post a comment.', 'bonestheme'), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
-  	</div>
-	<?php else : ?>
+		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) { ?>
+	  		<div class="alert help">
+	  			<p><?php printf( __('You must be %1$slogged in%2$s to post a comment.', 'oasistheme'), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
+	  		</div>
+		<?php } else { ?>
 
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+			<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
-	<?php if ( is_user_logged_in() ) : ?>
+		<?php if ( is_user_logged_in() ) { ?>
 
-	<p class="comments-logged-in-as"><?php _e("Logged in as", "bonestheme"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Log out of this account", "bonestheme"); ?>"><?php _e("Log out", "bonestheme"); ?> <?php _e("&raquo;", "bonestheme"); ?></a></p>
+			<p class="comments-logged-in-as"><?php _e("Logged in as", "oasistheme"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Log out of this account", "oasistheme"); ?>"><?php _e("Log out", "oasistheme"); ?> <?php _e("&raquo;", "oasistheme"); ?></a></p>
 
-	<?php else : ?>
-	
-	<ul id="comment-form-elements" class="clearfix">
-		
-		<li>
-		  <label for="author"><?php _e("Name", "bonestheme"); ?> <?php if ($req) _e("(required)"); ?></label>
-		  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Your Name*', 'bonestheme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-		</li>
-		
-		<li>
-		  <label for="email"><?php _e("Mail", "bonestheme"); ?> <?php if ($req) _e("(required)"); ?></label>
-		  <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('Your E-Mail*', 'bonestheme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-		  <small><?php _e("(will not be published)", "bonestheme"); ?></small>
-		</li>
-		
-		<li>
-		  <label for="url"><?php _e("Website", "bonestheme"); ?></label>
-		  <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Got a website?', 'bonestheme'); ?>" tabindex="3" />
-		</li>
-		
-	</ul>
+		<?php } else { ?>
 
-	<?php endif; ?>
-	
-	<p><textarea name="comment" id="comment" placeholder="<?php _e('Your Comment here...', 'bonestheme'); ?>" tabindex="4"></textarea></p>
-	
+			<ul id="comment-form-elements" class="clearfix">
+
+				<li>
+				  <label for="author"><?php _e("Name", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
+				  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Your Name*', 'oasistheme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+				</li>
+
+				<li>
+				  <label for="email"><?php _e("Mail", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
+				  <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('Your E-Mail*', 'oasistheme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+				  <small><?php _e("(will not be published)", "oasistheme"); ?></small>
+				</li>
+
+				<li>
+				  <label for="url"><?php _e("Website", "oasistheme"); ?></label>
+				  <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Got a website?', 'oasistheme'); ?>" tabindex="3" />
+				</li>
+
+			</ul>
+
+		<?php } //endif ?>
+
+	<p><textarea name="comment" id="comment" placeholder="<?php _e('Your Comment here...', 'oasistheme'); ?>" tabindex="4"></textarea></p>
+
 	<p>
-	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'bonestheme'); ?>" />
+	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'oasistheme'); ?>" />
 	  <?php comment_id_fields(); ?>
 	</p>
-	
+
 	<div class="alert info">
-		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e('You can use these tags', 'bonestheme'); ?>: <code><?php echo allowed_tags(); ?></code></p>
+		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e('You can use these tags', 'oasistheme'); ?>: <code><?php echo allowed_tags(); ?></code></p>
 	</div>
-	
+
 	<?php do_action('comment_form', $post->ID); ?>
-	
+
 	</form>
-	
-	<?php endif; // If registration required and not logged in ?>
+
+	<?php } //endif // If registration required and not logged in ?>
 </section>
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+<?php } //endif // if you delete this the sky will fall on your head ?>

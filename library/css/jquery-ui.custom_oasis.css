@@ -1,0 +1,175 @@
+/*
+File:           jquery-ui-1.8.16.custom.less
+Description:    Custom styles for sub-tabs */
+/* line 5, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\000035}}
+#sub-tabs .ui-tabs-nav li a {
+  display: none;
+}
+/* line 9, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\000039}}
+#sub-tabs #accordion .ui-accordion-header {
+  background: transparent;
+}
+/* line 13, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000313}}
+.custom #sub-tabs .ui-tabs-nav a:hover,
+.custom #sub-nav .ui-tabs-nav a:hover,
+.custom a:hover,
+.custom a:visited:hover,
+.custom a:hover {
+  color: #836916;
+  -webkit-transition: color 0.5s ease-in;
+  -moz-transition: color 0.5s ease-in;
+  -o-transition: color 0.5s ease-in;
+  -ms-transition: color 0.5s ease-in;
+  transition: color 0.5s ease-in;
+  background-color: rgba(248, 238, 143, 0.5);
+  background-image: none;
+  -webkit-box-shadow: 0px 0px 10px #f8ee8f;
+  /* Saf3-4 */
+  -moz-box-shadow: 0px 0px 10px #f8ee8f;
+  /* FF3.5 - 3.6 */
+  box-shadow: 0px 0px 10px #f8ee8f;
+  /* Opera 10.5, IE9, FF4+, Chrome 10+ */
+}
+/* line 26, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000326}}
+.custom #sub-tabs .ui-widget-content a:hover,
+.custom #sub-nav .ui-widget-content a:hover {
+  color: #efcb59;
+}
+/* line 30, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000330}}
+#sub-tabs {
+  background: transparent;
+  border: none;
+}
+/* line 34, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000334}}
+#sub-tabs .ui-widget-header {
+  background: transparent;
+  border: none;
+}
+/* line 38, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000338}}
+#sub-tabs .ui-state-default {
+  background: transparent;
+  border: none;
+}
+/* #sub-tabs .ui-state-active { background: #CFF1F2 } */
+/* line 43, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000343}}
+#sub-tabs .ui-state-default a {
+  color: #CFF1F2;
+}
+/* line 44, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000344}}
+#sub-tabs .ui-state-active a {
+  color: #1E92AB;
+}
+/* .custom #sub-tabs a:hover { color: #0B3952; } */
+/* line 47, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000347}}
+#sub-tabs {
+  background: transparent;
+  border: none;
+}
+/* line 51, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000351}}
+.custom #sub-tabs .ui-state-default,
+#sub-tabs .ui-widget-content .ui-state-default,
+#sub-tabs .ui-widget-header .ui-state-default {
+  background: transparent;
+  border: 0px solid #77D5F7;
+  color: #0B3952;
+  font-weight: normal;
+}
+/* line 59, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000359}}
+.custom #sub-tabs > ul > li {
+  background: transparent;
+  border: none;
+  display: inline;
+}
+/* line 64, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000364}}
+.custom #sub-tabs .ui-widget-header,
+.custom #sub-nav .ui-widget-header {
+  background: transparent;
+  border: none;
+  border-bottom: 0px solid #c0c0c0;
+}
+/* line 69, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000369}}
+.custom #sub-tabs .ui-state-default {
+  background: transparent;
+  border: none;
+}
+/* line 73, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000373}}
+.custom #sub-tabs .ui-state-default a,
+.custom #sub-nav .ui-state-default a {
+  color: #1E92AB;
+  background: transparent;
+}
+/* line 77, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000377}}
+.custom #sub-tabs .ui-state-active a,
+.custom #sub-nav .ui-state-active a {
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: none;
+}
+/* ! MOVES HIDDEN CONTENT INSTEAD OF HIDING IT SO HIDDEN TABS CAN DETERMINE THEIR SIZE */
+/* line 82, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000382}}
+#sub-tabs .ui-tabs-hide {
+  position: absolute;
+  top: -10000px;
+}
+/*
+ * jQuery UI CSS Framework 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+/* Layout helpers
+----------------------------------*/
+/* line 97, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\0000397}}
+#sub-tabs .ui-helper-hidden {
+  position: absolute;
+  left: -10000px;
+}
+/* line 101, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\00003101}}
+#sub-tabs .ui-helper-hidden-accessible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+/* line 106, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\00003106}}
+#sub-tabs .ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3em;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+/* line 116, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui.custom_oasis.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/jquery-ui\.custom_oasis\.less}line{font-family:\00003116}}
+#sub-tabs .ui-helper-clearfix:after {
+  content: ".";
+  display: block;
+  height: 1em;
+  /* ! vertical spacing before content tabs */
+  clear: both;
+  visibility: hidden;
+}

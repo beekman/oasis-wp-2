@@ -1,0 +1,89 @@
+/******************************************************************
+Site Name: Oasis v2
+Author:Ben Beekman
+
+Stylesheet: Print Stylesheet
+
+This is the print stylesheet. There's probably not a lot
+of reasons to edit this stylesheet. If you want to
+though, go for it.
+
+******************************************************************/
+/* line 15, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000315}}
+* {
+  background: transparent !important;
+  color: black !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -ms-filter: none !important;
+}
+/* line 23, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000323}}
+a,
+a:visited {
+  color: #444 !important;
+  text-decoration: underline;
+}
+/* line 33, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000333}}
+a abbr[title]:after,
+a:visited abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+/* line 38, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000338}}
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+  content: "";
+}
+/* line 44, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000344}}
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+/* line 49, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000349}}
+thead {
+  display: table-header-group;
+}
+/* line 53, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000353}}
+tr,
+img {
+  page-break-inside: avoid;
+}
+/* line 57, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000357}}
+img {
+  max-width: 100% !important;
+}
+@page {
+  margin: 0.5cm;
+}
+/* line 65, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000365}}
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+/* line 70, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000370}}
+h2,
+h3 {
+  page-break-after: avoid;
+}
+/* line 76, /Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_print.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/Sites\/webapps\/bbcms\/content\/themes\/oasis-wp-2\/library\/less\/_print\.less}line{font-family:\0000376}}
+.sidebar,
+.page-navigation,
+.wp-prev-next,
+.respond-form,
+nav {
+  display: none;
+}
