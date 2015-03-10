@@ -26,7 +26,9 @@ them in here, they won't work.
 /*********************
 NAVIGATION STYLES
 *********************/
+ul#menu-oasis-page-nav.nav.top-nav{
 
+}
 .nav {}
 
 	/* .menu is clearfixed inside mixins.scss */
@@ -78,7 +80,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 /* entry content */
-.entry-content {
+article {
 
 
 	/* at this larger size, we can start to align images */

@@ -21,7 +21,7 @@
 									<h3 class="entry-title single-title bigbold" itemprop="headline"><?php the_title(); ?></h3>
 
 									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')) ; ?>
+										<?php printf(__( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')) ); ?>
 									</p>
 
 								</header> <?php // end article header ?>

@@ -10,11 +10,19 @@ possible. This is called at the top of the main stylsheet
 and will be used across all viewports.
 
 ******************************************************************/
-
+// @import "css/positioning.css";
+// @import "css/tooltips.css";
+@import url("http://fonts.googleapis.com/css?family=Calligraffitti");
+@import url("http://fonts.googleapis.com/css?family=Buda:300");
+@import url("http://fonts.googleapis.com/css?family=La+Belle+Aurore");
 /*********************
 GENERAL STYLES
 *********************/
-
+.beachbar div ul {margin: 0;}
+.beachbar div ul li {
+	display: inline-block;
+	margin-right: 0.75rem;
+}
 
 body {
 	font-family: $sans;
@@ -23,6 +31,7 @@ body {
 	color: $black;
 	background-color: $white;
 	-webkit-font-smoothing: antialiased;
+	position: relative;
 }
 
 .box-left {
@@ -47,10 +56,38 @@ body {
 	@extend .stroked;
 	border-color: $orange;
 }
+/*---------------------------------------------- Stroked color borders with white padding inside-------------------------------------*/
+img.stroked { margin-bottom: 2em }
+img.stroked,
+blockquote.stroked,
+/* #video_box,
+*/
+#signup-box.giftbox.stroked {
+	max-width: 100%;
+	background-color: #fff;
+	padding: 0.4178272928%;
+		border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
+		border-style: solid;
+		border-color: #1E92AB;
+		font-style: italic;
+	}
+	#sidebar img.stroked {
+		background-color: #fff;
+		padding: 0.4178272928%;
+		border-width: 0.950519142% 1.58419857% 1.58419857% 0.950519142%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
+		border-style: solid;
+		border-color: #1E92AB;
+		margin: 0;
+		width: 30%;
+	}
+	.textstroked {
+		-webkit-text-stroke: .5px #000;
+		-webkit-text-fill-color: #FFF;
+	}
 
-.entry-content img{
-	margin: 0;
-}
+	.entry-content img{
+		margin: 0;
+	}
 
 /********************
 WORDPRESS BODY CLASSES
@@ -66,46 +103,46 @@ style a page via class
 .archive {}                       /* archive page */
 
 .date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
+		.date-paged-1 {}                /* replace the number to the corresponding page number */
 
 .search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+		.search-results {}              /* search result page */
+		.search-no-results {}           /* no results search page */
+		.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
 
 .error404 {}                      /* 404 page */
 
 .single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+		.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+		.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
 
 .attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
+		.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+		.attachment-mime-type {}        /* style mime type pages */
 
 .author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+		.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+		.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
 
 .category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
+		.category-1 {}                  /* individual category page (i.e. body.category-6) */
+		.category-paged-1 {}            /* replace the number to the corresponding page number */
 
 .tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+		.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+		.tag-paged-1 {}                 /* replace the number to the corresponding page number */
 
 .page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+		.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+		.page-paged-1 {}                /* replace the number to the corresponding page number */
+		.page-parent {}                 /* parent page template */
+		.page-child {}                  /* child page template */
+		.parent-pageid-1 {}             /* replace the number to the corresponding page number */
 
 .logged-in {}                     /* if user is logged in */
 
 .paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+		.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 
 /*********************
 LAYOUT & GRID STYLES
@@ -123,26 +160,26 @@ LINK STYLES
 a, a:visited {
 	color: $link-color;
 
-	/* on hover */
-	&:hover, &:focus {
-		color: $link-hover;
-	}
+		/* on hover */
+		&:hover, &:focus {
+			color: $link-hover;
+		}
 
-	/* on click */
-	&:active {
+		/* on click */
+		&:active {
 
-	}
+		}
 
-	/* mobile tap color */
-	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
-}
+		/* mobile tap color */
+		&:link {
+				/*
+				this highlights links on iPhones/iPads.
+				so it basically works like the :hover selector
+				for mobile devices.
+				*/
+				-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+			}
+		}
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
@@ -151,82 +188,117 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+		/*
+		if you're going to use webfonts, be sure to check your weights
+		http://css-tricks.com/watch-your-font-weight/
+		*/
 
-	/* removing text decoration from all headline links */
-	a {
-		text-decoration: none;
+		/* removing text decoration from all headline links */
+		a {
+			text-decoration: none;
+		}
 	}
-}
 
-h1, .h1 {
-	font-size: 1.8rem;
-	line-height: 1.111em; //was 1.333
-	font-weight: normal;
-}
+	h1, .h1 {
+		font-size: 1.8rem;
+		line-height: 1.111em; //was 1.333
+		font-weight: normal;
+	}
 
-h1.page-title {
-	font-weight: bold;
-	color: $teal;
-}
+	h1.page-title {
+		font-weight: bold;
+		color: $teal;
+	}
 
-h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
-}
+	h2, .h2 {
+		font-size: 1.75em;
+		line-height: 1.4em;
+		margin-bottom: 0.375em;
+	}
 
-h3, .h3 {
-	font-size: 1.125em;
-}
+	h3, .h3 {
+		font-size: 1.125em;
+	}
 
-h4, .h4 {
-	font-size: 1.1em;
-	font-weight: 700;
-}
+	h4, .h4 {
+		font-size: 1.1em;
+		font-weight: 700;
+	}
 
-h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
+	h5, .h5 {
+		font-size: 0.846em;
+		line-height: 2.09em;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
 
 /*********************
 HEADER STYLES
 *********************/
 header[role=banner] {
-background-color: transparent;
-background-image: url('../images/water_tile.png');
-width: 100%;
-background-repeat: repeat-x;
-background-attachment: scroll;
-background-position: left 8px;
-margin-top: 77px;
-padding-left: 186px;
-border: 0;
-display: inline-block;
+	background-color: transparent;
+	background-image: url('../images/water_tile.png');
+	width: 100%;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-position: left 80px;
+	margin-top: 0;
+	padding-left: 186px;
+	border: 0;
+	display: inline-block;
+	min-height:118px;
 }
 
 header nav {
 	margin: 0;
 	padding: 0;
+	line-height: 1;
+}
+header nav #menu-oasis-page-nav .current-menu-item a {
+	color: #1E92AB;
+	-webkit-text-stroke: .5px #F7F1AD;
+	text-shadow: 1px 1px 1px #F7F1AD;
+}
+header nav {
+	background-color: transparent;
+	border-width: 0;
+	width: auto;
 }
 
-.header {
+header nav #menu-oasis-page-nav .current-menu-item a {
+	color: #1E92AB;
+	-webkit-text-stroke: .5px #F7F1AD;
+	text-shadow: 1px 1px 1px #F7F1AD;
+}
+header nav {
+	background-color: transparent;
+	position: absolute;
+	width: auto;
+	top: 76px;
+}
+
+header nav ul {
+	color: #000;
+	background-color: transparent;
+	border-width: 0;
+}
+header nav ul li a:hover,
+header nav ul li a:active {
+	color: #EFCB59;
+	background-color: #1E92AB;
+	border-width: 0;
+}
+header nav ul li a {
+	color: #0B3952;
+	background-color: transparent;
+	border-width: 0;
+}
+header nav a:link#current,
+header nav a:visited#current,
+header nav a:hover {
+	color: #000;
 	background-color: transparent;
 }
-
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
-		}
-	}
 
 /*********************
 NAVIGATION STYLES
@@ -245,6 +317,8 @@ and more scalable.
 	margin: 0;
 
 	li {
+		float: left;
+		position: relative;
 
 		a {
 			display: inline-block;
@@ -252,61 +326,61 @@ and more scalable.
 			text-decoration: none;
 			padding: 0.75em;
 
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
+						/*
+						remember this is for mobile ONLY, so there's no need
+						to even declare hover styles here, you can do it in
+						the style.scss file where it's relevant. We want to
+						keep this file as small as possible!
+						*/
+						&:hover, &:focus {
 
-			}
-		}
+						}
+					}
 
-		&:first-child {}
+					&:first-child {}
 
-		&:last-child {}
+					&:last-child {}
 
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
+				/*
+				so you really have to rethink your dropdowns for mobile.
+				you don't want to have it expand too much because the
+				screen is so small. How you manage your menu should
+				depend on the project. Here's some great info on it:
+				http://www.alistapart.com/articles/organizing-mobile/
+				*/
+				ul.sub-menu,
+				ul.children {
 
-			li {
+					li {
 
-				a {
-					padding-left: 30px;
+						a {
+							padding-left: 30px;
 
-					&:hover,
-					&:focus {}
+							&:hover,
+							&:focus {}
 
-					&:link {}
+							&:link {}
+
+						}
+
+						&:first-child {}
+
+						&:last-child {}
+
+					}
 
 				}
 
-				&:first-child {}
+		} /* end .menu li */
 
-				&:last-child {}
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
 
-			}
+			a {}
 
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
+		}  /* end current highlighters */
 
 } /* end .nav */
 
@@ -321,251 +395,254 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 
-#content {
-	margin-top: 1.5em;
-}
+.hentry {
+	background-color: transparent;
+	border-radius: 0;
+	margin-bottom: 1.5em;
+	border: 0px solid $border-color;
 
-		.hentry {
-			background-color: transparent;
-			border-radius: 0;
-			margin-bottom: 1.5em;
-			border: 0px solid $border-color;
-
-			header {
-				border-bottom: 0px solid $light-gray;
-				padding: 1.5em;
-			}
-
-			footer {
-				padding: 1.5em;
-				border-top: 0px solid $light-gray;
-
-				p {
-					margin: 0;
-				}
-			}
-
-		} /* end .hentry */
-
-		.single-title,
-		.page-title,
-		.entry-title {
-			margin: 0;
-		}
-
-		.single-title {}
-
-		.page-title {}
-
-		.entry-title {}
-
-		.archive-title {}
-
-		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.byline {
-			color: $meta-gray;
-			font-style: italic;
-			margin: 0;
-
-			time {}
-		}
-
-		/* entry content */
-		.entry-content {
-			padding: 1.5em 1.5em 0;
-
-			p {
-				margin: 0 0 1.5em;
-			}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			table {
-				width: 100%;
-				border: 1px solid $gray;
-				margin-bottom: 1.5em;
-
-				caption {
-					margin: 0 0 7px;
-					font-size: 0.75em;
-					color: $meta-gray;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-			}
-
-			tr {
-				border-bottom: 1px solid $gray;
-
-				&:nth-child(even) {
-					background-color: $light-gray;
-				}
-			}
-
-			td {
-				padding: 7px;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			th {
-				background-color: $light-gray;
-				border-bottom: 1px solid $gray;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
-				font-style: italic;
-				color: $meta-gray;
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 0 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			.size-auto,
-			.size-full,
-			.size-large,
-			.size-medium,
-			.size-thumbnail {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: $black;
-				color: $light-gray;
-				font-size: 0.9em;
-				padding: 1.5em;
-				margin: 0 0 1.5em;
-				border-radius: 3px;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption {
-			max-width: 100%;
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-	// the tag output
-	.tags {
-		margin: 0;
+	header {
+		border-bottom: 0px solid $light-gray;
+		padding: 1.5em;
 	}
 
-	img.attachment-large { // blue border with a white inner padding used on pics (like Sue pic on home page)
-	max-width: 100%;
-	background-color: #fff;
-	padding: 0.4178272928%;
-	border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
-	border-style: solid;
-	border-color: #1E92AB;
+	footer {
+		padding: 1.5em;
+		border-top: 0px solid $light-gray;
+
+		p {
+			margin: 0;
+		}
+	}
+
+} /* end .hentry */
+
+.single-title,
+.page-title,
+.entry-title {
+	margin: 0;
+}
+
+.single-title {}
+
+.page-title {}
+
+.entry-title {}
+
+.archive-title {}
+
+/* want to style individual post classes? Booya! */
+.post-id {}         /* post by id (i.e. post-3) */
+.post {}            /* general post style */
+.page {}            /* general article on a page style */
+.attachment {}      /* general style on an attatchment */
+.sticky {}          /* sticky post style */
+.hentry {}          /* hentry class */
+.category-slug {}   /* style by category (i.e. category-videos) */
+.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.byline {
+	color: $meta-gray;
 	font-style: italic;
+	margin: 0;
+
+	time {}
+}
+
+/* entry content */
+article {
+	padding: 1.5em 1.5em 0;
+
+	p {
+		margin: 0 0 1.5em;
+	}
+
+
+	ul, ol, table, dl {}
+
+	ul, ol {
+
+		li {}
+
+	}
+
+	ul {
+
+		li {}
+
+	}
+
+	ol {
+
+		li {}
+
+	}
+
+	table {
+		width: 100%;
+		border: 1px solid $gray;
+		margin-bottom: 1.5em;
+	}
+
+	table caption {
+		margin: 0 0 7px;
+		font-size: 0.75em;
+		color: $meta-gray;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	tr {
+		border-bottom: 1px solid $gray;
+
+		&:nth-child(even) {
+			background-color: $light-gray;
+		}
+	}
+
+	td {
+		padding: 7px;
+		border-right: 1px solid $gray;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	th {
+		background-color: $light-gray;
+		border-bottom: 1px solid $gray;
+		border-right: 1px solid $gray;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	blockquote {
+		margin: 0 0 1.5em 0.75em;
+		padding: 0 0 0 0.75em;
+		border-left: 3px solid $blue;
+		font-style: italic;
+		color: $meta-gray;
+		background-position: right bottom;
+		background-image: url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/punctuation-marks-lt-r.png) ;
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-color: rgba(207,241,242, .5);
+		border-left:0px none;
+		box-shadow: .5% .5% .5% rgba(30,146,171,.5);
+
+		&:before {}
+
+	}
+
+	dl {}
+
+	dt {}
+
+	dd {
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
+
+	img {
+		margin: 0 0 0 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+		/*
+		image alignment on a screen this size may be
+		a bit difficult. It's set to start aligning
+		and floating images at the next breakpoint,
+		but it's up to you. Feel free to change it up.
+		*/
+		.alignleft, img.alignleft {}
+		.alignright, img.alignright {}
+		.aligncenter, img.aligncenter {}
+
+		.size-auto,
+		.size-full,
+		.size-large,
+		.size-medium,
+		.size-thumbnail {
+			max-width: 100%;
+			height: auto;
+		}
+
+		pre {
+			background: $black;
+			color: $light-gray;
+			font-size: 0.9em;
+			padding: 1.5em;
+			margin: 0 0 1.5em;
+			border-radius: 3px;
+		}
+
+} /* end .entry-content */
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+		/* images inside wp-caption */
+		img {
+			max-width: 100%;
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+		p.wp-caption-text {
+			font-size: 0.85em;
+			margin: 4px 0 7px;
+			text-align: center;
+		}
+
+} /* end .wp-caption */
+
+/* image gallery styles */
+.gallery {
+
+	dl {
+
+		a {}
+
+		img {}
+
+	}
+
+	dt {}
+
+	dd {}
+
+} /* end .gallery */
+
+/* gallery caption styles */
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+		// the tag output
+		.tags {
+			margin: 0;
+		}
+
+		img.attachment-large { // blue border with a white inner padding used on pics (like Sue pic on home page)
+			max-width: 100%;
+			background-color: #fff;
+			padding: 0.4178272928%;
+		border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
+		border-style: solid;
+		border-color: #1E92AB;
+		font-style: italic;
 	}
 
 /******************************************************************
@@ -576,71 +653,71 @@ PAGE NAVI STYLES
 .wp-prev-next {
 	margin: 1.5em 0;
 }
-	.pagination{
-    text-align: center;
+.pagination{
+	text-align: center;
 
-    ul {
-      display: inline-block;
-      background-color: $white;
-      white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
-    }
+	ul {
+		display: inline-block;
+		background-color: $white;
+		white-space: nowrap;
+		padding: 0;
+		clear: both;
+		border-radius: 3px;
+	}
 
-    li {
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
-      border-right: 1px solid $gray;
-    }
+	li {
+		padding: 0;
+		margin: 0;
+		float: left;
+		display: inline;
+		overflow: hidden;
+		border-right: 1px solid $gray;
+	}
 
-    a, span {
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
-      padding: 0.75em;
-      min-width: 1em;
-      display: inline-block;
-      color: $blue;
+	a, span {
+		margin: 0;
+		text-decoration: none;
+		padding: 0;
+		line-height: 1em;
+		font-size: 1em;
+		font-weight: normal;
+		padding: 0.75em;
+		min-width: 1em;
+		display: inline-block;
+		color: $blue;
 
-      &:hover, &:focus {
-      	background-color: $blue;
-      	color: $white;
-      }
-    }
-
-    .current{
-    	cursor: default;
-    	color: $text-color;
-
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
-    }
-
-  } /* end .oasis_page_navi */
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-
-		ul {}
-
-		.prev-link {
-			float: left;
+		&:hover, &:focus {
+			background-color: $blue;
+			color: $white;
 		}
+	}
 
-		.next-link {
-			float: right;
+	.current{
+		cursor: default;
+		color: $text-color;
+
+		&:hover, &:focus {
+			background-color: $white;
+			color: $text-color;
 		}
+	}
 
-	} /* end .wp-prev-next */
+		} /* end .oasis_page_navi */
+
+		/* fallback previous & next links */
+		.wp-prev-next {
+
+			ul {}
+
+			.prev-link {
+				float: left;
+			}
+
+			.next-link {
+				float: right;
+			}
+
+		} /* end .wp-prev-next */
 
 /******************************************************************
 COMMENT STYLES
@@ -652,185 +729,185 @@ COMMENT STYLES
 	margin: 0;
 	border-top: 1px solid $light-gray;
 
-	/* number of comments span */
-	span {}
-
-}
-
-.comment-nav {
-
-	ul {
-
-		li {}
+		/* number of comments span */
+		span {}
 
 	}
-}
 
+	.comment-nav {
 
-.commentlist {
-	margin: 0;
-	list-style-type: none;
-}
+		ul {
 
-.comment {
-	position: relative;
-	clear: both;
-	overflow: hidden;
-	padding: 1.5em;
-	border-bottom: 1px solid $light-gray;
-
-	.comment-author {
-		padding: 7px;
-		border: 0;
-	}
-
-	/* vcard */
-	.vcard {
-		margin-left: 50px;
-
-		cite.fn {
-			font-weight: 700;
-			font-style: normal;
-
-			a.url {}
+			li {}
 
 		}
+	}
 
-		time {
-			display: block;
-			font-size: 0.9em;
-			font-style: italic;
 
-			a {
-				color: $meta-gray;
-				text-decoration: none;
+	.commentlist {
+		margin: 0;
+		list-style-type: none;
+	}
 
-				&:hover {
-					text-decoration: underline;
+	.comment {
+		position: relative;
+		clear: both;
+		overflow: hidden;
+		padding: 1.5em;
+		border-bottom: 1px solid $light-gray;
+
+		.comment-author {
+			padding: 7px;
+			border: 0;
+		}
+
+		/* vcard */
+		.vcard {
+			margin-left: 50px;
+
+			cite.fn {
+				font-weight: 700;
+				font-style: normal;
+
+				a.url {}
+
+			}
+
+			time {
+				display: block;
+				font-size: 0.9em;
+				font-style: italic;
+
+				a {
+					color: $meta-gray;
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+
 				}
 
 			}
 
+			.photo {}
+
+			.avatar {
+				position: absolute;
+				left: 16px;
+				border-radius: 50%;
+			}
+
+		} /* end .commentlist .vcard */
+
+		&:last-child {
+			margin-bottom: 0;
 		}
 
-		.photo {}
+		.children {
+			margin: 0;
 
-		.avatar {
-			position: absolute;
-			left: 16px;
-			border-radius: 50%;
+			li {}
+
+						/* variations */
+						.comment {}
+						.alt {}
+						.odd {}
+						.even {}
+						.depth-1 {}           /* change number for different depth */
+						.byuser {}
+						.bypostauthor {}
+						.comment-author-admin {}
+
+		} /* end children */
+
+
+		&[class*=depth-] {
+			margin-top: 1.1em;
 		}
 
-	} /* end .commentlist .vcard */
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	.children {
-		margin: 0;
-
-		li {}
-
-			/* variations */
-			.comment {}
-			.alt {}
-			.odd {}
-			.even {}
-			.depth-1 {}           /* change number for different depth */
-			.byuser {}
-			.bypostauthor {}
-			.comment-author-admin {}
-
-	} /* end children */
-
-
-	&[class*=depth-] {
-		margin-top: 1.1em;
-	}
-
-	&.depth-1 {
-		margin-left: 0;
-		margin-top: 0;
-	}
-
-	&:not(.depth-1) {
-		margin-top: 0;
-		margin-left: 7px;
-		padding: 7px;
-	}
-
-	&.depth-2 {}
-	&.depth-3 {}
-	&.depth-4 {}
-	&.depth-5 {}
-
-	/* general comment classes */
-	&.alt {}
-	&.odd {
-		background-color: $white;
-	}
-	&.even {
-		background: $light-gray;
-	}
-	&.parent {}
-	&.comment {}
-	&.children {}
-	&.pingback {}
-	&.bypostauthor {}
-	&.comment-author {}
-	&.comment-author-admin {}
-	&.thread-alt {}
-	&.thread-odd {}
-	&.thread-even {}
-}
-
-
-
-
-	/* comment meta */
-	.comment-meta {
-
-		a {}
-
-	}
-
-	.commentmetadata {
-
-		a {}
-
-	}
-
-	/* comment content */
-	.comment_content {
-
-		p {
-			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			line-height: 1.5em;
+		&.depth-1 {
+			margin-left: 0;
+			margin-top: 0;
 		}
 
-	} /* end .commentlist .comment_content */
-
-	/* comment reply link */
-	.comment-reply-link {
-		@extend .blue-btn;
-		font-size: 0.9em;
-		float: right;
-
-		&:hover,
-		&:focus {
+		&:not(.depth-1) {
+			margin-top: 0;
+			margin-left: 7px;
+			padding: 7px;
 		}
 
-	} /* end .commentlist .comment-reply-link */
+		&.depth-2 {}
+		&.depth-3 {}
+		&.depth-4 {}
+		&.depth-5 {}
 
-	/* edit comment link */
-	.comment-edit-link {
-		font-style: italic;
-		margin: 0 7px;
-		text-decoration: none;
-		font-size: 0.9em;
+		/* general comment classes */
+		&.alt {}
+		&.odd {
+			background-color: $white;
+		}
+		&.even {
+			background: $light-gray;
+		}
+		&.parent {}
+		&.comment {}
+		&.children {}
+		&.pingback {}
+		&.bypostauthor {}
+		&.comment-author {}
+		&.comment-author-admin {}
+		&.thread-alt {}
+		&.thread-odd {}
+		&.thread-even {}
 	}
+
+
+
+
+		/* comment meta */
+		.comment-meta {
+
+			a {}
+
+		}
+
+		.commentmetadata {
+
+			a {}
+
+		}
+
+		/* comment content */
+		.comment_content {
+
+			p {
+				margin: 0.7335em 0 1.5em;
+				font-size: 1em;
+				line-height: 1.5em;
+			}
+
+		} /* end .commentlist .comment_content */
+
+		/* comment reply link */
+		.comment-reply-link {
+			@extend .blue-btn;
+			font-size: 0.9em;
+			float: right;
+
+			&:hover,
+			&:focus {
+			}
+
+		} /* end .commentlist .comment-reply-link */
+
+		/* edit comment link */
+		.comment-edit-link {
+			font-style: italic;
+			margin: 0 7px;
+			text-decoration: none;
+			font-size: 0.9em;
+		}
 
 
 
@@ -844,59 +921,59 @@ COMMENT FORM STYLES
 	border-top: 1px solid $light-gray;
 }
 
-	#reply-title {
-		margin: 0;
+#reply-title {
+	margin: 0;
+}
+
+.logged-in-as {
+	color: $meta-gray;
+	font-style: italic;
+	margin: 0;
+
+	a {
+		color: $text-color;
 	}
+}
 
-	.logged-in-as {
-		color: $meta-gray;
-		font-style: italic;
-		margin: 0;
+.comment-form-comment {
+	margin: 1.5em 0 0.75em;
+}
 
-		a {
-			color: $text-color;
+.form-allowed-tags {
+	padding: 1.5em;
+	background-color: $light-gray;
+	font-size: 0.9em;
+}
+
+		/* comment submit button */
+		#submit {
+			@extend .blue-btn;
+			float: right;
+			font-size: 1em;
 		}
-	}
 
-	.comment-form-comment {
-		margin: 1.5em 0 0.75em;
-	}
+		/* comment form title */
+		#comment-form-title {
+			margin: 0 0 1.1em;
+		}
 
-	.form-allowed-tags {
-		padding: 1.5em;
-		background-color: $light-gray;
-		font-size: 0.9em;
-	}
+		/* cancel comment reply link */
+		#cancel-comment-reply {
+			a {}
+		}
 
-	/* comment submit button */
-	#submit {
-		@extend .blue-btn;
-		float: right;
-		font-size: 1em;
-	}
+		/* logged in comments */
+		.comments-logged-in-as {}
 
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
+		/* allowed tags */
+		#allowed_tags {
+			margin: 1.5em 10px 0.7335em 0;
+		}
 
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
-
-	/* logged in comments */
-	.comments-logged-in-as {}
-
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
-
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+		/* no comments */
+		.nocomments {
+			margin: 0 20px 1.1em;
+		}
 
 /*********************
 SIDEBARS & ASIDES
@@ -904,37 +981,37 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-	.widgettitle {}
+.widgettitle {}
 
-	.widget {
+.widget {
+	margin: 0;
+	ul {
 
-		ul {
+		li {
 
-			li {
+			&:first-child {}
 
-				&:first-child {}
+			&:last-child {}
 
-				&:last-child {}
+			a {}
 
-				a {}
+								/* deep nesting */
+								ul {}
 
-				/* deep nesting */
-				ul {}
+							}
 
-			}
+						}
 
-		}
+					}
 
-	}
-
-	.no-widgets {
-		background-color: $white;
-		padding: 1.5em;
-		text-align: center;
-		border: 1px solid $border-color;
-		border-radius: 2px;
-		margin-bottom: 1.5em;
-	}
+					.no-widgets {
+						background-color: $white;
+						padding: 1.5em;
+						text-align: center;
+						border: 1px solid $border-color;
+						border-radius: 2px;
+						margin-bottom: 1.5em;
+					}
 
 /*********************
 FOOTER STYLES
@@ -942,28 +1019,521 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: transparent;
+	color: lighten($black, 30%);
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
+		/*
+		if you checked out the link above:
+		http://www.alistapart.com/articles/organizing-mobile/
+		you'll want to style the footer nav
+		a bit more in-depth. Remember to keep
+		it simple because you'll have to
+		override these styles for the desktop
+		view.
+		*/
+		.footer-links {
 
-		ul {
+			ul {
 
-			li {}
+				li {}
 
-		}
+			}
 
-	} /* end .footer-links */
+		} /* end .footer-links */
 
 
-	.copyright {}
+		.copyright {}
+
+		/*********************************************************************************
+/* "Sign Up Now" button- Custom 3D animated button from http://css3exp.com/button
+**********************************************************************************/
+div { display: block; }
+div.mod {
+	margin: 0 0 30px;
+	padding: 80px;
+	text-align: center;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,.1);
+	box-shadow: 0 0 3px rgba(0,0,0,.1);
+}
+#stamp {
+	display: block;
+	margin: 20px 0;
+	border: none;
+	-webkit-transition: opacity .2s ease;
+	-moz-transition: opacity .2s ease;
+	-o-transition: opacity .2s ease;
+	transition: opacity .2s ease;
+}
+#stamp:hover { opacity: .7 }
+/* button styles */
+a.btn {
+	display: inline-block;
+	margin: 20px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0 8px 0 #1a74a1,0 15px 20px rgba(0,0,0,.35);
+	-moz-box-shadow: 0 8px 0 #1a74a1,0 15px 20px rgba(0,0,0,.35);
+	box-shadow: 0 8px 0 #1a74a1,0 15px 20px rgba(0,0,0,.35);
+	-webkit-transition: -webkit-box-shadow .2s ease-in-out;
+	-moz-transition: -moz-box-shadow .2s ease-in-out;
+	-o-transition: -o-box-shadow .2s ease-in-out;
+	transition: box-shadow .2s ease-in-out;
+}
+
+.btn span {
+	font-size: 1.2em;
+	padding: 1em 2.2em;
+	display: inline-block;
+	padding: 10px 20px;
+	font-family: "Verdana", sans-serif;
+	line-height: 1.2em;
+	text-shadow: 0 -1px 1px rgba(255,255,255,0.8);
+	background-color: #CFF1F2;
+	background: -webkit-gradient(linear,0% 0%,0% 100%,from(#FFFFFF),to(#e0f8ff));
+	background: -moz-linear-gradient(#FFFFFF, #e0f8ff) repeat scroll 0 0 transparent;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	-moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,.15);
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	-moz-transition: -moz-transform .2s ease-in-out;
+	-o-transition: -o-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+}
+.btn:active {
+	-webkit-box-shadow: 0 8px 0 #1a74a1,0 12px 10px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 8px 0 #1a74a1,0 12px 10px rgba(0,0,0,.5);
+	box-shadow: 0 8px 0 #1a74a1,0 12px 10px rgba(0,0,0,.5);
+}
+.btn:active span {
+	-webkit-transform: translate(0,4px);
+	-moz-transform: translate(0,4px);
+	-o-transform: translate(0,4px);
+	transform: translate(0,4px);
+}
+a.btn:link,
+a.btn:visited { color:#009DBB;
+	text-decoration: none; }
+	a.btn:hover,
+	a.btn:active { color: #009DBB; }
+/**********************************************************************
+End custom button
+***********************************************************************/
+
+/**********************************************************************
+Logo animation
+***********************************************************************/
+/* LOGO ANIMATION */
+@-webkit-keyframes pulse {
+	0% { -webkit-transform: scale(1) }
+	100% { -webkit-transform: scale(2.2) }
+}
+@-moz-keyframes pulse {
+		/* larger scaling sizes due to graphic used in place of Webkit gradient */
+		from { -moz-transform: scale(1) }
+		to { -moz-transform: scale(2.2) }
+	}
+
+	#sun {
+		-webkit-animation: pulse 2s ease-in-out alternate;
+		-moz-animation: pulse 2s ease-in-out alternate;
+		animation: pulse 2s ease-in-out alternate;
+		-webkit-animation-delay: 5s;
+		-moz-animation-delay   : 5s;
+		-o-animation-delay     : 5s;
+		animation-delay      : 5s;
+		-webkit-animation-iteration-count: 2;
+		-moz-animation-iteration-count: 2;
+		-o-animation-iteration-count: 2;
+		animation-iteration-count: 2;
+		-webkit-transition: -webkit-transform 2s ease-in-out;
+		-moz-transition: -moz-transform 2s ease-in-out;
+		-o-transition: -o-transform 2s ease-in-out;
+		-ms-transition: -ms-transform 2s ease-in-out;
+		transition: transform 2s ease-in-out;
+		position: absolute;
+		z-index: 50;
+		top: -24px;
+		left: 62px;
+		width: 125px;
+		height: 100px;
+		/* background: transparent url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/template/i_glow.png) no-repeat scroll center center; */ /* fallback */
+		background: -webkit-radial-gradient(50% 50%,circle contain,rgba(248, 162, 31, 0.75) 0%,rgba(248, 212, 63, 1) 13%,rgba(248, 201, 43, 1) 16%,rgba(248, 238, 143, 0.85) 36%,rgba(250, 228, 94, 0.5) 44%,rgba(250, 236, 128, 0.25) 58%,rgba(250, 236, 128, 0) 76%,rgba(250, 236, 128, 0) 100%) !important;
+		background: -moz-radial-gradient(50% 50%, circle contain, rgba(248, 162, 31, 0.75), rgba(248, 162, 31, 0.75) 10%, rgba(248, 212, 63, 1) 13%,rgba(248, 201, 43, 1) 16%, rgba(248, 238, 143, 0.85) 36%,rgba(250, 228, 94, 0.5) 44%,rgba(250, 236, 128, 0.25) 58%,rgba(250, 236, 128, 0) 76%,rgba(250, 236, 128, 0));
+		overflow: visible;
+		/* background-image: -moz-radial-gradient( 50% 50% 0deg, circle cover, rgba(253, 250, 46, 1.00) rgba(232, 229, 67, 0.00) ,9% rgba(230, 189, 0, 1.00),11% rgba(236, 175, 53, 1.00),13% rgba(243, 255, 152, 1.00),23% rgba(255, 251, 67, 0.63),48% rgba(255, 246, 66, 0.00)); */
+	}
+	#sun:hover {
+		-webkit-animation: pulse 2s infinite ease-in-out alternate;
+		-moz-animation: pulse 2s infinite ease-in-out alternate;
+		animation: pulse 2s infinite ease-in-out alternate;
+	}
+	#sun:link,
+	#sun:visited {
+		-webkit-animation: pulse 2s infinite ease-in-out alternate;
+		-moz-animation: pulse 2s infinite ease-in-out alternate;
+		animation: pulse 2s infinite ease-in-out alternate;
+		-webkit-transform: scale(2.0);
+		-moz-transform: scale(2);
+		-webkit-transition: -webkit-transform 2s ease-in-out;
+		-moz-transition: -moz-transform 2s ease-in-out;
+		-o-transition: -o-transform 2s ease-in-out;
+		-ms-transition: -ms-transform 2s ease-in-out;
+		transition: transform 2s ease-in-out;
+	}
+
+	#idot {
+		background: url("http://www.oasislifedesign.com/wp-content/uploads/idot.png") no-repeat scroll 0 0 transparent;
+		height: 30px;
+		left: 117px;
+		position: relative;
+		top: 20px;
+		width: 30px;
+		z-index: 100;
+	}
+
+	#logo {
+		background-image: url(http://www.oasislifedesign.com/wp-content/uploads/logo.png);
+		background-position: 0 40px;
+		background-repeat: no-repeat no-repeat;
+		height: 109px;
+		left: 14px;
+		margin: 0;
+		top: 0;
+		width: 165px;
+		position: absolute;
+	}
+
+	.beachbar div{
+		margin-top: -6px;
+		background-repeat: repeat;
+		background-image: url('../images/beachbar.png');
+		width: 100%;
+		padding: 1rem;
+		background-size: cover;
+	}
+
+	#logo,
+	#sun {
+		cursor: pointer;
+	}
+/*
+#idot {
+		position:absolute;
+		width:30px;
+		height:30px;
+		top:27px;
+		left:131px;
+		background:url(http://www.oasislifedesign.com/wp-content/uploads/idot.png) no-repeat
+}
+*/
+#slogan {
+	font-family: "La Belle Aurore", cursive;
+	left: 202px;
+		/*  left: 6.35em; for calligraffitti*/
+		font-weight: 200;
+		color: #1E92AB;
+		position: absolute;
+	}
+	#slogan {white-space: nowrap;}
+	#slogan a:hover { color:#4CCE7E; }
+
+
+	#inner:after {
+		content: '';
+		background: #fff;
+		height: 15px;
+		width: 15px;
+		position: absolute;
+		bottom: -8px;
+		left: 45%;
+		z-index: 4;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg);
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	}
+	#inner {
+		background: #fff;
+		border-radius: 12px;
+		box-shadow: 0 0 6px rgba(0,0,0,0.6);
+		width: 200px;
+		position: relative;
+		margin: 20px;
+		padding: 10px;
+	}
+/* end http://blog.cooljaz124.com/css3-popup-box-with-shadow/ */
+
+
+/* CATEGORY MENU ITEMS THAT "POP OUT" ON THE RIGHT WHEN HOVERED- SEE http://css3exp.com/code/view/ */
+
+ol.cat {
+	border: 2px solid rgba(0,0,0,.25);
+	background: rgba(255,255,255,.7);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+ol.cat li {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+ol.cat li:last-child {
+	border: none;
+}
+ol.cat li a {
+	position: relative;
+	display: block;
+	width: 230px;
+	padding: 10px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #222;
+	text-shadow: 0 1px 1px rgba(255,255,255,.5);
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-webkit-transition: width 0.3s linear, background 0.2s ease;
+	-moz-transition: width 0.3s linear, background 0.2s ease;
+	-o-transition: width 0.3s linear, background 0.2s ease;
+	transition: width 0.3s linear, background 0.2s ease;
+}
+ol.cat li a img {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	opacity: .4;
+}
+ol.cat li a em {
+	float: right;
+	margin: 2px 30px 0 0;
+	font-size: .85em;
+	font-weight: normal;
+	font-style: normal;
+	opacity: .5;
+}
+ol.cat li a:hover {
+	color: #fff;
+	width: 245px;
+	background-color: rgba(30,99,141,.85);
+	text-shadow: 0 -1px 1px rgba(0,0,0,.4);
+}
+ol.cat li a:hover img {
+	opacity: .6;
+}
+ol.cat li a:hover em {
+	color: #000;
+	text-shadow: 0 1px 1px rgba(255,255,255,.6);
+}
+
+
+/* ! CONTACT FORM STYLING FROM ABKAPART.COM/CSS3 */
+article input[type="submit"] {
+	width: auto;
+	padding: .5em 1em;
+}
+
+article fieldset { margin:0 0 10px; }
+
+article fieldset:last-child { margin:0; }
+
+article fieldset label {
+	display:block;
+	font-weight:700;
+	line-height:1.4;
+	color:#666;
+	color:rgba(0,0,0,.6);
+	text-shadow:0 1px 1px #fff
+}
+textarea{
+	width: 100%;
+	color:#666;
+	background-image:-webkit-gradient(linear,0% 0%,0% 2%,from(#999),to(#fff));
+	background-image:-webkit-linear-gradient(#999,#fff);
+	background-image:-moz-linear-gradient(#999,#fff);
+	background-image:-o-linear-gradient(#999,#fff);
+	background-image:-ms-linear-gradient(#999,#fff);
+	background:linear-gradient(#999,#fff);
+	background-color:#fff;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px
+}
+article input[type="text"] {
+	color:#666;
+	background-image:-webkit-gradient(linear,0% 0%,0% 12%,from(#999),to(#fff));
+	background-image:-webkit-linear-gradient(#999,#fff);
+	background-image:-moz-linear-gradient(#999,#fff);
+	background-image:-o-linear-gradient(#999,#fff);
+	background-image:-ms-linear-gradient(#999,#fff);
+	background:linear-gradient(#999,#fff);
+	background-color:#fff;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px
+}
+
+/* END FORM STYLING */
+
+/*---------------------------------------------- TESTIMONIAL FORMATTING ------------------------------------------------------------*/
+.bne-testimonial-description p {
+	float: none;
+	font: italic 1.1em verdana,serif;
+	margin: 0px;
+	padding: 10px 10px 0px;
+	color: rgb(3, 129, 133);
+}
+
+.bne-testimonial-heading {  font-weight: 600;
+	color: #6EA6A8;}
+
+
+/*-----------------------------------------------CUSTOM TAGS---------------------------------------------*/
+a,a:visited {
+	text-decoration:none;
+	-webkit-transition:color .5s ease-in;
+	-moz-transition:color .5s ease-in;
+	-o-transition:color .5s ease-in;
+	-ms-transition:color .5s ease-in;
+	transition:color .5s ease-in
+}
+
+h2.bigbold {
+	font-size:1.8em
+}
+
+#social_thumbs ul {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:auto;
+	text-align: center;
+}
+
+/* scale thumbnail social icons in sidebar */
+
+
+
+#social_thumbs ul li {
+	display: inline-block;
+}
+
+#social_thumbs li a img {
+	max-width: 100%;
+	padding: 0 0;
+	height: auto;
+}
+
+/* Gradient sun bullets */
+article>ul>li, article ul li, #poptext ul {
+
+	list-style-image:-moz-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
+	/* FF3.6+ */
+	list-style-image:-webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(226,186,6,1)),color-stop(2%,rgba(226,186,6,1)),color-stop(40%,rgba(239,209,89,1)),color-stop(96%,rgba(248,238,143,0.07)),color-stop(100%,rgba(254,252,234,0)));
+	/* Chrome,Safari4+ */
+	list-style-image:-webkit-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
+	/* Chrome10+,Safari5.1+ */
+	list-style-image:-o-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
+	/* Opera 12+ */
+	list-style-image:-ms-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
+	/* IE10+ */
+	list-style-image:radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
+	/* W3C */
+}
+
+li.widget, .widget>h1, .widget>h2 {list-style-type: none;}
+
+.format_text .slidewrap2 ul {
+	list-style-image:none;
+}/*  removes bullet from testimonials slider */
+
+
+.custom .sidebar h3 {
+	line-height: 1.385em;
+	margin-bottom: 0.462em;
+	padding-top: 0.5em;
+}
+
+.sidebar input[type="text"] {
+	width: 30%  /* 215px */; nowhitespace: afterproperty; nowhitespace: afterproperty; /* padding:2.3255814% 3.72093023%; */ /* 5px 8px; _NO__DOTCOMMA__AFTER___NO__DOTCOMMA__AFTER__*/ font-family: Verdana ,sans-serif; font-size: 1.2em;
+	color: #666;
+	background-image: -webkit-gradient(linear,0% 0%,0% 12%,from(#999),to(#fff));
+	background-image: -webkit-linear-gradient(#999,#fff);
+	background-image: -moz-linear-gradient(#999,#fff);
+	background-image: -o-linear-gradient(#999,#fff);
+	background-image: -ms-linear-gradient(#999,#fff);
+	background: linear-gradient(#999,#fff);
+	background-color: #fff;
+	-webkit-border-radius: 2.3255814%;
+	-khtml-border-radius: 2.3255814%;
+	-moz-border-radius: 2.3255814%;
+	border-radius: 2.3255814%;
+}
+.sidebar input[type="text"] {
+	font-family: Verdana,sans-serif;
+	padding: 0.5em;
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	max-width: 80%;
+}
+
+.contact input[type="checkbox"] {
+    width:2em;
+}
+
+.contact article .wpcf7-form-control-wrap input[type="text"],.contact .format_text .wpcf7-form-control-wrap input[type="email"]{
+		/* clear:both; */
+	float: right;
+	display: inline;
+	max-width: 60%;
+	width: 100%;
+}
+
+.contact article .wpcf7-form-control-wrap input[type="textarea"] {
+	max-width: 60%;
+	width: 100%;
+}
+
+.contact .list_signup, .contact .article input[type="submit"]{
+	clear:both;
+	float:right;
+	display: inline-block;
+}
+
+.contact .your-message {
+	float: right;
+	display: inline;
+	max-width: 60%;
+	width: 100%;
+}
+
+input[type="submit"]{
+	-moz-transition: -moz-box-shadow 0.2s ease-in-out 0s;
+	border-radius: 8px 8px 8px 8px;
+	box-shadow: 0 8px 0 #1A74A1, 0 15px 20px rgba(0, 0, 0, 0.35);
+	display: inline-block;
+	margin: 0.5em 0 1em 1.2em;
+	color: #009DBB;
+	background: -webkit-gradient(linear,0% 0%,0% 100%,from(#FFFFFF),to(#e0f8ff));
+	background: -moz-linear-gradient(#FFFFFF, #e0f8ff) repeat scroll 0 0 transparent;
+}
+
+.contact .labels {
+	clear:both;
+	float: left;
+	display: inline;
+}

@@ -1,76 +1,56 @@
 <?php get_header(); ?>
 
-			<div id="content">
+<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+  <div id="inner-content" class="wrap cf">
 
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+   <div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
 
-			<?php if (have_posts()) {
-				while (have_posts()) {
-					the_post(); ?>
+    <article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+     <header>
 
-						<header class="article-header">
+      <?=get_template_part('includes/partials/content', 'header')?>
 
-							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							<!-- in the byline, print only the post date on the index pages -->
-							<p class="byline vcard"><?php the_time('F j, Y'); ?></p>
+    </header>
 
-							</header> <!-- end article header -->
+    <section id="content" itemprop="articleBody">
+     <?php if (have_posts()) :
+      while (have_posts()) :
+       the_post(); ?>
 
-							<section class="entry-content clearfix">
-							<?php if ( has_post_thumbnail() ) { ?>
-								<div class="stroked box-left"> <?php the_post_thumbnail('thumbnail'); ?></div>
-						<?php 	} //end post thumnail
-							the_content(); ?>
-							</section> <!-- end article section -->
+       <?=get_template_part('includes/partials/content', 'index');?>
+     <?php endwhile; ?>
 
-							<footer class="article-footer">
-								<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'oasistheme') . '</span> ', ', ', ''); ?></p>
+     <?php if (function_exists('oasis_page_navi')): ?>
 
-							</footer> <!-- end article footer -->
+      <?=oasis_page_navi()?>
 
-							<?php // comments_template(); // uncomment if you want to use them ?>
+    <?php else: ?>
 
-						</article> <!-- end article -->
+      <nav class="wp-prev-next">
 
-					<?php } //endwhile; ?>
+        <ul class="clearfix">
 
-					<?php if (function_exists('oasis_page_navi')) { ?>
-						<?php oasis_page_navi(); ?>
-					<?php } else { ?>
-						<nav class="wp-prev-next">
-							<ul class="clearfix">
-								<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "oasistheme")) ?></li>
-								<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "oasistheme")) ?></li>
-							</ul>
-						</nav>
-					<?php } ?>  <!-- endwhile -->
+          <li class="prev-link"><?=next_posts_link(__('&laquo; Older Entries', 'oasistheme'))?></li>
+          <li class="next-link"><?=previous_posts_link(__('Newer Entries &raquo;', 'oasistheme'))?></li>
+        </ul>
 
-					<?php } else { ?>
 
-					<article id="post-not-found" class="hentry clearfix">
-						<header class="article-header">
-							<h1><?php _e("Oops, Post Not Found!", "oasistheme"); ?></h1>
-						</header>
-						<section class="entry-content">
-							<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "oasistheme"); ?></p>
-						</section>
-						<footer class="article-footer">
-							<p><?php _e("This is the error message in the index.php template.", "oasistheme"); ?></p>
-						</footer>
-					</article>
 
-					<?php } //endif ?>
+      </nav>
 
-				</div> <!-- end #main -->
 
-				<?php get_sidebar(); ?>
+    <?php endif; ?>
+  </section>
+<?php endif; ?>
+</article>
+</div> <!-- end #main -->
+<div class="last-col d-2of7 t-1of3 m-all">
+ <?php get_sidebar(); ?>
+</div>
+</div> <!-- end #inner-content -->
 
-			</div> <!-- end #inner-content -->
+</div> <!-- end #content -->
 
-		</div> <!-- end #content -->
-
-		<?php get_footer(); ?>
+<?php get_footer(); ?>

@@ -53,6 +53,4 @@
 		<nav role="navigation">
 			<?php oasis_main_nav(); ?>
 		</nav>
-			<?php oasis_blog_subnav();?>
 </header>
-<div class="wrap">

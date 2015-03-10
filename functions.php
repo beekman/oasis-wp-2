@@ -11,7 +11,7 @@ sidebars, comments, ect.
 /************* INCLUDE NEEDED FILES ***************/
 
 /*
-1. library/bones.php
+1. library/oasis.php
 	- head cleanup (remove rsd, uri links, junk css, ect)
 	- enqueueing scripts & styles
 	- theme support functions
@@ -122,6 +122,24 @@ function oasis_register_sidebars() {
 									 'before_title' => '<h4 class="widgettitle">',
 									 'after_title' => '</h4>',
 									 ));
+    register_sidebar(array(
+                                                       'id' => 'resources',
+                                                       'name' => __( 'Resources Page Sidebar', 'oasistheme' ),
+                                                       'description' => __( 'The resources page sidebar.', 'oasistheme' ),
+                                                       'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                                                       'after_widget' => '</div>',
+                                                       'before_title' => '<h4 class="widgettitle">',
+                                                       'after_title' => '</h4>',
+                                                       ));
+    register_sidebar(array(
+                                                       'id' => 'about',
+                                                       'name' => __( 'About Page Sidebar', 'oasistheme' ),
+                                                       'description' => __( 'The about page sidebar.', 'oasistheme' ),
+                                                       'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                                                       'after_widget' => '</div>',
+                                                       'before_title' => '<h4 class="widgettitle">',
+                                                       'after_title' => '</h4>',
+                                                       ));
 	register_sidebar(array(
 									 'id' => 'footbar',
 									 'name' => __( 'Footer Widgets', 'oasistheme' ),
@@ -225,175 +243,31 @@ ________________________________________________________________________*/
 function main_column_before_post() {
 }
 
-/**********************************************************************
-Navigation menus
-***********************************************************************/
-
 function main_column_after_post() {
-	/**********************************************************************
-	CUSTOM QUERIES THAT OCCUR AFTER CMS POST/PAGE CONTENT
-	***********************************************************************/
-	if (is_single()){
-		if ( 'post' == get_post_type() ){
-		}
-	}
-
-	/* ! BOOKS, MUSIC & OTHER RESOURCES -------These use tags, not categories----------------------------------*/
-	if (is_page ('resources')) {
-		?>
-		<div class="post_box">
-			<div id="sub-tabs">
-				<ul class="" role="navigation">
-					<li><a href="#awakening" id="awakening_tab" aria-describedby="awakening">Heart and Wholeness</a></li>
-					<li><a href="#investigating" id="investigating_tab" aria-describedby="investigating">Investigating the Mind</a></li>
-					<li><a href="#navigating" id="navigating_tab" aria-describedby="navigating">Navigating the Path Ahead</a></li>
-					<li><a href="#poetry" id="poetry_tab" aria-describedby="poetry">Poetry</a></li>
-					<li><a href="#audio" id="audio_tab" aria-describedby="audio">Audio</a></li>
-				</ul>
-
-				<!-- AWAKENING TAB -->
-
-				<div id="awakening">
-					<aside>
-						<span class="bigbold">Draw it up. Water from the well. </span> <p>These words to an African American spiritual rang in my mind when I decided to name my practice Oasis. Here are some of the deep wells that continue to inspire and renew me in my journey.</p>
-					</aside>
-					<section>
-						<?php $awakening_query = new WP_Query(
-							 array(
-								'post_type' => 'publications',
-								'tag_slug__in' => 'awakening',
-								'posts_per_page' => 50,
-								'orderby' => 'title',
-								'numberposts'=> 50
-							 )
-						);
-						while($awakening_query->have_posts())  {
-							$awakening_query->the_post(); ?> <!-- NOTE: BOOK TITLE CUSTOM FIELD IS MAPPED TO PUBLICATION AUTHOR -->
-							<div class="publication">
-								<div class="pubgroup">
-									<span class="pub_title">
-										<a href="<?php get_custom_field_data('link_to_amazon', true); ?>" rel="external"><?php the_title(); ?></span><!-- .pub_title --></a><br>
-										<span class="pub_author">
-											<?php get_custom_field_data('book_titles', true); ?>
-										</span>
-									</div> <!-- .pubgroup -->
-									<div class="pub_review"><?php the_content();?></div>
-						</div> <!-- .publication -->                <?php } //} //endwhile
-						wp_reset_postdata();?></section>
-					</div>
-					<!-- INVESTIGATING TAB -->
-					<div id="investigating"><section>
-						<aside>
-							<span class="bigbold">Draw it up. Water from the well. </span> <p>These words to an African American spiritual rang in my mind when I decided to name my practice Oasis. Here are some of the deep wells that continue to inspire and renew me in my journey.</p>
-						</aside>
-						<?php $investigating_query = new WP_Query( array(
-					'meta_key' => 'publication_author',
-					'numberposts'=> 50 )
-						);
-						while($investigating_query->have_posts())  {
-							$investigating_query->the_post(); ?> <!-- NOTE: BOOK TITLE CUSTOM FIELD IS MAPPED TO PUBLICATION AUTHOR -->
-							<div class="publication">
-								<div class="pubgroup">
-									<span class="pub_title">
-										<a href="<?php get_custom_field_data('link_to_amazon', true); ?>" rel="external"><?php the_title(); ?></span><!-- .pub_title --></a><br>
-										<span class="pub_author">
-											<?php get_custom_field_data('book_titles', true); ?>
-										</span>
-									</div> <!-- .pubgroup -->
-									<div class="pub_review"><?php the_content();?></div>
-								</div> <!-- .publication -->
-
-					<?php } //} //endwhile
-					wp_reset_postdata();?></section>
-				</div> <!-- #investigating -->
-				<!-- NAVIGATING THE PATH AHEAD TAB -->
-				<div id="navigating"><section>
-					<aside>
-						<span class="bigbold">Draw it up. Water from the well. </span> <p>These words to an African American spiritual rang in my mind when I decided to name my practice Oasis. Here are some of the deep wells that continue to inspire and renew me in my journey.</p>
-					</aside>
-					<?php $navigating_query = new WP_Query( array(
-				'post_type' => 'publications',
-				'tag_slug__in' => 'navigation',
-				'posts_per_page' => 50,
-				'orderby' => 'title',
-				'numberposts'=> 50 )
-		);
-					while($navigating_query->have_posts())  {
-						$navigating_query->the_post(); ?> <!-- NOTE: BOOK TITLE CUSTOM FIELD IS MAPPED TO PUBLICATION AUTHOR -->
-						<div class="publication">
-							<div class="pubgroup">
-								<span class="pub_title">
-									<a href="<?php get_custom_field_data('link_to_amazon', true); ?>" rel="external"><?php the_title(); ?></span><!-- .pub_title --></a><br>
-									<span class="pub_author">
-										<?php get_custom_field_data('book_titles', true); ?>
-									</span>
-								</div> <!-- .pubgroup -->
-								<div class="pub_review"><?php the_content();?></div>
-						</div> <!-- .publication -->                <?php } //endwhile
-						wp_reset_postdata();?></section>
-					</div> <!-- #navigating -->
-
-					<!-- POETRY TAB -->
-					<div id="poetry"><section>
-						<aside>
-							<span class="bigbold">Draw it up. Water from the well. </span> <p>These words to an African American spiritual rang in my mind when I decided to name my practice Oasis. Here are some of the deep wells that continue to inspire and renew me in my journey.</p>
-						</aside>
-						<?php $poetry_query = new WP_Query( array(
-							'numberposts'=> 50 )
-						);
-						while($poetry_query->have_posts())  {
-							$poetry_query->the_post(); ?>
-							<!-- NOTE: BOOK TITLE CUSTOM FIELD IS MAPPED TO PUBLICATION AUTHOR -->
-							<div class="publication">
-								<div class="pubgroup">
-									<span class="pub_title">
-										<a href="<?php get_custom_field_data('link_to_amazon', true); ?>" rel="external"><?php the_title(); ?></span><!-- .pub_title --></a><br>
-										<span class="pub_author">
-											<?php get_custom_field_data('book_titles', true); ?>
-										</span>
-									</div> <!-- .pubgroup -->
-									<div class="pub_review"><?php the_content();?></div>
-								</div> <!-- .publication -->
-					<?php } //endwhile
-					wp_reset_postdata();?></section>
-				</div><!-- #poetry -->
-
-				<!-- MUSIC TAB -->
-				<div id="audio"><section>
-					<aside>
-						<span class="bigbold">Draw it up. Water from the well. </span> <p>These words to an African American spiritual rang in my mind when I decided to name my practice Oasis. Here are some of the deep wells that continue to inspire and renew me in my journey.</p>
-					</aside>
-					<?php
-					$audio_query = new WP_Query( array(
-																			'post_type' => 'music',
-																			'posts_per_page' => 10,
-																			'orderby' => 'title',
-																			'numberposts'=> 50 )
-				/* 'orderby' => 'meta_value',
-				'meta_key' => 'publication_author', */ );
-					while($audio_query->have_posts())  {
-						$audio_query->the_post(); ?>
-						<div class="publication"> <div class="pubgroup">
-							<span class="pub_author"><?php get_custom_field_data('album_artists', true);
-								echo ', ';
-								get_custom_field_data('album_recording_labels', true);?></span>,
-								<span class="pub_title"><a href="<?php get_custom_field_data('links_to_amazon', true); ?>"><?php the_title();?></a>
-								</span> <!-- .pub_title -->
-							</div> <!-- .pubgroup -->
-							<div class="pub_review"><?php the_content();?></div>
-						</div> <!-- .publication -->
-					<?php } //endwhile
-					wp_reset_postdata(); ?> </section>
-
-				</div> <!-- audio -->
-			</div>
-		</div>
-	</div>
-	<?php
-	}
 }
-/*---------------------------------------------- END RESOURCES TABS
-END MAIN COLUMN AFTER POST----------------------------------------------*/
+
+
+/* UTILITY FUNCTIONS */
+function get_custom_field_data($key, $echo = false) {
+  global $post;
+  $value = get_post_meta($post->ID, $key, true);
+  if($echo == false) {
+    return $value;
+  } else {
+    echo $value;
+  }
+}
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+global $post;
+if ( isset( $post ) ) {
+$classes[] = $post->post_name;
+}
+return $classes;
+}
+
+add_filter( 'body_class', 'add_slug_body_class' );
 
 /**********************************************************************
 PRE-PAGE POST CONTENT FOR SPECIFIC SECTIONS

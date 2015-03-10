@@ -157,10 +157,6 @@ function oasis_scripts_and_styles() {
 	wp_enqueue_script('jquery-colors');
 	wp_enqueue_script('jquery-ui-widget');
 	wp_enqueue_script('jquery-ui-accordion');
-	/*  wp_enqueue_script('nivo-slider', get_bloginfo('stylesheet_directory') . '/js/jquery.nivo.slider.pack.js', array ('jquery'), '20111012642'); */
-	wp_enqueue_script('hoverIntent', get_bloginfo('stylesheet_directory') . '/library/js/jquery.hoverIntent.js', array ('jquery'), '20111012643');
-	wp_enqueue_script('backgroundPosition', get_bloginfo('stylesheet_directory') . '/library/js/jquery.backgroundPosition.js', array ('jquery'), '20111012544');
-wp_enqueue_script('custom-jquery', get_bloginfo('stylesheet_directory') . '/library/js/custom-jquery.js', array ('jquery'), '20111012649');
 
 //end legacy scripts
 

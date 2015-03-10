@@ -142,17 +142,17 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
-.entry-content {
+article {
   /* at this larger size, we can start to align images */ }
-  .entry-content .alignleft, .entry-content img.alignleft {
+  article .alignleft, article img.alignleft {
     margin-right: 1.5em;
     display: inline;
     float: left; }
-  .entry-content .alignright, .entry-content img.alignright {
+  article .alignright, article img.alignright {
     margin-left: 1.5em;
     display: inline;
     float: right; }
-  .entry-content .aligncenter, .entry-content img.aligncenter {
+  article .aligncenter, article img.aligncenter {
     margin-right: auto;
     margin-left: auto;
     display: block;
@@ -269,7 +269,7 @@ SIDEBARS & ASIDES
 
 .widget {
   padding: 0 10px;
-  margin: 0 0 2.2em 0; }
+  margin: 0; }
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */ }

@@ -180,11 +180,11 @@ dl#comment_list dl dt.bypostauthor {
 dl#comment_list dl dd {
   padding-left: 0; }
 
-dl#comment_list dl dd .format_text {
+dl#comment_list dl dd article {
   padding-left: 1.6em;
   border-width: 0 0 0 0.071em; }
 
-dl#comment_list dl dd.bypostauthor > .format_text {
+dl#comment_list dl dd.bypostauthor > article {
   padding-left: 1.5em;
   border-width: 0 0 0 0.143em; }
 
@@ -264,18 +264,18 @@ body {
   font-size: 2.2em;
   line-height: 1.364em; }
 
-.format_text h2, .format_text h3 {
+article h2, article h3 {
   font-size: 1.286em;
   line-height: 1.222em;
   margin: 1.833em 0 0.611em 0; }
 
-.format_text h4 {
+article h4 {
   font-size: 1em; }
 
-.format_text h5 {
+article h5 {
   font-size: 0.786em; }
 
-.format_text h6 {
+article h6 {
   font-size: 0.786em; }
 
 .sidebar h3 {
@@ -312,126 +312,129 @@ body {
   border-width: 0.1em; }
 
 /*---:[ post content area ]:---*/
-.format_text {
+article {
   font-size: 1.4em;
   line-height: 1.571em; }
 
-.format_text p {
+article p {
   margin-bottom: 1.571em; }
 
-.format_text p.note, .format_text p.alert {
+article p.note, article p.alert {
   padding: 0.571em 0.786em; }
 
-.format_text .drop_cap {
+article .drop_cap {
   font-size: 3.571em;
   line-height: 0.76em;
-  padding: 0.04em 0.12em 0 0; }
+  padding: 0.04em 0.12em 0 0;
+  }
 
-.ie6 .format_text .drop_cap {
+.ie6 article .drop_cap {
   padding-right: 0.06em; }
 
-.format_text acronym, .format_text abbr {
+article acronym, article abbr {
   font-size: 0.786em; }
 
-.format_text code, .format_text pre {
-  font-family: Consolas, "Andale Mono", Monaco, Courier, "Courier New", Verdana, sans-serif; }
+article code, article pre {
+  font-family: Consolas, "Andale Mono", Monaco, Courier, "Courier New", Verdana, sans-serif;
+}
 
-.format_text code {
+article code {
   font-size: 0.929em; }
 
-.format_text pre {
+article pre {
   font-size: 0.857em;
   line-height: 1.5em;
   margin-bottom: 1.833em;
   padding: 0.667em 0.917em; }
 
-.format_text sub, .format_text sup {
+article sub, article sup {
   line-height: 0.786em; }
 
-.format_text ul {
+article ul {
   margin: 0 0 1.571em 1.571em; }
 
-.format_text ol {
+article ol {
   margin: 0 0 1.571em 1.571em; }
 
-.format_text ul ul, .format_text ul ol, .format_text ol ul, .format_text ol ol {
+article ul ul, article ul ol, article ol ul, article ol ol {
   margin: 0 0 0 1.571em; }
 
-.format_text dl {
+article dl {
   margin-bottom: 1.571em; }
 
-.format_text dd {
+article dd {
   margin-bottom: 1.571em; }
 
-.format_text blockquote {
+article blockquote {
   margin: 0 0 1.571em 0.786em;
   padding-left: 0.786em; }
 
 /*---:[ pullquotes ]:---*/
-.format_text blockquote.right, .format_text blockquote.left {
+article blockquote.right, article blockquote.left {
   width: 45%;
   font-size: 1.286em;
   line-height: 1.222em; }
 
-.format_text blockquote.right {
+article blockquote.right {
   margin: 0 0 1.222em 1.222em; }
 
-.format_text blockquote.left {
+article blockquote.left {
   margin: 0 1.222em 1.222em 0; }
 
 /*---:[ image handling classes ]:---*/
-.format_text img.left, .format_text img.alignleft, .wp-caption.alignleft {
+article img.left, article img.alignleft, .wp-caption.alignleft {
   margin: 0 1.571em 1.571em 0; }
 
-.format_text img.right, .format_text img.alignright, .wp-caption.alignright {
+article img.right, article img.alignright, .wp-caption.alignright {
   margin: 0 0 1.571em 1.571em; }
 
-.format_text img.center, .format_text img.aligncenter, .wp-caption.aligncenter {
+article img.center, article img.aligncenter, .wp-caption.aligncenter {
   margin: 0 auto 1.571em auto; }
 
-.format_text img.block, .format_text img.alignnone, .wp-caption.alignnone {
+article img.block, article img.alignnone, .wp-caption.alignnone {
   margin: 0 auto 1.571em 0; }
 
-.format_text img[align="left"] {
+article img[align="left"] {
   margin-right: 1.571em;
-  margin-bottom: 1.571em; }
+  margin-bottom: 1.571em;
+}
 
-.format_text img[align="right"] {
+article img[align="right"] {
   margin-bottom: 1.571em;
   margin-left: 1.571em; }
 
-.format_text img[align="middle"] {
+article img[align="middle"] {
   margin-bottom: 1.571em; }
 
-.format_text img.frame, .format_text .wp-caption {
+article img.frame, article .wp-caption {
   padding: 0.714em;
   border-width: 0.071em; }
 
-.format_text img.stack {
+article img.stack {
   margin-left: 1.571em; }
 
-.format_text .wp-caption p {
+article .wp-caption p {
   font-size: 0.857em;
   line-height: 1.5em;
   margin-bottom: 0; }
 
 /*---:[ ad and miscellaneous "block" classes ]:---*/
-.format_text .ad {
+article .ad {
   margin-left: 1.571em; }
 
-.format_text .ad_left {
+article .ad_left {
   margin-right: 1.571em; }
 
 /*---:[ after-post elements ]:---*/
-.format_text .to_comments {
+article .to_comments {
   font-size: 0.857em;
   line-height: 1.833em;
   margin-bottom: 1.833em; }
 
-.format_text .to_comments span {
+article .to_comments span {
   font-size: 1.833em; }
 
-.format_text .post_tags {
+article .post_tags {
   font-size: 0.857em;
   line-height: 1.833em;
   margin-bottom: 1.833em; }
@@ -517,7 +520,7 @@ dl#comment_list dl dd p.reply {
 dl#comment_list dl dt, dl#comment_list dl dd {
   padding-top: 0; }
 
-dl#comment_list dl dd .format_text {
+dl#comment_list dl dd article {
   margin-bottom: 1.571em; }
 
 #trackback_list {
@@ -668,7 +671,7 @@ table#wp-calendar td#prev {
 input, textarea {
   font-family: Verdana, sans-serif; }
 
-.format_text input, #commentform input, #commentform textarea {
+article input, #commentform input, #commentform textarea {
   width: 45%;
   padding: 0.214em;
   border-width: 0.071em 0.071em 0.071em 0.071em; }
@@ -676,7 +679,7 @@ input, textarea {
 #commentform textarea {
   width: 96%; }
 
-.format_text input.form_submit, #commentform .form_submit {
+article input.form_submit, #commentform .form_submit {
   font-size: 1.143em;
   padding: 0.313em 0.25em; }
 
@@ -764,12 +767,13 @@ ul.sidebar_list {
   margin-left: 0.75em;
   margin-bottom: 0; }
 
-.teaser .format_teaser .post_image_link img.aligncenter {
-  margin-bottom: 1.5em; }
+.teaser img.aligncenter {
+  margin-bottom: 1rem; }
 
-.teaser .format_teaser .post_image_link img.frame {
+.teaser img.frame {
   padding: 0.333em;
-  border-width: 0.083em; }
+  border-width: 0.083em;
+}
 
 /*---:[ layout colors ]:---*/
 body {
@@ -878,11 +882,11 @@ ul.mainpoints {
   margin-left: 8%; }
 
 /*
-.home .format_text {
+.home article {
 	margin-top:1.6em;
 }
 */
-.custom .format_text p.to_comments {
+.custom article p.to_comments {
   display: none;
   visibility: hidden; }
 
@@ -919,7 +923,7 @@ ul.mainpoints {
   background-color: #FCFFFC;
   box-shadow: 0.2em 0.2em 0.75em rgba(30, 146, 171, 0.5); }
 
-.custom .format_text .slidecaption {
+.custom article .slidecaption {
   text-align: left;
   font-family: "Calligraffitti","Buda", serif;
   font-size: 1.5em;
@@ -1125,14 +1129,14 @@ ul.mainpoints {
 .custom .pquoteyellow {
   line-height: 1.2em; }
 
-.custom .format_text blockquote.pquote, .custom #sidebars blockquote.pquote {
+.custom article blockquote.pquote, .custom #sidebars blockquote.pquote {
   background-color: transparent;
   background-position: left top;
   background-repeat: no-repeat;
   background-image: url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/punctuation-marks-dk-l.png);
   background-size: contain; }
 
-.custom .format_text blockquote.pquoteyellow, .custom #sidebars blockquote.pquoteyellow {
+.custom article blockquote.pquoteyellow, .custom #sidebars blockquote.pquoteyellow {
   background-color: #F8EE8F;
   border: 2px solid #EFCB59;
   border-radius: 2%;
@@ -1172,7 +1176,7 @@ ul.mainpoints {
   margin: 2%;
   padding: 1%; }
 
-.custom .format_text blockquote.bquote, .custom #sidebars blockquote.bquote {
+.custom article blockquote.bquote, .custom #sidebars blockquote.bquote {
   background-color: #CFF1F2;
   border: .5px solid #1E92AB;
   border-radius: 10%;
