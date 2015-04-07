@@ -78,112 +78,96 @@ you like. Enjoy!
 // Sidebars & Widgetizes Areas
 function oasis_register_sidebars() {
 	register_sidebar(array(
-									 'id' => 'sidebar1',
-									 'name' => __( 'Sidebar 1', 'oasistheme' ),
-									 'description' => __( 'The default sidebar.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-	register_sidebar(array(
-									 'id' => 'blog',
-									 'name' => __( 'Blog Sidebar', 'oasistheme' ),
-									 'description' => __( 'The blog sidebar.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-	register_sidebar(array(
-									 'id' => 'single',
-									 'name' => __( 'Single Sidebar', 'oasistheme' ),
-									 'description' => __( 'Single Post Sidebar.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-	register_sidebar(array(
-									 'id' => 'contact',
-									 'name' => __( 'Contact Page Sidebar', 'oasistheme' ),
-									 'description' => __( 'The contact page sidebar.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-	register_sidebar(array(
-									 'id' => 'home-sidebar',
-									 'name' => __( 'Home Page Sidebar', 'oasistheme' ),
-									 'description' => __( 'The home page sidebar.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-    register_sidebar(array(
-                                                       'id' => 'resources',
-                                                       'name' => __( 'Resources Page Sidebar', 'oasistheme' ),
-                                                       'description' => __( 'The resources page sidebar.', 'oasistheme' ),
-                                                       'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                                                       'after_widget' => '</div>',
-                                                       'before_title' => '<h4 class="widgettitle">',
-                                                       'after_title' => '</h4>',
-                                                       ));
-    register_sidebar(array(
-                                                       'id' => 'about',
-                                                       'name' => __( 'About Page Sidebar', 'oasistheme' ),
-                                                       'description' => __( 'The about page sidebar.', 'oasistheme' ),
-                                                       'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                                                       'after_widget' => '</div>',
-                                                       'before_title' => '<h4 class="widgettitle">',
-                                                       'after_title' => '</h4>',
-                                                       ));
-	register_sidebar(array(
-									 'id' => 'footbar',
-									 'name' => __( 'Footer Widgets', 'oasistheme' ),
-									 'description' => __( 'Widgets to appear in the footer on every page.', 'oasistheme' ),
-									 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-									 'after_widget' => '</div>',
-									 'before_title' => '<h4 class="widgettitle">',
-									 'after_title' => '</h4>',
-									 ));
-	register_sidebar(array(
-									'id'            => 'home-main-left-widgets',
-									'name'          => __( 'Home Page, Lower Left Column', 'oasistheme' ),
-									'description'   => __( 'A widget area below the page content in the left column of the home page.', 'oasistheme' ),
-									));
-		register_sidebar(array(
-									'id'            => 'home-main-right-widgets',
-									'name'          => __( 'Home Page, Lower Right Column', 'oasistheme' ),
-									'description'   => __( 'A widget area below the photo of Susan in the right column of the home page.', 'oasistheme' ),
-									));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-
-	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __('Sidebar 2', 'oasistheme'),
-		'description' => __('The second (secondary) sidebar.', 'oasistheme'),
+		'id' => 'universal',
+		'name' => __( 'Universal Sidebar Content', 'oasistheme' ),
+		'description' => __( 'The universal sidebar content that appears on every page (after the page-specific one if applicable).', 'oasistheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-
-	*/
+	register_sidebar(array(
+		'id' => 'blog',
+		'name' => __( 'Blog Sidebar', 'oasistheme' ),
+		'description' => __( 'The blog sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'single',
+		'name' => __( 'Single Sidebar', 'oasistheme' ),
+		'description' => __( 'Single post (and single custom post type) sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'home-sidebar',
+		'name' => __( 'Home Page Sidebar', 'oasistheme' ),
+		'description' => __( 'The home page sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'resources',
+		'name' => __( 'Resources Page Sidebar', 'oasistheme' ),
+		'description' => __( 'The resources page sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'about',
+		'name' => __( 'About Page Sidebar', 'oasistheme' ),
+		'description' => __( 'The about page sidebar that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'services',
+		'name' => __( 'Services Page Sidebar', 'oasistheme' ),
+		'description' => __( 'The services page sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'contact',
+		'name' => __( 'Contact Page Sidebar', 'oasistheme' ),
+		'description' => __( 'The contact page sidebar content that appears before the site-wide sidebar content.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id' => 'footbar',
+		'name' => __( 'Footer Widgets', 'oasistheme' ),
+		'description' => __( 'Widgets to appear in the footer on every page.', 'oasistheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'id'            => 'home-main-left-widgets',
+		'name'          => __( 'Home Page, Lower Left Column', 'oasistheme' ),
+		'description'   => __( 'A widget area below the page content in the left column of the home page.', 'oasistheme' ),
+	));
+	register_sidebar(array(
+		'id'            => 'home-main-right-widgets',
+		'name'          => __( 'Home Page, Lower Right Column', 'oasistheme' ),
+		'description'   => __( 'A widget area below the photo of Susan in the right column of the home page.', 'oasistheme' ),
+	));
 } // don't remove this bracket!
 
 /************* COMMENT LAYOUT *********************/
@@ -199,31 +183,30 @@ function oasis_comments($comment, $args, $depth) {
 					this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
 					echo get_avatar($comment,$size='32',$default='<path_to_url>' );
 				*/
-					?>
-					<!-- custom gravatar call -->
-					<?php
-					// create variable
-					$bgauthemail = get_comment_author_email();
-					?>
-					<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
-					<!-- end custom gravatar call -->
-					<?php printf(__('<cite class="fn">%s</cite>', 'oasistheme'), get_comment_author_link()) ?>
-					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('F jS, Y', 'oasistheme')); ?> </a></time>
-					<?php edit_comment_link(__('(Edit)', 'oasistheme'),'  ','') ?>
-				</header>
-				<?php if ($comment->comment_approved == '0')  {
-					?>
-					<div class="alert info">
-						<p><?php _e('Your comment is awaiting moderation.', 'oasistheme') ?></p>
-					</div>
-					<?php } //} //endif ?>
-					<section class="comment_content clearfix">
-						<?php comment_text() ?>
-					</section>
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</article>
-				<!-- </li> is added by WordPress automatically -->
+				?>
+				<!-- custom gravatar call -->
 				<?php
+				// create variable
+				$bgauthemail = get_comment_author_email();
+				?>
+				<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+				<!-- end custom gravatar call -->
+				<?php printf(__('<cite class="fn">%s</cite>', 'oasistheme'), get_comment_author_link()) ?>
+				<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__('F jS, Y', 'oasistheme')); ?> </a></time>
+				<?php edit_comment_link(__('(Edit)', 'oasistheme'),'  ','') ?>
+			</header>
+			<?php if ($comment->comment_approved == '0')  { ?>
+				<div class="alert info">
+					<p><?php _e('Your comment is awaiting moderation.', 'oasistheme') ?></p>
+				</div>
+				<?php } //} //endif ?>
+				<section class="comment_content clearfix">
+					<?php comment_text() ?>
+				</section>
+				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+			</article>
+			<!-- </li> is added by WordPress automatically -->
+			<?php
 } // don't remove this bracket!
 
 /************* SEARCH FORM LAYOUT *****************/
@@ -249,22 +232,22 @@ function main_column_after_post() {
 
 /* UTILITY FUNCTIONS */
 function get_custom_field_data($key, $echo = false) {
-  global $post;
-  $value = get_post_meta($post->ID, $key, true);
-  if($echo == false) {
-    return $value;
-  } else {
-    echo $value;
-  }
+	global $post;
+	$value = get_post_meta($post->ID, $key, true);
+	if($echo == false) {
+		return $value;
+	} else {
+		echo $value;
+	}
 }
 
 //Page Slug Body Class
 function add_slug_body_class( $classes ) {
-global $post;
-if ( isset( $post ) ) {
-$classes[] = $post->post_name;
-}
-return $classes;
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_name;
+	}
+	return $classes;
 }
 
 add_filter( 'body_class', 'add_slug_body_class' );
@@ -314,4 +297,5 @@ function blogEmailLink() {
 }
 
 add_shortcode('blogsignup', 'blogEmailLink');
+
 ?>

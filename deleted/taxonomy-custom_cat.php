@@ -19,50 +19,50 @@ taxonomy-shoes.php
 
 				<div id="inner-content" class="wrap clearfix">
 
-				    <div id="main" class="eightcol first clearfix" role="main">
+				<div id="main" class="eightcol first clearfix" role="main">
 
-					    <h1 class="archive-title h2"><span><?php _e("Posts Categorized:", "oasistheme"); ?></span> <?php single_cat_title(); ?></h1>
+					<h1 class="archive-title h2"><span><?php _e("Posts Categorized:", "oasistheme"); ?></span> <?php single_cat_title(); ?></h1>
 
-					    <?php if (have_posts()) {
-						 while (have_posts()) {
+					<?php if (have_posts()) {
+						while (have_posts()) {
 							the_post(); ?>
 
-					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
-						    <header class="article-header">
+						<header class="article-header">
 
-							    <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+							<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
                   <p class="byline vcard"><?php
                     printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'oasistheme'), get_the_time('Y-m-j'), get_the_time(__('F js, Y', 'oasistheme')), oasis_get_the_author_posts_link(), get_the_term_list( get_the_ID(), 'custom_cat', "" ));
                   ?></p>
 
-						    </header> <!-- end article header -->
+						</header> <!-- end article header -->
 
-						    <section class="entry-content">
-							    <?php the_excerpt('<span class="read-more">' . __('Read More &raquo;', 'oasistheme') . '</span>'); ?>
+						<section class="entry-content">
+							<?php the_excerpt('<span class="read-more">' . __('Read More &raquo;', 'oasistheme') . '</span>'); ?>
 
-						    </section> <!-- end article section -->
+						</section> <!-- end article section -->
 
-						    <footer class="article-footer">
+						<footer class="article-footer">
 
-						    </footer> <!-- end article footer -->
+						</footer> <!-- end article footer -->
 
-					    </article> <!-- end article -->
+					</article> <!-- end article -->
 
-					    <?php } //endwhile; ?>
+					<?php } //endwhile; ?>
 
-					        <?php if (function_exists('oasis_page_navi')) { ?>
-					            <?php oasis_page_navi(); ?>
-					        <?php } else { ?>
-					            <nav class="wp-prev-next">
-					                <ul class="clearfix">
-					        	        <li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "oasistheme")) ?></li>
-					        	        <li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "oasistheme")) ?></li>
-					                </ul>
-					            </nav>
-					        <?php } ?>
+					<?php if (function_exists('oasis_page_navi')) { ?>
+					<?php oasis_page_navi(); ?>
+					<?php } else { ?>
+					<nav class="wp-prev-next">
+					<ul class="clearfix">
+						<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "oasistheme")) ?></li>
+						<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "oasistheme")) ?></li>
+					</ul>
+					</nav>
+					<?php } ?>
 
-					    <?php else { ?>
+					<?php else { ?>
 
         					<article id="post-not-found" class="hentry clearfix">
         						<header class="article-header">
@@ -72,15 +72,15 @@ taxonomy-shoes.php
         							<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "oasistheme"); ?></p>
         						</section>
         						<footer class="article-footer">
-        						    <p><?php _e("This is the error message in the taxonomy-custom_cat.php template.", "oasistheme"); ?></p>
+        						<p><?php _e("This is the error message in the taxonomy-custom_cat.php template.", "oasistheme"); ?></p>
         						</footer>
         					</article>
 
-					    <?php } //endif ?>
+					<?php } //endif ?>
 
-				    </div> <!-- end #main -->
+				</div> <!-- end #main -->
 
-				    <?php get_sidebar(); ?>
+				<?php get_sidebar(); ?>
 
 				</div> <!-- end #inner-content -->
 

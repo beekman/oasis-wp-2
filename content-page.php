@@ -15,10 +15,10 @@
 			<?php the_content(); ?>
 <?php
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it. ?>
-				<?php the_post_thumbnail( 'medium', array( 'class' => 'floatright stroked' ) );
+				<?php the_post_thumbnail( 'medium', array( 'class' => 'floatright stroked-orange' ) );
 		} ?>
 			<?php the_content(); ?>
 		</section> <!-- end article section -->
 
-		<footer class="article-footer"></footer> <!-- end article footer -->
+		<footer class="article-footer"></footer>
 </article> <!-- end article -->

@@ -256,9 +256,6 @@ nav ol {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
-img {
-  border: 0; }
-
 /**
  * Correct overflow displayed oddly in IE 9.
  */
@@ -1265,6 +1262,16 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+img {
+  max-width: 100%; }
+
+.two-col {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2; }
+
 .beachbar div ul {
   margin: 0; }
 
@@ -1286,17 +1293,16 @@ body {
   margin-right: 1rem; }
 
 .stroked, .stroked-teal, .stroked-orange {
-  background-color: white;
-  padding: 0.15rem;
+  border-width: 2px 4px 4px 2px;
   border-style: solid;
-  font-style: italic;
-  border-width: .3rem .16rem .22rem .3rem; }
+  border-color: #1E92AB;
+}
 
 .stroked-teal {
   border-color: #1e92ab; }
 
 .stroked-orange {
-  border-color: orange; }
+  border-color: $orange; }
 
 /*---------------------------------------------- Stroked color borders with white padding inside-------------------------------------*/
 img.stroked, img.stroked-teal, img.stroked-orange {
@@ -1310,7 +1316,7 @@ blockquote.stroked-orange,
 #signup-box.giftbox.stroked-teal,
 #signup-box.giftbox.stroked-orange {
   max-width: 100%;
-  background-color: #fff;
+  background-color: white;
   padding: 0.4178272928%;
   border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%;
   /* 3px/#content 5px/#content 5px/#content 3px/#content */
@@ -1328,7 +1334,7 @@ blockquote.stroked-orange,
   margin: 0;
   width: 30%; }
 
-.textstroked {
+.textstroked, .text-stroked {
   -webkit-text-stroke: .5px #000;
   -webkit-text-fill-color: #FFF; }
 
@@ -1384,6 +1390,9 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
+a {
+  transition: color 0.5s ease-in 0s; }
+
 a, a:visited {
   color: #1e92ab;
   /* on hover */
@@ -1419,19 +1428,20 @@ h1, .h1 {
   font-weight: normal; }
 
 h1.page-title {
-  font-weight: bold;
+  font-size: 24px;
   color: #1e92ab; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 22px;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 20px;
+  font-weight: 400; }
 
 h4, .h4 {
-  font-size: 1.1em;
+  font-size: 17px;
   font-weight: 700; }
 
 h5, .h5 {
@@ -1472,37 +1482,57 @@ header nav {
   width: auto; }
 
 header nav #menu-oasis-page-nav .current-menu-item a {
-  color: #1E92AB;
+  color: orange;
   -webkit-text-stroke: .5px #F7F1AD;
-  text-shadow: 1px 1px 1px #F7F1AD; }
+  text-shadow: 1px 1px 1px #F7F1AD;
+  box-shadow: 0 0 10px #f8f394;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.25); }
 
 header nav {
   background-color: transparent;
   position: absolute;
   width: auto;
-  top: 76px; }
+  top: 81px; }
 
 header nav ul {
   color: #000;
   background-color: transparent;
-  border-width: 0; }
+  border-width: 0;
+  text-transform: uppercase; }
 
-header nav ul li a:hover,
-header nav ul li a:active {
-  color: #EFCB59;
-  background-color: #1E92AB;
-  border-width: 0; }
+header .nav ul li a:hover,
+header .nav ul li a:active {
+  color: orange;
+  border-width: 0;
+  box-shadow: 0 0 10px #f8f394;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.35); }
 
-header nav ul li a {
-  color: #0B3952;
+header .nav ul li a {
+  color: #323944;
   background-color: transparent;
   border-width: 0; }
 
-header nav a:link#current,
-header nav a:visited#current,
-header nav a:hover {
+header .nav a:link.current-menu-item
+header .nav a:visited.current-menu-item,
+header .nav a:hover.current-menu-item {
   color: #000;
-  background-color: transparent; }
+  text-decoration: none; }
+
+.beachbar a {
+  border-radius: 10px;
+  padding: 5px; }
+
+.beachbar a:active, .ui-tabs-active {
+  box-shadow: 0 0 10px #f8f394;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #323944; }
+
+.beachbar a:hover {
+  box-shadow: 0 0 10px #f8f394;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #323944; }
 
 /*********************
 NAVIGATION STYLES
@@ -1523,18 +1553,15 @@ and more scalable.
   .nav li {
     float: left;
     position: relative;
-    /*
-    so you really have to rethink your dropdowns for mobile.
-    you don't want to have it expand too much because the
-    screen is so small. How you manage your menu should
-    depend on the project. Here's some great info on it:
-    http://www.alistapart.com/articles/organizing-mobile/
-    */ }
+    				/*
+
+    				http://www.alistapart.com/articles/organizing-mobile/
+    				*/ }
     .nav li a {
       display: inline-block;
-      color: white;
+      color: #323944;
       text-decoration: none;
-      padding: 0.75em;
+      padding: 0.6em 0.75em;
       /*
       remember this is for mobile ONLY, so there's no need
       to even declare hover styles here, you can do it in
@@ -1589,9 +1616,12 @@ POSTS & CONTENT STYLES
   font-style: italic;
   margin: 0; }
 
+.byline .meta-gray {
+  padding-left: 0.35rem; }
+
 /* entry content */
 article {
-  padding: 1.5em 1.5em 0;
+  padding: 10px 1.5em 0;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -1879,6 +1909,44 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+/* Input elements-- forms for sidebar & contact page */
+.sidebar h3 {
+  line-height: 1.385em;
+  margin-bottom: 0.462em;
+  padding-top: 0.5em; }
+
+.sidebar input[type="email"] {
+  font-family: Verdana, sans-serif;
+  font-size: 1.2em;
+  color: #666;
+  background-color: #fff;
+  background: linear-gradient(#999999, white);
+  -webkit-border-radius: 2.3255814%;
+  -khtml-border-radius: 2.3255814%;
+  -moz-border-radius: 2.3255814%;
+  border-radius: 2.3255814%; }
+
+.sidebar input[type="email"] {
+  font-family: Verdana,sans-serif;
+  padding: 0.25em;
+  max-width: 49%;
+  width: 100%; }
+
+.sidebar input[type="submit"] {
+  margin: 0; }
+
+div.sidebar {
+  -webkit-box-shadow: -2px 2px 2px #1E92AB;
+  /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: -2px 2px 2px #1E92AB;
+  /* FF3.5 - 3.6 */
+  box-shadow: -2px 2px 2px #1E92AB;
+  background: -webkit-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
+  background: -moz-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
+  background: -o-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
+  background: linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%); }
+
 .widget {
   margin: 0; }
   .widget ul li {
@@ -2092,7 +2160,7 @@ Logo animation
   background-repeat: repeat;
   background-image: url("../images/beachbar.png");
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem;
   background-size: cover; }
 
 #logo,
@@ -2242,7 +2310,7 @@ textarea {
   -moz-border-radius: 4px;
   border-radius: 4px; }
 
-article input[type="text"] {
+article input[type="text"], article input[type="email"] {
   color: #666;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 12%, from(#999999), to(white));
   background-image: -webkit-linear-gradient(#999999, white);
@@ -2281,12 +2349,23 @@ a, a:visited {
 h2.bigbold {
   font-size: 1.8em; }
 
+.byline time {
+  text-transform: capitalize;
+  font-variant: small-caps; }
+
 #social_thumbs ul {
   margin: 0;
   padding: 0;
   width: 100%;
   height: auto;
   text-align: center; }
+
+a[rel="category"] {
+  text-transform: capitalize; }
+
+.all-caps, .all-caps a {
+  text-transform: capitalize;
+  font-variant: small-caps; }
 
 /* scale thumbnail social icons in sidebar */
 #social_thumbs ul li {
@@ -2298,7 +2377,12 @@ h2.bigbold {
   height: auto; }
 
 /* Gradient sun bullets */
-article > ul > li, article ul li, #poptext ul {
+article > ul > li,
+article ul li,
+#poptext ul,
+article > section > div > ul {
+  list-style-type: disc;
+  list-style-position: inside;
   list-style-image: -moz-radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
   /* FF3.6+ */
   list-style-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e2ba06), color-stop(2%, #e2ba06), color-stop(40%, #efd159), color-stop(96%, rgba(248, 238, 143, 0.07)), color-stop(100%, rgba(254, 252, 234, 0)));
@@ -2312,14 +2396,18 @@ article > ul > li, article ul li, #poptext ul {
   list-style-image: radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
   /* W3C */ }
 
+.front article .widget ul, .front article .widget ul li {
+  list-style-type: none; }
+
 li.widget, .widget > h1, .widget > h2 {
   list-style-type: none; }
 
+li.widget:nth-child(4)
 .format_text .slidewrap2 ul {
   list-style-image: none; }
 
 /*  removes bullet from testimonials slider */
-.custom .sidebar h3 {
+.sidebar h3 {
   line-height: 1.385em;
   margin-bottom: 0.462em;
   padding-top: 0.5em; }
@@ -2345,18 +2433,16 @@ li.widget, .widget > h1, .widget > h2 {
   -moz-border-radius: 2.3255814%;
   border-radius: 2.3255814%; }
 
-.sidebar input[type="text"] {
+.sidebar input[type="text"], .sidebar input[type="email"] {
   font-family: Verdana,sans-serif;
-  padding: 0.5em;
-  margin-top: 1em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  max-width: 80%; }
+  padding: 0.25em 0.5em;
+  margin: 0;
+  display: inline-block; }
 
 .contact input[type="checkbox"] {
   width: 2em; }
 
-.contact article .wpcf7-form-control-wrap input[type="text"], .contact .format_text .wpcf7-form-control-wrap input[type="email"] {
+.contact article .wpcf7-form-control-wrap input[type="text"], .contact .wpcf7-form-control-wrap input[type="email"] {
   /* clear:both; */
   float: right;
   display: inline;
@@ -2393,6 +2479,199 @@ input[type="submit"] {
   float: left;
   display: inline; }
 
+/*
+.custom #badges .badge{
+	display: block;
+    margin: 60px 0 0 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+*/
+#badges .badge img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block; }
+
+#social_thumbs img.badge {
+  margin: 1%;
+  padding: 0;
+  height: auto;
+  display: inline-block;
+  float: left; }
+
+#screenshot {
+  /* position:absolute;	*/
+  border: 1px solid #ccc;
+  background: #333;
+  padding: 10px;
+  display: none;
+  color: #fff;
+  font-size: 1.6em;
+  -webkit-animation: screenshotreveal 2s ease-in-out;
+  /* Saf5, Chrome */
+  -moz-animation: screenshotreveal 2s ease-in-out;
+  /* FF5+ */
+  -ms-animation: screenshotreveal 2s ease-in-out;
+  /* IE10pp3 */ }
+
+#screens {
+  position: absolute;
+  margin-left: -200px;
+  margin-top: -294px;
+  width: 200px;
+  height: auto;
+  -webkit-animation: screenshotreveal 2s ease-in-out;
+  /* Saf5, Chrome */
+  -moz-animation: screenshotreveal 2s  ease-in-out;
+  /* FF5+ */
+  -ms-animation: screenshotreveal 2s ease-in-out;
+  /* IE10pp3 */ }
+
+@-webkit-keyframes screenshotreveal {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+@-moz-keyframes screenshotreveal {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+@-ms-keyframes screenshotreveal {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.italicized {
+  font-style: italic; }
+
+.meta-gray {
+  color: #9fa6b4; }
+
+.ui-accordion-header {
+  color: #1e92ab; }
+
+/*=============================================
+=            Blog styles            =
+=============================================*/
+.blog article, .blog article p {
+  padding: 0;
+  margin: 0; }
+
+.blog .hentry header {
+  padding: 0px 0px 10px 0px; }
+
+.teaser-box {
+  font-size: 0.75rem; }
+  .teaser-box h3 {
+    font-size: 24px; }
+
+.featured-post p {
+  font-size: 0.875rem; }
+  .featured-post p h3 {
+    font-size: 18px; }
+
+.featured-img img {
+  max-width: 100%; }
+
+/*-----  End of Blog styles  ------*/
+/* What's New (Upcoming Events) listings on home page
+________________________________________________________________________*/
+.subhead {
+  font-size: .8em;
+  font-style: italic; }
+
+.ui-widget-header {
+  /* border-bottom: 4px solid #4CA6A8; */
+  border-color: #4CA6A8;
+  /* border-top: 2px solid #4CA6A8; */
+  margin: 0 0;
+  padding: 0.05em 0 0; }
+
+.ui-accordion .ui-accordion-header {
+  margin: 1.5em 0 0 0;
+  clear: both;
+  position: relative; }
+
+.ui-accordion .ui-accordion-header .eventheader {
+  background: none repeat scroll 0 0 #EEFFFF;
+  border-left: 1em solid #DDFFFF;
+  display: block;
+  margin: 0;
+  padding: 0.5em 0.5em 0.5em 1em;
+  text-decoration: none; }
+
+.ui-accordion .ui-accordion-header .eventheader:hover {
+  background: none repeat scroll 0 0 #0000DD;
+  border-color: #FAE55F;
+  color: #FFFFFF; }
+
+.ui-accordion .ui-accordion-header h2 {
+  color: #444488;
+  background-color: #EEFFFF; }
+
+.ui-accordion .ui-accordion-header b {
+  background-color: #CCFFFF; }
+
+.ui-accordion > b {
+  /*
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	*/
+  color: #444488;
+  font-family: Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+  padding: .5em 1em 0 1em;
+  display: block;
+  border-bottom: 2px solid #4CA6A8;
+  margin: 1em 0; }
+
+.front .ui-accordion .ui-accordion-header {
+  /* border-bottom: 4px solid #4CA6A8; */
+  border-color: #4CA6A8;
+  /* border-top: 2px solid #4CA6A8; */
+  margin: 0 0;
+  /* padding: 0.05em .5em;; */ }
+
+.ui-accordion .ui-icon {
+  background-image: url("http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/222222_256x240_icons_icons.png");
+  height: 16px;
+  margin-right: 1em;
+  width: 16px; }
+
+.ui-widget-header {
+  border-width: 0;
+  background-image: none;
+  background-color: transparent; }
+
+.whatsnewdate {
+  font-size: 0.75em;
+  color: #888;
+  text-transform: uppercase;
+  text-indent: .5em; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2403,18 +2682,18 @@ tweeners.
   /******************************************************************
   Site Name:
   Author:
-  
+
   Stylesheet: 481px and Up Stylesheet
-  
+
   This stylesheet is loaded for larger devices. It's set to
   481px because at 480px it would load on a landscaped iPhone.
   This isn't ideal because then you would be loading all those
   extra styles on that same mobile connection.
-  
+
   A word of warning. This size COULD be a larger mobile device,
   so you still want to keep it pretty light and simply expand
   upon your base.scss styles.
-  
+
   ******************************************************************/
   /*
   IMPORTANT NOTE ABOUT SASS 3.3 & UP
@@ -2482,16 +2761,34 @@ you can add resource intensive styles.
   /******************************************************************
   Site Name:
   Author:
-  
+
   Stylesheet: Tablet & Small Desktop Stylesheet
-  
+
   Here's where you can start getting into the good stuff.
   This size will work on iPads, other tablets, and desktops.
   So you can start working with more styles, background images,
   and other resources. You'll also notice the grid starts to
   come into play. Have fun!
-  
+
   ******************************************************************/
+  a:hover, a:hover #slogan {
+    background-color: rgba(248, 238, 143, 0.5);
+    box-shadow: 0 0 10px 248, 238, 143, 0.7; }
+
+  /*=============================================
+  =            Blog styles            =
+  =============================================*/
+  .teaser-box:nth-child(odd) {
+    margin-left: 0;
+    clear: both; }
+
+  .teaser-box:nth-child(even) {
+    float: right; }
+
+  .featured-img img {
+    max-width: 100%; }
+
+  /*-----  End of Blog styles  ------*/
   /*********************
   GENERAL STYLES
   *********************/
@@ -2508,62 +2805,66 @@ you can add resource intensive styles.
   NAVIGATION STYLES
   *********************/
   .nav {
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
+    border: 0; }
     .nav ul {
-      background: #323944;
-      margin-top: 0; }
-    .nav li {
-      float: left;
-      position: relative;
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .nav li a {
-        border-bottom: 0;
+      margin-top: 0;
+      /* end .menu ul li */
+      /* highlight current page */
+      /* end current highlighters */ }
+      .nav ul li {
+        float: left;
+        position: relative;
         /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-        .nav li a:hover, .nav li a:focus {
-          color: white;
-          text-decoration: underline; }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
+        plan your menus and drop-downs wisely.
+        */
+        /* showing sub-menus */ }
+        .nav ul li a {
+          border-bottom: 0;
+          color: #323944;
+          background-color: transparent;
           /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
+          you can use hover styles here even though this size
+          has the possibility of being a mobile device.
           */ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: inline-block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-          .nav li ul.sub-menu li ul,
-          .nav li ul.children li ul {
-            top: 0;
-            left: 100%; }
-      .nav li:hover > ul {
-        top: auto;
-        visibility: visible; }
+          .nav ul li a:hover, .nav ul li a:focus {
+            color: #1e92ab;
+            background-color: #323944; }
+        .nav ul li .current {
+          color: #111111;
+          background: none repeat scroll 0% 0% white; }
+        .nav ul li ul.sub-menu,
+        .nav ul li ul.children {
+          margin-top: 0;
+          border: 1px solid #ccc;
+          border-top: 0;
+          position: absolute;
+          visibility: hidden;
+          z-index: 8999;
+          /* highlight sub-menu current page */ }
+          .nav ul li ul.sub-menu li,
+          .nav ul li ul.children li {
+            /*
+            if you need to go deeper, go nuts
+            just remember deeper menus suck
+            for usability. k, bai.
+            */ }
+            .nav ul li ul.sub-menu li a,
+            .nav ul li ul.children li a {
+              padding-left: 10px;
+              border-right: 0;
+              display: inline-block;
+              width: 180px;
+              border-bottom: 1px solid #ccc; }
+            .nav ul li ul.sub-menu li:last-child a,
+            .nav ul li ul.children li:last-child a {
+              border-bottom: 0; }
+            .nav ul li ul.sub-menu li ul,
+            .nav ul li ul.children li ul {
+              top: 0;
+              left: 100%; }
+        .nav ul li:hover > ul {
+          top: auto;
+          visibility: visible; }
 
   /* end .nav */
   /*********************
@@ -2573,7 +2874,7 @@ you can add resource intensive styles.
     padding-right: 1rem  !important; }
 
   .sidebar {
-    margin-top: 0; }
+    padding-top: 20px; }
 
   .widgettitle {
     border-bottom: 2px solid #444;
@@ -2626,15 +2927,15 @@ you can add resource intensive styles.
   /******************************************************************
   Site Name:
   Author:
-  
+
   Stylesheet: Desktop Stylsheet
-  
+
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop.
-  
+
   ******************************************************************/
   .wrap {
-    width: 1040px; } }
+    width: 1020px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2643,12 +2944,12 @@ This is for the larger monitors and possibly full screen viewers.
   /******************************************************************
   Site Name:
   Author:
-  
+
   Stylesheet: Super Large Monitor Stylesheet
-  
+
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
-  
+
   ******************************************************************/
   .wrap {
     width: 1200px; }
@@ -2698,44 +2999,44 @@ query for retina AND a certain size if you want. Go Nuts.
 *********************/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /******************************************************************
-  Site Name: 
-  Author: 
-  
+  Site Name:
+  Author:
+
   Stylesheet: Retina Screens & Devices Stylesheet
-  
+
   When handling retina screens you need to make adjustments, especially
   if you're not using font icons. Here you can add them in one neat
   place.
-  
+
   ******************************************************************/
-  /* 
-  
-  EXAMPLE 
+  /*
+
+  EXAMPLE
   Let's say you have an image and you need to make sure it looks ok
   on retina screens. Let's say we have an icon which dimension are
   24px x 24px. In your regular stylesheets, it would look something
   like this:
-  
+
   .icon {
   	width: 24px;
   	height: 24px;
   	background: url(img/test.png) no-repeat;
   }
-  
+
   For retina screens, we have to make some adjustments, so that image
   doesn't look blurry. So, taking into account the image above and the
   dimensions, this is what we would put in our retina stylesheet:
-  
+
   .icon {
   	background: url(img/test@2x.png) no-repeat;
   	background-size: 24px 24px;
   }
-  
-  So, you would create the same icon, but at double the resolution, meaning 
+
+  So, you would create the same icon, but at double the resolution, meaning
   it would be 48px x 48px. You'd name it the same, but with a @2x at the end
   (this is pretty standard practice). Set the background image so it matches
-  the original dimensions and you are good to go. 
-  
+  the original dimensions and you are good to go.
+
   */ }
 /*********************
 PRINT STYLESHEET
@@ -2747,13 +3048,13 @@ be set to display none.
   /******************************************************************
   Site Name:
   Author:
-  
+
   Stylesheet: Print Stylesheet
-  
+
   This is the print stylesheet. There's probably not a lot
   of reasons to edit this stylesheet. If you want to
   though, go for it.
-  
+
   ******************************************************************/
   * {
     background: transparent !important;

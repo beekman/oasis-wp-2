@@ -1,3 +1,4 @@
+<? ?>
 <!doctype html>
 
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -79,7 +80,7 @@
 							</h3>
 
 						</div><!-- .format-text -->
-					 	<?php wp_tag_cloud($args, 'orderby=title'); ?>
+						<?php wp_tag_cloud($args, 'orderby=title'); ?>
 					</div><!-- .blueshadow -->
 					<div class="clear"></div>
 				<?php

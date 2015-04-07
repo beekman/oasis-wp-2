@@ -1,47 +1,73 @@
+<?php
+	/*
+	* This is the default post format.
+	*
+	* So basically this is a regular post. if you don't want to use post formats,
+	* you can just copy ths stuff in here and replace the post format thing in
+	* single.php.
+	*
+	* The other formats are SUPER basic so you can style them as you like.
+	*
+	* Again, If you want to remove post formats, just delete the post-formats
+	* folder and replace the function below with the contents of the "format.php" file.
+	*/
+?>
 
-							<?php
-								/*
-								 * This is the default post format.
-								 *
-								 * So basically this is a regular post. if you don't want to use post formats,
-								 * you can just copy ths stuff in here and replace the post format thing in
-								 * single.php.
-								 *
-								 * The other formats are SUPER basic so you can style them as you like.
-								 *
-								 * Again, If you want to remove post formats, just delete the post-formats
-								 * folder and replace the function below with the contents of the "format.php" file.
-								*/
-							?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="article-header">
 
-								<header class="article-header">
+		<?php if(is_singular( 'post' )) : ?>
+			<h1 class="entry-title">
+		<?php else: ?>
+			<h2 class="entry-title">
+				<a href="<?=the_permalink()?>" rel="bookmark" title="<?=the_title_attribute()?>">
+		<?php endif; ?>
 
-									<h3 class="entry-title single-title bigbold" itemprop="headline"><?php the_title(); ?></h3>
+					<?=the_title()?>
 
-									<p class="byline vcard">
-										<?php printf(__( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')) ); ?>
-									</p>
+					<?php if(is_singular( 'post' )) :?>
+						</h1>
+					<?php else: ?>
+							</a>
+							</h2>
+					<?php endif; ?>
 
-								</header> <?php // end article header ?>
+			<p class="byline vcard">
+				<?php printf(__( '<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')) ); ?>
+				<?php if (has_category()): ?>
+					<span class="meta-gray"><i>in </i><span class="all-caps">
+							<?php printf( __( ' %1$s', 'oasistheme' ), get_the_category_list(', ') ); ?>
+						</span>
+					</span>
+				<?php endif; ?>
+			</p>
 
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php if ( has_post_thumbnail() ) { ?>
-										<div class="stroked box-left"> <?php the_post_thumbnail('medium'); ?></div> <?php
-									} //endif post thumbnail
-									 the_content();
-									?>
-								</section><?php // end article section ?>
+	</header> <?php // end article header ?>
 
-								<footer class="article-footer">
+		<section class="entry-content cf" itemprop="articleBody">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<?php global $more; ?>
+				<?php if ($more) {
+					    $thumb_size = 'medium';
+				} else {
+					$thumb_size = 'thumb';
+				} //endif;
+			?>
 
-									<?php printf( __( 'Filed under: %1$s', 'oasistheme' ), get_the_category_list(', ') ); ?>
+			<div class=".stroked-orange box-left featured-img"> <?php the_post_thumbnail($thumb_size); ?>
+			</div> <?php
+			endif;
+			the_content("More...");
+			?>
+		</section><?php // end article section ?>
 
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'oasistheme' ) . '</span> ', ', ', '</p>' ); ?>
+		<footer class="article-footer">
 
-								</footer> <?php // end article footer ?>
+			<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'oasistheme' ) . '</span> ', ', ', '</p>' ); ?>
 
-								<?php comments_template(); ?>
+		</footer> <?php // end article footer ?>
 
-							</article> <?php // end article ?>
+	<?php comments_template(); ?>
+
+</article> <?php // end article ?>

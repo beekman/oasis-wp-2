@@ -188,13 +188,13 @@ function oasis_theme_support() {
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
-	    array(
-	    'default-image' => '',  // background image default
-	    'default-color' => '', // background color default (dont add the #)
-	    'wp-head-callback' => '_custom_background_cb',
-	    'admin-head-callback' => '',
-	    'admin-preview-callback' => ''
-	    )
+	array(
+	'default-image' => '',  // background image default
+	'default-color' => '', // background color default (dont add the #)
+	'wp-head-callback' => '_custom_background_cb',
+	'admin-head-callback' => '',
+	'admin-preview-callback' => ''
+	)
 	);
 
 	// rss thingy
@@ -239,33 +239,33 @@ MENUS & NAVIGATION
 function oasis_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
-    	'container' => false,                           // remove nav container
-    	'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-    	'menu' => __( 'The Main Menu', 'oasistheme' ),  // nav name
-    	'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
-    	'theme_location' => 'main-nav',                 // where it's located in the theme
-    	'before' => '',                                 // before the menu
+		'container' => false,                           // remove nav container
+		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+		'menu' => __( 'The Main Menu', 'oasistheme' ),  // nav name
+		'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
+		'theme_location' => 'main-nav',                 // where it's located in the theme
+		'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
-    	'fallback_cb' => 'oasis_main_nav_fallback'      // fallback function
+		'fallback_cb' => 'oasis_main_nav_fallback'      // fallback function
 	));
 } /* end oasis main nav */
 function oasis_blog_subnav(){
 	// display the wp3 menu if available
     wp_nav_menu(array(
-    	'container' => false,                           // remove nav container
-    	'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
-    	'menu' => __( 'Blog Secondary Nav', 'oasistheme' ),  // nav name
-    	'menu_class' => 'nav secondary-nav clearfix',         // adding custom nav class
-    	'theme_location' => 'secondary-nav',                 // where it's located in the theme
-    	'before' => '',                                 // before the menu
+		'container' => false,                           // remove nav container
+		'container_class' => 'menu clearfix',           // class of container (should you choose to use it)
+		'menu' => __( 'Blog Secondary Nav', 'oasistheme' ),  // nav name
+		'menu_class' => 'nav secondary-nav clearfix',         // adding custom nav class
+		'theme_location' => 'secondary-nav',                 // where it's located in the theme
+		'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
-    	'fallback_cb' => ''      // fallback function
+		'fallback_cb' => ''      // fallback function
 	));
 } /* end oasis main nav */
 
@@ -273,17 +273,17 @@ function oasis_blog_subnav(){
 function oasis_footer_links() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
-    	'container' => '',                              // remove nav container
-    	'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
-    	'menu' => __( 'Footer Links', 'oasistheme' ),   // nav name
-    	'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
-    	'theme_location' => 'footer-links',             // where it's located in the theme
-    	'before' => '',                                 // before the menu
+		'container' => '',                              // remove nav container
+		'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
+		'menu' => __( 'Footer Links', 'oasistheme' ),   // nav name
+		'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
+		'theme_location' => 'footer-links',             // where it's located in the theme
+		'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
-    	'fallback_cb' => 'oasis_footer_links_fallback'  // fallback function
+		'fallback_cb' => 'oasis_footer_links_fallback'  // fallback function
 	));
 } /* end oasis footer link */
 
@@ -291,7 +291,7 @@ function oasis_footer_links() {
 function oasis_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home' => true,
-    	'menu_class' => 'nav header-nav clearfix',      // adding custom nav class
+		'menu_class' => 'nav header-nav clearfix',      // adding custom nav class
 		'include'     => '',
 		'exclude'     => '',
 		'echo'        => true,
@@ -317,16 +317,16 @@ function oasis_related_posts() {
 	if($tags) {
 		foreach($tags as $tag) { $tag_arr .= $tag->slug . ','; }
         $args = array(
-        	'tag' => $tag_arr,
-        	'numberposts' => 5, /* you can change this to show more */
-        	'post__not_in' => array($post->ID)
-     	);
+			'tag' => $tag_arr,
+			'numberposts' => 5, /* you can change this to show more */
+			'post__not_in' => array($post->ID)
+		);
         $related_posts = get_posts($args);
         if($related_posts) {
-        	foreach ($related_posts as $post) : setup_postdata($post); ?>
-	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-	        <?php endforeach; }
-	    else { ?>
+			foreach ($related_posts as $post) : setup_postdata($post); ?>
+		<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+	<?php endforeach; }
+	else { ?>
             <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'oasistheme' ) . '</li>'; ?>
 		<?php }
 	}

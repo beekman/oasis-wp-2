@@ -70,4 +70,13 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
+//@include stroked($00FFFF);
+@mixin stroked ($color: rgb(30, 146, 171)) {
+	border-color: $color;
+	border-style: solid;
+	border-width: .3rem .16rem .22rem .3rem;
+	background-color: $white;
+	padding: 0.15rem;
+	font-style: italic;
 
+}

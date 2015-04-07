@@ -28,7 +28,7 @@
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -50,7 +50,7 @@
 <a href="<?php echo site_url(); ?>">
 <div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
 </a> <!-- / .slogan -->
-		<nav role="navigation">
+		<nav role="navigation" class="nav">
 			<?php oasis_main_nav(); ?>
 		</nav>
 </header>

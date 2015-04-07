@@ -4,7 +4,7 @@
 
 					<nav role="navigation">
     					<?php oasis_footer_links(); ?>
-	                </nav>
+	</nav>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 

@@ -31,18 +31,18 @@ if ( is_single ( ) ) {
 		}
 		/* ! PLACE 5 TESTIMONIAL QUOTES IN SIDEBAR */
 		$testimonial_args = array(
-		                          'cat' => 'testimonials',
-		                          'posts_per_page' => 5,
-		                          'orderby' => $testorderby,
-		                          'post_type' => 'testimonials',
-		                          'tax_query' => array(
-		                                               array(
-		                                                     'taxonomy' => 'testimonial_sections',
-		                                                     'field' => 'slug',
-		                                                     'terms' => $tterms
-		                                                     )
-		                                               )
-		                          );
+		'cat' => 'testimonials',
+		'posts_per_page' => 5,
+		'orderby' => $testorderby,
+		'post_type' => 'testimonials',
+		'tax_query' => array(
+		               array(
+		                     'taxonomy' => 'testimonial_sections',
+		                     'field' => 'slug',
+		                     'terms' => $tterms
+		                     )
+		               )
+		);
 
 	// !NO SLIDER QUOTE IN SIDEBAR FOR HOME, RESOURCES, ABOUT, OR CONTACT PAGES
 		if ( (!is_page('resources') ) && (!is_page('contact') ) && (!is_page('about') ) && (!is_page('home') ) ) {

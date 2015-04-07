@@ -10,17 +10,17 @@
 
 							<?php
 								/*
-								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-								 *
-								 * So this function will bring in the needed template file depending on what the post
-								 * format is. The different post formats are located in the post-formats folder.
-								 *
-								 *
-								 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
-								 * A SPECIFIC POST FORMAT.
-								 *
-								 * If you want to remove post formats, just delete the post-formats folder and
-								 * replace the function below with the contents of the "format.php" file.
+								* Ah, post formats. Nature's greatest mystery (aside from the sloth).
+								*
+								* So this function will bring in the needed template file depending on what the post
+								* format is. The different post formats are located in the post-formats folder.
+								*
+								*
+								* REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
+								* A SPECIFIC POST FORMAT.
+								*
+								* If you want to remove post formats, just delete the post-formats folder and
+								* replace the function below with the contents of the "format.php" file.
 								*/
 								get_template_part( 'post-formats/format', get_post_format() );
 							?>
@@ -34,10 +34,10 @@
 										<h1><?php _e( 'Oops, Post Not Found!', 'oasistheme' ); ?></h1>
 									</header>
 									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'oasistheme' ); ?></p>
 									</section>
 									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
+											<p><?php _e( 'This is the error message in the single.php template.', 'oasistheme' ); ?></p>
 									</footer>
 							</article>
 
@@ -45,7 +45,8 @@
 
 					</div>
 
-					<?php get_sidebar('single'); ?>
+					<?php get_sidebar(); ?>
+
 
 				</div>
 
