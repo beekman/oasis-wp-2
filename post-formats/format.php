@@ -48,8 +48,10 @@
 		<section class="entry-content cf" itemprop="articleBody">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php global $more; ?>
-				<?php if ($more) {
-					    $thumb_size = 'medium';
+				<?php if ($more) { ?>
+					<div class="t-1of2 d-1of2 m-all">
+					    <?php $thumb_size = 'medium';
+					?></div><?php
 				} else {
 					$thumb_size = 'thumb';
 				} //endif;

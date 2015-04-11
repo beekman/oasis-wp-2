@@ -10,7 +10,7 @@
 <div class="m-all t-2of3 d-4of7 cf first" role="main">
 	<?php the_field('top_left'); ?>
 
-     	 <?php the_content();?>
+	<?php the_content();?>
 
 	<?php if ( dynamic_sidebar('home-main-left-widgets') ) : else : endif; ?>
 </div><!-- role: main -->

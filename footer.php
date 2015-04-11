@@ -3,10 +3,12 @@
 				<div id="inner-footer" class="wrap clearfix">
 
 					<nav role="navigation">
-    					<?php oasis_footer_links(); ?>
-	</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+						<?php oasis_footer_links(); ?>
+
+					</nav>
+
+					<p class="source-org copyright">&copy; <?php echo date('Y') . ' ' . bloginfo('name'); ?>.</p>
 
 				</div> <!-- end #inner-footer -->
 

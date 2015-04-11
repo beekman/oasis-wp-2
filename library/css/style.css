@@ -1275,9 +1275,15 @@ img {
 .beachbar div ul {
   margin: 0; }
 
-.beachbar div ul li {
+.beachbar div ul li,
+.beachbar div li {
   display: inline-block;
-  margin-right: 0.75rem; }
+  margin-right: .25rem;
+  font-size: .75rem; }
+  .beachbar div ul li a,
+  .beachbar div li a {
+    color: #323944;
+    text-transform: uppercase; }
 
 body {
   font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1295,19 +1301,15 @@ body {
 .stroked, .stroked-teal, .stroked-orange {
   border-width: 2px 4px 4px 2px;
   border-style: solid;
-  border-color: #1E92AB;
-}
+  padding: 3px 4px 0 4px; }
 
 .stroked-teal {
   border-color: #1e92ab; }
 
 .stroked-orange {
-  border-color: $orange; }
+  border-color: orange; }
 
 /*---------------------------------------------- Stroked color borders with white padding inside-------------------------------------*/
-img.stroked, img.stroked-teal, img.stroked-orange {
-  margin-bottom: 2em; }
-
 img.stroked, img.stroked-teal, img.stroked-orange,
 blockquote.stroked,
 blockquote.stroked-teal,
@@ -1554,7 +1556,7 @@ and more scalable.
     float: left;
     position: relative;
     				/*
-
+    
     				http://www.alistapart.com/articles/organizing-mobile/
     				*/ }
     .nav li a {
@@ -1959,6 +1961,131 @@ div.sidebar {
   border: 1px solid #cccccc;
   border-radius: 2px;
   margin-bottom: 1.5em; }
+
+/* What's New (Upcoming Events) listings on home page
+________________________________________________________________________*/
+.subhead {
+  font-size: .8em;
+  font-style: italic; }
+
+.ui-widget-header {
+  /* border-bottom: 4px solid #4CA6A8; */
+  border-color: #4CA6A8;
+  margin: 0 0;
+  padding: 0.05em 0 0; }
+
+.ui-accordion .ui-accordion-header {
+  margin: 0 0 0 0;
+  clear: both;
+  position: relative;
+  border: 1px solid #2980b9; }
+
+.ui-accordion .ui-accordion-header .event-header:link {
+  background: none repeat scroll 0 0 #EEFFFF;
+  border-style: solid;
+  display: block;
+  margin: 0;
+  padding: 0.5em 0.5em 0.5em 1em;
+  text-decoration: none; }
+
+.ui-accordion .ui-accordion-header .event-header {
+  border-left: 0 solid #DDFFFF;
+  border-right: 0px solid #323944;
+  background-color: #EEFFFF; }
+
+.ui-accordion .ui-accordion-header .event-header:hover {
+  background: none repeat scroll 0 0 #AAFFFF;
+  color: #323944;
+  border-left-color: #FAE55F;
+  box-shadow: 0 0 10px #f8f394; }
+
+.ui-accordion .ui-accordion-header h3 {
+  color: #444488;
+  display: inline;
+  line-height: 1.25; }
+
+.ui-accordion .ui-accordion-header h5 {
+  padding: 0;
+  margin: 0; }
+
+.ui-accordion > h5 {
+  display: block;
+  line-height: 1;
+  margin: 0;
+  /*
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	*/
+  color: #444488;
+  font-family: Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+  padding: .5em 1em 0 1em;
+  display: block;
+  border-bottom: 2px solid #4CA6A8;
+  margin: 1em 0; }
+
+.ui-accordion .event-header {
+  /* border-bottom: 4px solid #4CA6A8; */
+  border-color: #4CA6A8;
+  /* border-top: 2px solid #4CA6A8; */
+  margin: 0 0;
+  padding: 0.5rem 1rem;
+  /* padding: 0.05em .5em;; */ }
+
+.ui-accordion h3 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block; }
+
+.ui-accordion h5 {
+  margin: 0;
+  position: relative;
+  display: block; }
+
+.ui-accordion .ui-icon {
+  background-image: url("http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/222222_256x240_icons_icons.png");
+  height: 16px;
+  margin-right: 1em;
+  width: 16px;
+  display: inline-block;
+  margin-top: 0.4rem; }
+
+.ui-accordion .ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+  float: left; }
+
+.ui-accordion .ui-accordion-header .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+  float: left; }
+
+.ui-accordion .ui-accordion-content {
+  padding: .5rem 1rem;
+  font-size: .75rem;
+  border: 1px solid #d5ffff; }
+
+.ui-widget-header {
+  border-width: 0;
+  background-image: none;
+  background-color: transparent; }
+
+.whatsnewdate {
+  font-size: 0.925em;
+  color: #888;
+  text-transform: uppercase;
+  text-indent: .5em;
+  border-width: 0;
+  border-top-right-radius: 12px;
+  border-color: #323944;
+  border-style: solid;
+  padding-top: .2rem;
+  background-color: #eeffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#eeffff));
+  background-image: -webkit-linear-gradient(top, white, #eeffff);
+  background-image: -moz-linear-gradient(top, white, #eeffff);
+  background-image: -o-linear-gradient(top, white, #eeffff);
+  background-image: linear-gradient(to bottom, white, #eeffff); }
 
 /*********************
 FOOTER STYLES
@@ -2397,7 +2524,8 @@ article > section > div > ul {
   /* W3C */ }
 
 .front article .widget ul, .front article .widget ul li {
-  list-style-type: none; }
+  list-style-type: none;
+  display: initial; }
 
 li.widget, .widget > h1, .widget > h2 {
   list-style-type: none; }
@@ -2569,9 +2697,6 @@ img {
 .meta-gray {
   color: #9fa6b4; }
 
-.ui-accordion-header {
-  color: #1e92ab; }
-
 /*=============================================
 =            Blog styles            =
 =============================================*/
@@ -2596,82 +2721,6 @@ img {
   max-width: 100%; }
 
 /*-----  End of Blog styles  ------*/
-/* What's New (Upcoming Events) listings on home page
-________________________________________________________________________*/
-.subhead {
-  font-size: .8em;
-  font-style: italic; }
-
-.ui-widget-header {
-  /* border-bottom: 4px solid #4CA6A8; */
-  border-color: #4CA6A8;
-  /* border-top: 2px solid #4CA6A8; */
-  margin: 0 0;
-  padding: 0.05em 0 0; }
-
-.ui-accordion .ui-accordion-header {
-  margin: 1.5em 0 0 0;
-  clear: both;
-  position: relative; }
-
-.ui-accordion .ui-accordion-header .eventheader {
-  background: none repeat scroll 0 0 #EEFFFF;
-  border-left: 1em solid #DDFFFF;
-  display: block;
-  margin: 0;
-  padding: 0.5em 0.5em 0.5em 1em;
-  text-decoration: none; }
-
-.ui-accordion .ui-accordion-header .eventheader:hover {
-  background: none repeat scroll 0 0 #0000DD;
-  border-color: #FAE55F;
-  color: #FFFFFF; }
-
-.ui-accordion .ui-accordion-header h2 {
-  color: #444488;
-  background-color: #EEFFFF; }
-
-.ui-accordion .ui-accordion-header b {
-  background-color: #CCFFFF; }
-
-.ui-accordion > b {
-  /*
-  	letter-spacing: 2px;
-  	text-transform: uppercase;
-  	*/
-  color: #444488;
-  font-family: Verdana, sans-serif;
-  font-weight: 600;
-  font-size: 1.25em;
-  padding: .5em 1em 0 1em;
-  display: block;
-  border-bottom: 2px solid #4CA6A8;
-  margin: 1em 0; }
-
-.front .ui-accordion .ui-accordion-header {
-  /* border-bottom: 4px solid #4CA6A8; */
-  border-color: #4CA6A8;
-  /* border-top: 2px solid #4CA6A8; */
-  margin: 0 0;
-  /* padding: 0.05em .5em;; */ }
-
-.ui-accordion .ui-icon {
-  background-image: url("http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/222222_256x240_icons_icons.png");
-  height: 16px;
-  margin-right: 1em;
-  width: 16px; }
-
-.ui-widget-header {
-  border-width: 0;
-  background-image: none;
-  background-color: transparent; }
-
-.whatsnewdate {
-  font-size: 0.75em;
-  color: #888;
-  text-transform: uppercase;
-  text-indent: .5em; }
-
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2682,18 +2731,18 @@ tweeners.
   /******************************************************************
   Site Name:
   Author:
-
+  
   Stylesheet: 481px and Up Stylesheet
-
+  
   This stylesheet is loaded for larger devices. It's set to
   481px because at 480px it would load on a landscaped iPhone.
   This isn't ideal because then you would be loading all those
   extra styles on that same mobile connection.
-
+  
   A word of warning. This size COULD be a larger mobile device,
   so you still want to keep it pretty light and simply expand
   upon your base.scss styles.
-
+  
   ******************************************************************/
   /*
   IMPORTANT NOTE ABOUT SASS 3.3 & UP
@@ -2761,15 +2810,15 @@ you can add resource intensive styles.
   /******************************************************************
   Site Name:
   Author:
-
+  
   Stylesheet: Tablet & Small Desktop Stylesheet
-
+  
   Here's where you can start getting into the good stuff.
   This size will work on iPads, other tablets, and desktops.
   So you can start working with more styles, background images,
   and other resources. You'll also notice the grid starts to
   come into play. Have fun!
-
+  
   ******************************************************************/
   a:hover, a:hover #slogan {
     background-color: rgba(248, 238, 143, 0.5);
@@ -2927,12 +2976,12 @@ you can add resource intensive styles.
   /******************************************************************
   Site Name:
   Author:
-
+  
   Stylesheet: Desktop Stylsheet
-
+  
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop.
-
+  
   ******************************************************************/
   .wrap {
     width: 1020px; } }
@@ -2944,12 +2993,12 @@ This is for the larger monitors and possibly full screen viewers.
   /******************************************************************
   Site Name:
   Author:
-
+  
   Stylesheet: Super Large Monitor Stylesheet
-
+  
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
-
+  
   ******************************************************************/
   .wrap {
     width: 1200px; }
@@ -2999,44 +3048,44 @@ query for retina AND a certain size if you want. Go Nuts.
 *********************/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /******************************************************************
-  Site Name:
-  Author:
-
+  Site Name: 
+  Author: 
+  
   Stylesheet: Retina Screens & Devices Stylesheet
-
+  
   When handling retina screens you need to make adjustments, especially
   if you're not using font icons. Here you can add them in one neat
   place.
-
+  
   ******************************************************************/
-  /*
-
-  EXAMPLE
+  /* 
+  
+  EXAMPLE 
   Let's say you have an image and you need to make sure it looks ok
   on retina screens. Let's say we have an icon which dimension are
   24px x 24px. In your regular stylesheets, it would look something
   like this:
-
+  
   .icon {
   	width: 24px;
   	height: 24px;
   	background: url(img/test.png) no-repeat;
   }
-
+  
   For retina screens, we have to make some adjustments, so that image
   doesn't look blurry. So, taking into account the image above and the
   dimensions, this is what we would put in our retina stylesheet:
-
+  
   .icon {
   	background: url(img/test@2x.png) no-repeat;
   	background-size: 24px 24px;
   }
-
-  So, you would create the same icon, but at double the resolution, meaning
+  
+  So, you would create the same icon, but at double the resolution, meaning 
   it would be 48px x 48px. You'd name it the same, but with a @2x at the end
   (this is pretty standard practice). Set the background image so it matches
-  the original dimensions and you are good to go.
-
+  the original dimensions and you are good to go. 
+  
   */ }
 /*********************
 PRINT STYLESHEET
@@ -3048,13 +3097,13 @@ be set to display none.
   /******************************************************************
   Site Name:
   Author:
-
+  
   Stylesheet: Print Stylesheet
-
+  
   This is the print stylesheet. There's probably not a lot
   of reasons to edit this stylesheet. If you want to
   though, go for it.
-
+  
   ******************************************************************/
   * {
     background: transparent !important;

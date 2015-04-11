@@ -20,10 +20,10 @@ jQuery(function() { /*<- shortcut for document ready*/
 	// jQuery(".sub-tabs .ui-tabs-nav").removeClass("ui-tabs-hide"); /*unhide anti-FOUC class */
 	// jQuery(".sub-tabs .ui-tabs-nav li a").fadeIn(5000); // Tab section links fade in.
 	// jQuery(".gquote").removeClass("ui-tabs-hide"); /*unhide anti-FOUC class */
-	jQuery(".beachbar").hide(); // Ghibran quote on home page fades in.
-	jQuery(".beachbar").fadeIn(2000); // Ghibran quote on home page fades in.
-	jQuery(".poptext").hide();
-	jQuery("#signup-box").hoverIntent(poptext);
+	// jQuery(".beachbar").hide(); // Ghibran quote on home page fades in.
+	// jQuery(".beachbar").fadeIn(2000); // Ghibran quote on home page fades in.
+	// jQuery(".poptext").hide();
+	// jQuery("#signup-box").hoverIntent(poptext);
 	jQuery(".widget_em_widget li").accordion({ /* accordion for faq and whatsnew */
 		/* icons: true, */
 		event: "click",
@@ -32,7 +32,8 @@ jQuery(function() { /*<- shortcut for document ready*/
 		autoHeight: false,
 		heightStyle: "content",
 		animated: 'easeinout',
-		collapsible: true
+		collapsible: true,
+		header: 'header'
 	});
 
 

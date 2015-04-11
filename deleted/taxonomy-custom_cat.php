@@ -51,7 +51,7 @@ taxonomy-shoes.php
 
 					<?php } //endwhile; ?>
 
-					<?php if (function_exists('oasis_page_navi')) { ?>
+					<?php if (function_exists('oasis_page_navi')) : ?>
 					<?php oasis_page_navi(); ?>
 					<?php } else { ?>
 					<nav class="wp-prev-next">
@@ -62,21 +62,21 @@ taxonomy-shoes.php
 					</nav>
 					<?php } ?>
 
-					<?php else { ?>
+					<?php else : ?>
 
-        					<article id="post-not-found" class="hentry clearfix">
-        						<header class="article-header">
-        							<h1><?php _e("Oops, Post Not Found!", "oasistheme"); ?></h1>
-        						</header>
-        						<section class="entry-content">
-        							<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "oasistheme"); ?></p>
-        						</section>
-        						<footer class="article-footer">
-        						<p><?php _e("This is the error message in the taxonomy-custom_cat.php template.", "oasistheme"); ?></p>
-        						</footer>
-        					</article>
+    						<article id="post-not-found" class="hentry clearfix">
+    							<header class="article-header">
+    								<h1><?php _e("Oops, Post Not Found!", "oasistheme"); ?></h1>
+    							</header>
+    							<section class="entry-content">
+    								<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "oasistheme"); ?></p>
+    							</section>
+    							<footer class="article-footer">
+    							<p><?php _e("This is the error message in the taxonomy-custom_cat.php template.", "oasistheme"); ?></p>
+    							</footer>
+    						</article>
 
-					<?php } //endif ?>
+					<?php endif; ?>
 
 				</div> <!-- end #main -->
 

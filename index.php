@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part('includes/partials/content', 'category_bar'); ?>
+
 <div id="content">
 
 	<div id="inner-content" class="wrap cf">
@@ -8,7 +10,7 @@
 
 				<header>
 
-					<?=get_template_part('includes/partials/content', 'header')?>
+					<?php oasis_blog_subnav(); ?>
 
 				</header>
 
@@ -29,7 +31,7 @@
 						'order'      =>  'desc',
 						'posts_per_page'     =>  $display_count,
 						'page'       =>  $page,
-						'offset'     =>  $offset
+						'offset'     =>  $offset,
 					);
 					$featured_query = new WP_Query ( $featured_args );
 					?>
@@ -55,14 +57,14 @@
 					// After that, calculate the offset
 					$offset = (( $page - 1 ) * $display_count + 2);
 					// Finally, we'll set the query arguments and instantiate WP_Query
-$query_args = array(
-  'post_type'   =>  'post',
-  'orderby' =>  'date',
-  'order'   =>  'desc',
-  'posts_per_page'  =>  $display_count,
-  'page'    =>  $page,
-  'offset'  =>  $offset
-);
+					$query_args = array(
+					  'post_type'   =>  'post',
+					  'orderby' =>  'date',
+					  'order'   =>  'desc',
+					  'posts_per_page'  =>  $display_count,
+					  'page'    =>  $page,
+					  'offset'  =>  $offset
+					);
 
 					$teasers_query = new WP_Query ( $query_args );
 					?>
@@ -112,7 +114,7 @@ $query_args = array(
 
 		</div> <!-- end #main -->
 
-		 <?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
 		</div> <!-- end #inner-content -->
 
