@@ -23,14 +23,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss/breakpoints/_base.scss",
-			"settings":
-			{
-				"buffer_size": 47267,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -182,10 +174,17 @@
 		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2",
 		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library",
 		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss",
-		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss/breakpoints"
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss/breakpoints",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/post-formats"
 	],
 	"file_history":
 	[
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/index.php",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss/breakpoints/_base.scss",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/functions.php",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/post-formats/format.php",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/page.php",
+		"/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/oasis-wp-2.sublime-workspace",
 		"/Users/djbeeker/github/oasis-wp-2/library/oasis.php",
 		"/Users/djbeeker/github/oasis-wp-2/library/scss/layout.scss",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/index.php",
@@ -307,13 +306,7 @@
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/taxonomy-custom_cat.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/legacy.less",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/plugins/post-types-oasis.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui-custom_oasis.less",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/style.less",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_base.less",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/custom-post-types.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/custom-post-type.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/translation/translation.php",
-		"/Users/djbeeker/Library/Application Support/Sublime Text 3/Packages/User/snippets/wp-byline.sublime-snippet"
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui-custom_oasis.less"
 	],
 	"find":
 	{
@@ -637,105 +630,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Volumes/Calculon/Users/djbeeker/github/oasis-wp-2/library/scss/breakpoints/_base.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2403,
-								2403
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "scss",
-							"apply_syntax_touched": true,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"syntax_mgr_loaded": true,
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1447.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
