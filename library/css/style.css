@@ -1272,9 +1272,12 @@ img {
   /* Firefox */
   column-count: 2; }
 
+<<<<<<< HEAD
 .cf, .comment-respond {
   clear: both; }
 
+=======
+>>>>>>> origin/master
 .beachbar div ul {
   margin: 0; }
 
@@ -1320,7 +1323,16 @@ blockquote.stroked-orange,
 #signup-box.giftbox.stroked,
 #signup-box.giftbox.stroked-teal,
 #signup-box.giftbox.stroked-orange {
+<<<<<<< HEAD
   background-color: white;
+=======
+  max-width: 100%;
+  background-color: white;
+  padding: 0.4178272928%;
+  border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%;
+  /* 3px/#content 5px/#content 5px/#content 3px/#content */
+  border-style: solid;
+>>>>>>> origin/master
   border-color: #1E92AB;
   border-style: solid;
   border-width: .4178272928% .696378830083% .696378830083% .4178272928%;
@@ -1361,6 +1373,7 @@ style a page via class
   margin: 0 auto;
   width: 96%; }
 
+<<<<<<< HEAD
 a {
   transition: color .5s ease-in 0s; }
 
@@ -1370,6 +1383,20 @@ a:visited {
   a:hover, a:focus,
   a:visited:hover,
   a:visited:focus {
+=======
+/*********************
+LINK STYLES
+*********************/
+a {
+  transition: color 0.5s ease-in 0s; }
+
+a, a:visited {
+  color: #1e92ab;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+>>>>>>> origin/master
     color: #2361a1; }
   a:link,
   a:visited:link {
@@ -1535,11 +1562,18 @@ article nav ul li, .respond-form ul li {
   .nav li {
     float: left;
     position: relative;
+<<<<<<< HEAD
     list-style-type: none;
         /*
 
         http://www.alistapart.com/articles/organizing-mobile/
         */ }
+=======
+    				/*
+    
+    				http://www.alistapart.com/articles/organizing-mobile/
+    				*/ }
+>>>>>>> origin/master
     .nav li a {
       display: inline-block;
       color: #323944;
@@ -1937,7 +1971,11 @@ SIDEBARS & ASIDES
   width: 100%; }
 
 .sidebar input[type="submit"] {
+<<<<<<< HEAD
   margin: 0 0 15px 0; }
+=======
+  margin: 0; }
+>>>>>>> origin/master
 
 div.sidebar {
   -webkit-box-shadow: -2px 2px 2px #1E92AB;
@@ -2015,9 +2053,15 @@ ________________________________________________________________________*/
   line-height: 1;
   margin: 0;
   /*
+<<<<<<< HEAD
     letter-spacing: 2px;
     text-transform: uppercase;
     */
+=======
+  	letter-spacing: 2px;
+  	text-transform: uppercase;
+  	*/
+>>>>>>> origin/master
   color: #444488;
   font-family: Verdana, sans-serif;
   font-weight: 600;
@@ -2289,7 +2333,11 @@ Logo animation
   background-repeat: repeat;
   background-image: url("../images/beachbar.png");
   width: 100%;
+<<<<<<< HEAD
   padding: 0.25rem 0.75rem;
+=======
+  padding: 0.75rem;
+>>>>>>> origin/master
   background-size: cover; }
 
 #content > .featured-post:nth-child(1) {
@@ -2529,12 +2577,15 @@ article > section > div > ul {
   list-style-type: none;
   display: initial; }
 
+<<<<<<< HEAD
 .front article .widget_feacpost_featuredcategorypostswidget ul li {
   display: block; }
 
 .front article .widget_feacpost_featuredcategorypostswidget h4 {
   margin: 0; }
 
+=======
+>>>>>>> origin/master
 li.widget, .widget > h1, .widget > h2 {
   list-style-type: none; }
 
@@ -2617,7 +2668,11 @@ input[type="submit"] {
 
 /*
 .custom #badges .badge{
+<<<<<<< HEAD
   display: block;
+=======
+	display: block;
+>>>>>>> origin/master
     margin: 60px 0 0 0;
     padding: 0;
     position: relative;
@@ -2638,7 +2693,11 @@ input[type="submit"] {
   float: left; }
 
 #screenshot {
+<<<<<<< HEAD
   /* position:absolute; */
+=======
+  /* position:absolute;	*/
+>>>>>>> origin/master
   border: 1px solid #ccc;
   background: #333;
   padding: 10px;
@@ -2729,6 +2788,7 @@ img {
   max-width: 100%; }
 
 /*-----  End of Blog styles  ------*/
+<<<<<<< HEAD
 .schedule .wpdevbk blockquote {
   background-image: none;
   padding-top: 0.5rem; }
@@ -2746,6 +2806,8 @@ img {
   font-weight: 300;
   text-align: center; }
 
+=======
+>>>>>>> origin/master
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
