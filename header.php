@@ -43,22 +43,6 @@
 
 <!-- menu -->
 <header role="banner">
-<<<<<<< HEAD
-
-  <div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">
-    <div id="idot" onclick = "window.location.href = '<?php echo site_url(); ?>'"></div>
-    <div id="sun"></div>
-  </div> <!-- / .logo -->
-
-  <a href="<?php echo site_url(); ?>">
-    <div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
-  </a> <!-- / .slogan -->
-
-	<nav role="navigation" class="nav">
-		<?php oasis_main_nav(); ?>
-	</nav>
-
-=======
 <div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">
 <div id="idot" onclick = "window.location.href = '<?php echo site_url(); ?>'"></div>
 <div id="sun"></div>
@@ -69,5 +53,4 @@
 		<nav role="navigation" class="nav">
 			<?php oasis_main_nav(); ?>
 		</nav>
->>>>>>> origin/master
 </header>
