@@ -8,9 +8,9 @@ The comments page for oasis
     die ('Please do not load this page directly. Thanks!');
 
   if ( post_password_required() ) { ?>
-  	<div class="alert help">
-    	<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "oasistheme"); ?></p>
-  	</div>
+	<div class="alert help">
+		<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "oasistheme"); ?></p>
+	</div>
   <?php
     return;
   }
@@ -23,9 +23,9 @@ The comments page for oasis
 
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link() ?></li>
-	  		<li><?php next_comments_link() ?></li>
-	 	</ul>
+			<li><?php previous_comments_link() ?></li>
+			<li><?php next_comments_link() ?></li>
+		</ul>
 	</nav>
 
 	<ol class="commentlist">
@@ -34,15 +34,15 @@ The comments page for oasis
 
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link() ?></li>
-	  		<li><?php next_comments_link() ?></li>
+			<li><?php previous_comments_link() ?></li>
+			<li><?php next_comments_link() ?></li>
 		</ul>
 	</nav>
 
 	<?php } else { // this is displayed if there are no comments so far ?>
 
 		<?php if ( comments_open() ) { ?>
-	    	<!-- If comments are open, but there are no comments. -->
+		<!-- If comments are open, but there are no comments. -->
 
 		<?php } else { // comments are closed ?>
 
@@ -65,9 +65,9 @@ The comments page for oasis
 		</div>
 
 		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) { ?>
-	  		<div class="alert help">
-	  			<p><?php printf( __('You must be %1$slogged in%2$s to post a comment.', 'oasistheme'), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
-	  		</div>
+			<div class="alert help">
+				<p><?php printf( __('You must be %1$slogged in%2$s to post a comment.', 'oasistheme'), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
+			</div>
 		<?php } else { ?>
 
 			<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
@@ -81,19 +81,19 @@ The comments page for oasis
 			<ul id="comment-form-elements" class="clearfix">
 
 				<li>
-				  <label for="author"><?php _e("Name", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
-				  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Your Name*', 'oasistheme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+				<label for="author"><?php _e("Name", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
+				<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Your Name*', 'oasistheme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 				</li>
 
 				<li>
-				  <label for="email"><?php _e("Mail", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
-				  <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('Your E-Mail*', 'oasistheme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-				  <small><?php _e("(will not be published)", "oasistheme"); ?></small>
+				<label for="email"><?php _e("Mail", "oasistheme"); ?> <?php if ($req) _e("(required)"); ?></label>
+				<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('Your E-Mail*', 'oasistheme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+				<small><?php _e("(will not be published)", "oasistheme"); ?></small>
 				</li>
 
 				<li>
-				  <label for="url"><?php _e("Website", "oasistheme"); ?></label>
-				  <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Got a website?', 'oasistheme'); ?>" tabindex="3" />
+				<label for="url"><?php _e("Website", "oasistheme"); ?></label>
+				<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Got a website?', 'oasistheme'); ?>" tabindex="3" />
 				</li>
 
 			</ul>
@@ -103,8 +103,8 @@ The comments page for oasis
 	<p><textarea name="comment" id="comment" placeholder="<?php _e('Your Comment here...', 'oasistheme'); ?>" tabindex="4"></textarea></p>
 
 	<p>
-	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'oasistheme'); ?>" />
-	  <?php comment_id_fields(); ?>
+	<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit', 'oasistheme'); ?>" />
+	<?php comment_id_fields(); ?>
 	</p>
 
 	<div class="alert info">

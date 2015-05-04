@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"library/css",
+				".phpintel"
+			],
+			"follow_symlinks": true,
+			"path": "/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2"
+		}
+	]
+}

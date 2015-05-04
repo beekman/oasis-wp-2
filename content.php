@@ -61,7 +61,7 @@ if (is_page()) {
             <div class="entry-content">
                 <p class="byline vcard">
                 <!-- Put the author's avatar on the left side of the byline on the single post template only -->
-                <?php if( is_single() ) {
+                <?php if(is_single() ) {
                     ?><img class="floatleft" src="<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>">
                     <?php } //endif is_single
                 printf( __( 'Written by <a href="%1$s"><span class="author">%2$s</span></a><br><time class="updated" datetime="%3$s" pubdate>%4$s</time>', 'oasistheme' ),
@@ -72,14 +72,14 @@ if (is_page()) {
                 ?>
                 </p><!-- byline vcard -->
 <!-- If there is a post thumbnail, put it to the left of the post on the single post template only -->
-                <?php if( is_single() ) { ?>
+                <?php if(is_single()): ?>
                     <?php if ( has_post_thumbnail() ) { ?>
                     <div class="floatleft">
-                        <?php the_post_thumbnail('medium'); ?>
+                      <?php the_post_thumbnail('medium'); ?>
                     </div>
                     <?php } //endif post thumbnail ?>
                     </div>
-                } //endif is_single
+                <?php endif; //endif is_single
 
                  ?>
                 <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'oasistheme' ) );
@@ -90,7 +90,9 @@ if (is_page()) {
                               'link_after'  => '</span>',
                               ) );
                             ?>
-                <?php if( is_single() ) { ?></div> <!-- close the single content div --><?php } ?>
+                <?php
+                if(is_single()) echo '</div>'
+                ?>
                 </div><!-- .entry-content -->
                 </article><!-- #post-## -->
 <?php

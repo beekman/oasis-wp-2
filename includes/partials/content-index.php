@@ -1,27 +1,31 @@
 <?php # The content loop for the index page. ?>
+<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<h2 class="entry-title">
+		<a
+		href="<?=the_permalink()?>"
+		rel="bookmark"
+		title="<?=the_title_attribute()?>"
+		>
+		<?=the_title()?>
+		</a>
+	</h2>
 
-<h3 class="entry-title">
-  <a
-    href="<?=the_permalink()?>"
-    rel="bookmark"
-    title="<?=the_title_attribute()?>"
-  >
-      <?=the_title()?>
-  </a>
-</h3>
+	<p class="byline entry-meta vcard">
 
-<p class="byline entry-meta vcard">
+	</p>
 
-</p>
-
-<section class="entry-content cf">
-
-  <?=the_post_thumbnail( 'portrait-300' )?>
+	<section class="entry-content cf">
+	<div class="floatright">
+		<?=the_post_thumbnail( 'thumb' )?>
+	</div>
 
 
-  <?=the_excerpt()?>
+	<?php
+	the_content("More...");
+	?>
 
-  <footer class="article-footer">
-  </footer>
+	<footer class="article-footer">
+	</footer>
 
-</section>
+	</section>
+</article>

@@ -180,6 +180,24 @@ and other resources. You'll also notice the grid starts to
 come into play. Have fun!
 
 ******************************************************************/
+a:hover, a:hover #slogan {
+  background-color: rgba(248, 238, 143, 0.5);
+  box-shadow: 0 0 10px 248, 238, 143, 0.7; }
+
+/*=============================================
+=            Blog styles            =
+=============================================*/
+.teaser-box:nth-child(odd) {
+  margin-left: 0;
+  clear: both; }
+
+.teaser-box:nth-child(even) {
+  float: right; }
+
+.featured-img img {
+  max-width: 100%; }
+
+/*-----  End of Blog styles  ------*/
 /*********************
 GENERAL STYLES
 *********************/
@@ -196,62 +214,66 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 .nav {
-  border: 0;
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */ }
+  border: 0; }
   .nav ul {
-    background: #323944;
-    margin-top: 0; }
-  .nav li {
-    float: left;
-    position: relative;
-    /*
-    plan your menus and drop-downs wisely.
-    */
-    /* showing sub-menus */ }
-    .nav li a {
-      border-bottom: 0;
+    margin-top: 0;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .nav ul li {
+      float: left;
+      position: relative;
       /*
-      you can use hover styles here even though this size
-      has the possibility of being a mobile device.
-      */ }
-      .nav li a:hover, .nav li a:focus {
-        color: white;
-        text-decoration: underline; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
-      margin-top: 0;
-      border: 1px solid #ccc;
-      border-top: 0;
-      position: absolute;
-      visibility: hidden;
-      z-index: 8999;
-      /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
+      plan your menus and drop-downs wisely.
+      */
+      /* showing sub-menus */ }
+      .nav ul li a {
+        border-bottom: 0;
+        color: #323944;
+        background-color: transparent;
         /*
-        if you need to go deeper, go nuts
-        just remember deeper menus suck
-        for usability. k, bai.
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
         */ }
-        .nav li ul.sub-menu li a,
-        .nav li ul.children li a {
-          padding-left: 10px;
-          border-right: 0;
-          display: inline-block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
-        .nav li ul.sub-menu li ul,
-        .nav li ul.children li ul {
-          top: 0;
-          left: 100%; }
-    .nav li:hover > ul {
-      top: auto;
-      visibility: visible; }
+        .nav ul li a:hover, .nav ul li a:focus {
+          color: #1e92ab;
+          background-color: #323944; }
+      .nav ul li .current {
+        color: #111111;
+        background: none repeat scroll 0% 0% white; }
+      .nav ul li ul.sub-menu,
+      .nav ul li ul.children {
+        margin-top: 0;
+        border: 1px solid #ccc;
+        border-top: 0;
+        position: absolute;
+        visibility: hidden;
+        z-index: 8999;
+        /* highlight sub-menu current page */ }
+        .nav ul li ul.sub-menu li,
+        .nav ul li ul.children li {
+          /*
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */ }
+          .nav ul li ul.sub-menu li a,
+          .nav ul li ul.children li a {
+            padding-left: 10px;
+            border-right: 0;
+            display: inline-block;
+            width: 180px;
+            border-bottom: 1px solid #ccc; }
+          .nav ul li ul.sub-menu li:last-child a,
+          .nav ul li ul.children li:last-child a {
+            border-bottom: 0; }
+          .nav ul li ul.sub-menu li ul,
+          .nav ul li ul.children li ul {
+            top: 0;
+            left: 100%; }
+      .nav ul li:hover > ul {
+        top: auto;
+        visibility: visible; }
 
 /* end .nav */
 /*********************
@@ -261,7 +283,7 @@ SIDEBARS & ASIDES
   padding-right: 1rem  !important; }
 
 .sidebar {
-  margin-top: 0; }
+  padding-top: 20px; }
 
 .widgettitle {
   border-bottom: 2px solid #444;
@@ -315,7 +337,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
-  width: 1040px; }
+  width: 1020px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

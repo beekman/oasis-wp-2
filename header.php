@@ -28,7 +28,7 @@
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -43,14 +43,18 @@
 
 <!-- menu -->
 <header role="banner">
-<div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">
-<div id="idot" onclick = "window.location.href = '<?php echo site_url(); ?>'"></div>
-<div id="sun"></div>
-</div> <!-- / .logo -->
-<a href="<?php echo site_url(); ?>">
-<div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
-</a> <!-- / .slogan -->
-		<nav role="navigation">
-			<?php oasis_main_nav(); ?>
-		</nav>
+
+  <div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">
+    <div id="idot" onclick = "window.location.href = '<?php echo site_url(); ?>'"></div>
+    <div id="sun"></div>
+  </div> <!-- / .logo -->
+
+  <a href="<?php echo site_url(); ?>">
+    <div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
+  </a> <!-- / .slogan -->
+
+	<nav role="navigation" class="nav">
+		<?php oasis_main_nav(); ?>
+	</nav>
+
 </header>

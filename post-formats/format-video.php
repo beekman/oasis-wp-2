@@ -6,9 +6,15 @@
 
                   <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                  <p class="byline vcard">
-                    <?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-                  </p>
+					<p class="byline vcard">
+						<?php printf(__( '<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'oasistheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')) ); ?>
+						<?php if (has_category()): ?>
+							<span class="meta-gray"><i>in </i><span class="all-caps">
+									<?php printf( __( ' %1$s', 'oasistheme' ), get_the_category_list(', ') ); ?>
+								</span>
+							</span>
+						<?php endif; ?>
+					</p>
 
                 </header> <?php // end article header ?>
 

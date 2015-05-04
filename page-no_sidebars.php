@@ -1,4 +1,9 @@
-<?=get_header()?>
+<?php
+/*
+Template Name: No Sidebars
+*/
+get_header();
+?>
 
 <?php if (have_posts()): ?>
     <?php while (have_posts()): ?>
@@ -32,7 +37,7 @@
         <?php endif; ?>
         <?=the_post()?>
     <div class="wrap">
-        <article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting" class="m-all t-2of3 d-5of7">
+        <article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting" class="m-all t-all d-all">
 
             <header>
 
@@ -51,15 +56,11 @@
 
         </article>
 
-
-        <?=get_sidebar()?>
-
+</div>
 
 <?php endwhile; ?>
 
 <?php else: ?>
-
-    <?=get_template_part('includes/partials/content', 'none')?>
 
 
 <?php endif; ?>

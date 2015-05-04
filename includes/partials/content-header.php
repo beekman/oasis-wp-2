@@ -1,29 +1,19 @@
 <? #include for header of articles ?>
-
-<?php if (is_single() || is_page()): ?>
-
 <h1>
-    <?php # Single posts or pages: ?>
-
-    <?=the_title()?>
-
-<?php elseif (is_front_page() && is_home()): ?>
+<?php # Single posts or pages: ?>
+<?php if (is_front_page() && is_home()): ?>
 
     <?php # Default homepage: ?>
-
-    Default homepage
 
 <?php elseif (is_front_page()): ?>
 
     <?php # Static homepage: ?>
 
-    Static homepage
-
 <?php elseif (is_home()): ?>
 
     <?php # Blog page: ?>
+Latest Posts
 
-    Blog page
     <?php # Archive stuff: ?>
 
     <? #If it's a post category page or a product category page, print the category title ?>
@@ -52,9 +42,8 @@
 <?php elseif (is_year()): ?>
     <span><?=_e('Yearly Archives:', 'oasistheme')?></span>
     <?=the_time('Y')?>
-<?php elseif (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ) :
-    _e('Shop Category:', 'oasistheme')?>
-    <?=single_cat_title()?>
+<?php elseif (is_single() || is_page()): ?>
+    <?#=the_title()?>
 <?php endif; ?>
 </h1>
 
