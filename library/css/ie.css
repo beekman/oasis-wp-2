@@ -187,11 +187,11 @@ a:hover, a:hover #slogan {
 /*=============================================
 =            Blog styles            =
 =============================================*/
-.teaser-box:nth-child(odd) {
+.teaser-box:nth-of-type(odd) {
   margin-left: 0;
   clear: both; }
 
-.teaser-box:nth-child(even) {
+.teaser-box:nth-of-type(even) {
   float: right; }
 
 .featured-img img {

@@ -21,10 +21,10 @@ a:hover, a:hover #slogan {
 =            Blog styles            =
 =============================================*/
 
-.teaser-box:nth-child(odd) { //the leftmost columns of the teasers
+.teaser-box:nth-of-type(odd) { //the leftmost columns of the teasers
 		margin-left: 0; clear: both;
 	}
-.teaser-box:nth-child(even) { // the rightmost columns of the teasers
+.teaser-box:nth-of-type(even) { // the rightmost columns of the teasers
 		float:right;
 	}
 

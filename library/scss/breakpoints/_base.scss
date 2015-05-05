@@ -20,6 +20,8 @@ GENERAL STYLES
 *********************/
 img {max-width:100%;
 }
+
+
 .two-col {
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
@@ -340,8 +342,15 @@ header .nav a:hover.current-menu-item {
   color: $black;
 }
 
-.beachbar a:hover {
+.beachbar a:hover,
+.beachbar a:active {
   box-shadow: 0 0 10px rgba(248, 243, 148, 1);
+  background-color: white(0.35);
+  color: $black;
+}
+
+.beachbar .current-menu-item {
+  box-shadow: 0 0 10px rgba(248, 243, 148, 0.6);
   background-color: white(0.35);
   color: $black;
 }
@@ -1328,6 +1337,7 @@ div.mod {
 a.btn {
   display: inline-block;
   margin: 20px;
+  padding: 0 .75rem;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -1925,30 +1935,7 @@ input[type="submit"]{
     }
 
 
-/*=============================================
-=            Blog styles            =
-=============================================*/
-.blog article, .blog article p {
-  padding: 0; margin: 0;
-}
 
-.blog .hentry header {
-  padding: 0px 0px 10px 0px;
-}
-
-.teaser-box {
-  font-size: 0.75rem; //12px
-  h3 {
-    font-size: 24px;
-  }
-}
-
-.featured-post p {
-  font-size: 0.875rem; //14px
-  h3 {
-    font-size: 18px;
-  }
-}
 
 .featured-img img {max-width: 100%;}
 /*-----  End of Blog styles  ------*/

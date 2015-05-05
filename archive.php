@@ -59,6 +59,7 @@
 
                 <div class="d-1of2 t-1of2 m-all teaser-box">
                     <?php #the "teasers" appear after the featured posts
+                    global $more;
                     $more = 0; #Display content above the more tag.
                     ?>
                     <?php

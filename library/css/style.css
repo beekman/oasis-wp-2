@@ -1507,8 +1507,14 @@ header .nav a:hover.current-menu-item {
   background-color: rgba(255, 255, 255, 0.2);
   color: #323944; }
 
-.beachbar a:hover {
+.beachbar a:hover,
+.beachbar a:active {
   box-shadow: 0 0 10px #f8f394;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #323944; }
+
+.beachbar .current-menu-item {
+  box-shadow: 0 0 10px rgba(248, 243, 148, 0.6);
   background-color: rgba(255, 255, 255, 0.35);
   color: #323944; }
 
@@ -2136,6 +2142,7 @@ div.mod {
 a.btn {
   display: inline-block;
   margin: 20px;
+  padding: 0 .75rem;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -2704,26 +2711,6 @@ img {
 .meta-gray {
   color: #9fa6b4; }
 
-/*=============================================
-=            Blog styles            =
-=============================================*/
-.blog article, .blog article p {
-  padding: 0;
-  margin: 0; }
-
-.blog .hentry header {
-  padding: 0px 0px 10px 0px; }
-
-.teaser-box {
-  font-size: 0.75rem; }
-  .teaser-box h3 {
-    font-size: 24px; }
-
-.featured-post p {
-  font-size: 0.875rem; }
-  .featured-post p h3 {
-    font-size: 18px; }
-
 .featured-img img {
   max-width: 100%; }
 
@@ -2965,11 +2952,11 @@ you can add resource intensive styles.
   /*=============================================
   =            Blog styles            =
   =============================================*/
-  .teaser-box:nth-child(odd) {
+  .teaser-box:nth-of-type(odd) {
     margin-left: 0;
     clear: both; }
 
-  .teaser-box:nth-child(even) {
+  .teaser-box:nth-of-type(even) {
     float: right; }
 
   .featured-img img {

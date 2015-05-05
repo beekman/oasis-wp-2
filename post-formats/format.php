@@ -62,11 +62,16 @@ if(is_singular('post')) : ?>
       </div> <?php
       endif;
       global $more;
+      //use the excerpt if there is one. If not, use up to the More tag if there is one,
+      //If no more tag and no excerpt, use the whole post content.
       if ($more):
         the_content();
-      else:
-        the_content("More...");
+      elseif($post->post_excerpt):
+          the_excerpt();
+        else:
+          the_content('Read More>>');
       endif;
+
       ?>
     </section><?php // end article section ?>
 
