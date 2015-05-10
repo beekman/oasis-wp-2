@@ -46,7 +46,7 @@ function oasis_ahoy() {
     // cleaning up random code around images
     add_filter('the_content', 'oasis_filter_ptags_on_images');
     // cleaning up excerpt
-    add_filter('excerpt_more', 'oasis_excerpt_more');
+    //add_filter('excerpt_more', 'oasis_excerpt_more');
 
 } /* end oasis ahoy */
 

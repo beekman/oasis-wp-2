@@ -31,7 +31,7 @@ Latest Posts
     $author_id = $post->post_author;
 
     ?>
-    <span><?=_e('Posts By:', 'oasistheme')?></span>
+    <span><?=_e('Posts By ', 'oasistheme')?></span>
     <?=the_author_meta('display_name', $author_id)?>
 <?php elseif (is_day()): ?>
     <span><?=_e('Daily Archives:', 'oasistheme')?></span>

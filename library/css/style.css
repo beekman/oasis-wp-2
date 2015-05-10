@@ -1424,9 +1424,7 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
+  line-height: 1.6em; }
 
 /*********************
 HEADER STYLES
@@ -1603,7 +1601,7 @@ POSTS & CONTENT STYLES
 .byline .meta-gray {
   padding-left: 0.35rem; }
 
-/* entry content */
+/* Main article styles start here */
 article {
   padding: 10px 1.5em 0;
   /*
@@ -1611,11 +1609,12 @@ article {
   a bit difficult. It's set to start aligning
   and floating images at the next breakpoint,
   but it's up to you. Feel free to change it up.
-  */ }
+  */
+  /* end article */ }
   article fieldset:last-child {
     margin: 0; }
   article p {
-    margin: 0 0 1.5em; }
+    margin: 0 0 0.75rem; }
   article table {
     border: 1px solid #eaedf2;
     margin-bottom: 1.5em;
@@ -1684,8 +1683,29 @@ article {
     padding: 1.5em;
     margin: 0 0 1.5em;
     border-radius: 3px; }
+  article .recent_posts_with_excerpts blockquote {
+    background-color: transparent;
+    background-image: none;
+    border-left: 0px solid transparent;
+    box-shadow: none;
+    color: #323944;
+    font-style: normal;
+    margin: 0;
+    padding: 0; }
+    article .recent_posts_with_excerpts blockquote p {
+      margin: 0;
+      padding: 0;
+      display: inline; }
+  article h2 {
+    clear: both; }
+  article p.alignright {
+    float: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0; }
+  article small {
+    display: inline-block; }
 
-/* end article */
 .sidebar {
   hyphens: none;
   word-break: keep-all; }
