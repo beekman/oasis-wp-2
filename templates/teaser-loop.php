@@ -9,6 +9,8 @@
  $more = 0; #Display content above the more tag.
 				?>
 				<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <section class="entry-content cf">
+      <div class="alignright"><?=the_post_thumbnail( 'thumb' )?></div>
   <h2 class="entry-title">
     <a
     href="<?=the_permalink()?>"
@@ -19,24 +21,7 @@
     </a>
   </h2>
 
-  <p class="byline entry-meta vcard">
-
-  </p>
-
-  <section class="entry-content cf">
-  <div class="alignright">
-    <?=the_post_thumbnail( 'thumb' )?>
-  </div>
-
-
-  <?php
-
-  the_content("More...");
-  ?>
-
-  <footer class="article-footer">
-  </footer>
-
+  <?php the_content("More..."); ?>
   </section>
 </article>
 				<?php
@@ -44,7 +29,8 @@
 		}
 		// Posts not found
 		else {
-			echo '<h4>' . __( 'Posts not found', 'su' ) . '</h4>';
+			echo '<h4>' . __( 'Nothing Listed', 'su' ) . '</h4>';
+      echo '<p>' . __( 'There are no upcoming events of this type listed currently. Please check back soon, as these listings are updated frequently.', 'su' ) . '</p>';
 		}
 	?>
 </div>

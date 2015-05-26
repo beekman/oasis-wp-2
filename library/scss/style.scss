@@ -121,29 +121,29 @@ This is for the larger monitors and possibly full screen viewers.
 
 
 @media screen and (max-width: 522px) {
-    #slogan {
+    .slogan {
       display: none; visibility: hidden;
     }
 }
 
 @media screen and (max-width:664px) {
-    #slogan {
+    .slogan {
         font-size: 0.95em;
         top: 1px;
     }
 }
 @media screen and (max-width: 705px) { /* <---------------------------------705 px or smaller breakpoint */
-    #slogan {
+    .slogan {
         font-size: 1.1em;
-        top: 18px;
+        top: 1px;
         display: block;
     }
 }
 @media screen and (min-width: 706px) {
 
-#slogan {
-    font-size: 1.5em; //24px
-    top: 1.5em;
+.slogan {
+    font-size: 22px; //24px
+    top: 51px;
     display: block;
   }
 }
@@ -160,8 +160,15 @@ This is for the larger monitors and possibly full screen viewers.
           background: linear-gradient(top, rgba(254,213,148,1) 0%,rgba(247,242,167,1) 100%);
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed594', endColorstr='#f7f2a7',GradientType=0 );
         }
-      } /* <----------------------------------------------------------------------end 811 px or larger breakpoint */
+      } /* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
 
+@media screen and (min-width: 1280px) { /* <---------------------------------1280 px or larger breakpoint */
+.slogan {
+font-size: 34px;
+font-weight: 200;
+top: 30px;
+}
+      } /* <----------------------------------------------------------------------end 1280px or larger breakpoint */
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

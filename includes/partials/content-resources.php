@@ -1,6 +1,6 @@
-<? # ! BOOKS, MUSIC & OTHER RESOURCES -------
-#These use tags, not categories---------------------------------- ?>
-
+<? // ! BOOKS, MUSIC & OTHER RESOURCES -------
+//These use tags, not categories----------------------------------
+?>
 <section>
 		<?php the_content(); ?>
 </section>
@@ -81,6 +81,6 @@
 				'meta_key' => 'publication_author', */ );
 				while($audio_query->have_posts()) : $audio_query->the_post(); ?>
 				<?=get_template_part('includes/partials/content-resource')?>
-		<?php endwhile; ?>
-		<? wp_reset_postdata(); ?>
+		<?php endwhile;
+		wp_reset_postdata(); ?>
  </section>

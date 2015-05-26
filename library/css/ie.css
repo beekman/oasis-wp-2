@@ -180,16 +180,17 @@ and other resources. You'll also notice the grid starts to
 come into play. Have fun!
 
 ******************************************************************/
-a:hover, a:hover #slogan {
+a:hover .slogan {
   background-color: rgba(248, 238, 143, 0.5);
-  box-shadow: 0 0 10px 248, 238, 143, 0.7; }
+  border-radius: 20px;
+  box-shadow: 0 0 10px 10px rgba(248, 238, 143, 0.5); }
 
 /*=============================================
 =            Blog styles            =
 =============================================*/
 .teaser-box:nth-of-type(odd) {
-  margin-left: 0;
-  clear: both; }
+  clear: both;
+  margin-left: 0; }
 
 .teaser-box:nth-of-type(even) {
   float: right; }
@@ -197,13 +198,6 @@ a:hover, a:hover #slogan {
 .featured-img img {
   max-width: 100%; }
 
-/*-----  End of Blog styles  ------*/
-/*********************
-GENERAL STYLES
-*********************/
-/*********************
-LAYOUT & GRID STYLES
-*********************/
 .wrap {
   width: 760px; }
 
@@ -230,11 +224,7 @@ NAVIGATION STYLES
       .nav ul li a {
         border-bottom: 0;
         color: #323944;
-        background-color: transparent;
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
+        background-color: transparent; }
         .nav ul li a:hover, .nav ul li a:focus {
           color: #1e92ab;
           background-color: #323944; }

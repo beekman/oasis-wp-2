@@ -19,7 +19,96 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 img {max-width:100%;
+}#social_thumbs {
+    /* you must set it to relative, so that you can use absolute position for children elements */
+    position: relative;
 }
+#sidebars #social_thumbs ul {
+    /* remove the list style and spaces*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    /* position absolute so that z-index can be defined */
+    position: absolute;
+    /* center the menu, depend on the width of you menu*/
+    left: 0px;
+    top: 0;
+    width: 100%;
+}
+#social_thumbs ul li {
+    /* give some spaces between the list items */
+    margin: 0 1%;
+    /* display the list item in single row */
+  display: inline-block;
+    width: 17%;
+    float: left;
+}
+#social_thumbs ul li img {
+    /* give some spaces between the list items */
+    max-width: 100%;
+    /* display the list item in single row */
+    display: inline-block;
+}
+
+/*
+.custom #badges .badge{
+  display: block;
+    margin: 60px 0 0 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+*/
+
+.custom #badges .badge img {
+  max-width: 100%;
+  height:auto;
+  display: inline-block;
+}
+
+.custom #social_thumbs img.badge {
+  margin:1%;
+  padding:0;
+  height:auto;
+  display: inline-block;
+  float: left;
+}
+
+#screenshot{  /* position:absolute;  */border:1px solid #ccc; background:#333;  padding:10px; display:none; color:#fff; font-size: 1.6em;
+  -webkit-animation: myanim 2s ease-in-out; /* Saf5, Chrome */
+     -moz-animation: myanim 2s ease-in-out; /* FF5+ */
+      -ms-animation: myanim 2s ease-in-out; /* IE10pp3 */}
+#screens {
+position: absolute;
+margin-left: -200px;
+margin-top: -294px;
+width: 200px;
+height: auto;
+  -webkit-animation: myanim 2s ease-in-out; /* Saf5, Chrome */
+     -moz-animation: myanim 2s  ease-in-out; /* FF5+ */
+      -ms-animation: myanim 2s ease-in-out; /* IE10pp3 */
+}
+
+@-webkit-keyframes myanim {
+  0%   { opacity: 0.0; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1.0; }
+}
+@-moz-keyframes myanim {
+  0%   { opacity: 0.0; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1.0; }
+}
+@-ms-keyframes myanim {
+  0%   { opacity: 0.0; }
+  50%  { opacity: 0.5; }
+  100% { opacity: 1.0; }
+}
+.custom img {
+max-width: 100%;
+height: auto;}
 
 
 .two-col {
@@ -585,14 +674,14 @@ article {
   }
 
   blockquote {
-    background-color: rgba(207,241,242, .5);
-    background-image: url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/punctuation-marks-lt-r.png) ;
+    background-color: rgba($white, .8);
+    background-image: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/punctuation-marks-dk-r.png);
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: contain;
     border-left: 3px solid $blue;
-    box-shadow: .5% .5% .5% rgba(30, 146, 171, .5);
-    color: $meta-gray;
+    // box-shadow: 0 0 10 10px rgba(30, 146, 171, .5);
+    color: $blue;
     font-style: italic;
     margin: 0 0 1.5em .75em;
     padding: 0 0 0 .75em;
@@ -1102,7 +1191,7 @@ SIDEBARS & ASIDES
 .sidebar input[type="email"] {
   font-family: Verdana,sans-serif;
   padding: 0.25em;
-  max-width: 49%;
+  max-width: 75%;
   width: 100%;
 }
 .sidebar input[type="submit"] {
@@ -1256,7 +1345,7 @@ ________________________________________________________________________*/
 }
 .ui-accordion h3 {}
 .ui-accordion .ui-icon {
-  background-image: url("http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/222222_256x240_icons_icons.png");
+  background-image: url("http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/222222_256x240_icons_icons.png");
   height: 16px;
   margin-right: 1em;
   width: 16px;
@@ -1287,6 +1376,14 @@ ________________________________________________________________________*/
   background-image: none;
   background-color: transparent;
 }
+
+.event-categories li {
+  list-style-type: none;
+}
+.su-posts .event-categories{
+  display:none;
+}
+
 .whatsnewdate{
   font-size: 0.925em;
   color: #888;
@@ -1362,8 +1459,8 @@ div.mod {
 /* button styles */
 a.btn {
   display: inline-block;
-  margin: 20px;
-  padding: 0 .75rem;
+  margin: 10px 0 20px 0;
+  padding: 0;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -1481,7 +1578,7 @@ Logo animation
   }
 
   #idot {
-    background: url("http://www.oasislifedesign.com/wp-content/uploads/idot.png") no-repeat scroll 0 0 transparent;
+    background: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/idot.png) no-repeat scroll 0 0 transparent;
     height: 30px;
     left: 117px;
     position: relative;
@@ -1491,7 +1588,7 @@ Logo animation
   }
 
   #logo {
-    background-image: url(http://www.oasislifedesign.com/wp-content/uploads/logo.png);
+    background-image: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/logo.png);
     background-position: 0 40px;
     background-repeat: no-repeat no-repeat;
     height: 109px;
@@ -1517,26 +1614,21 @@ Logo animation
   #sun {
     cursor: pointer;
   }
-/*
-#idot {
-    position:absolute;
-    width:30px;
-    height:30px;
-    top:27px;
-    left:131px;
-    background:url(http://www.oasislifedesign.com/wp-content/uploads/idot.png) no-repeat
-}
-*/
-#slogan {
+
+.slogan {
+  color: $blue;
+  font-weight: 200;
   font-family: "La Belle Aurore", cursive;
   left: 202px;
     /*  left: 6.35em; for calligraffitti*/
-    font-weight: 200;
-    color: #1E92AB;
     position: absolute;
   }
-  #slogan {white-space: nowrap;}
-  #slogan a:hover { color:#4CCE7E; }
+  .slogan {
+    white-space: nowrap;
+  }
+  .slogan a:hover {
+    color: $blue-ocean;
+  }
 
 
   #inner:after {
@@ -1752,18 +1844,9 @@ article ul li,
 article>section>div>ul {
   list-style-type: disc;
   list-style-position: inside;
-  list-style-image:-moz-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
-  /* FF3.6+ */
-  list-style-image:-webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(226,186,6,1)),color-stop(2%,rgba(226,186,6,1)),color-stop(40%,rgba(239,209,89,1)),color-stop(96%,rgba(248,238,143,0.07)),color-stop(100%,rgba(254,252,234,0)));
-  /* Chrome,Safari4+ */
-  list-style-image:-webkit-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
-  /* Chrome10+,Safari5.1+ */
-  list-style-image:-o-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
-  /* Opera 12+ */
-  list-style-image:-ms-radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
-  /* IE10+ */
-  list-style-image:radial-gradient(center,ellipse cover,rgba(226,186,6,1) 0%,rgba(226,186,6,1) 2%,rgba(239,209,89,1) 40%,rgba(248,238,143,0.07) 96%,rgba(254,252,234,0) 100%);
-  /* W3C */
+    background-size: 3em auto;
+    background-repeat: no-repeat;
+    list-style-image: url("http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/bullet.gif");
 }
 
 .front article .widget ul, .front article .widget ul li{
@@ -1806,9 +1889,10 @@ li.widget:nth-child(4)
   border-radius: 2.3255814%;
 }
 
-.sidebar input[type="text"],  .sidebar input[type="email"]{
+.sidebar input[type="text"],
+.sidebar input[type="email"]{
   font-family: Verdana,sans-serif;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 0.125em;
   margin: 0;
   display: inline-block;
 }
@@ -1821,7 +1905,7 @@ li.widget:nth-child(4)
   /* clear:both; */
   float: right;
   display: inline;
-  max-width: 60%;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -2114,3 +2198,174 @@ input[type="submit"]{
 
 .featured-img img {max-width: 100%;}
 /*-----  End of Blog styles  ------*/
+
+
+/*    Posts
+---------------------------------------------------------------*/
+
+.su-posts-default-loop { }
+.su-posts-default-loop .su-post {
+  margin-bottom: 2.5em;
+  line-height: 1.5;
+}
+.su-posts-default-loop .su-post:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.su-posts-default-loop .su-post-thumbnail {
+  float: left;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+}
+.su-posts-default-loop .su-post-thumbnail img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.su-posts-default-loop h2.su-post-title {
+  clear: none;
+  margin: 0 0 0.3em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.su-posts-default-loop .su-post-meta {
+  margin-bottom: 0.7em;
+  font-size: 0.8em;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+a.btn {background-color: transparent;}
+
+.su-posts-default-loop .su-post-excerpt { margin-bottom: 0.5em }
+.su-posts-default-loop .su-post-excerpt p:last-child { margin-bottom: 0 }
+.su-posts-default-loop .su-post-comments-link { font-size: 0.9em }
+.su-posts-teaser-loop { }
+.su-posts-teaser-loop .su-post {
+  margin-bottom: 1.5em;
+  line-height: 1.2;
+}
+.su-posts-teaser-loop .su-post:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.su-posts-teaser-loop .su-post-thumbnail {
+  float: left;
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 1em 0 0;
+}
+.su-posts-teaser-loop .su-post-thumbnail img {
+  display: block;
+  margin: 0;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.su-posts-teaser-loop h2.su-post-title {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 0.9em;
+  font-weight: normal;
+  clear: none;
+}
+
+.cloudbox {
+  background:#CFF1F2;
+/* for non-css3 browsers */
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8EE8F',endColorstr='#CFF1F2');
+/* for IE */
+  background:-webkit-gradient(linear,left top,left bottom,from(#F8EE8F),to(#CFF1F2));
+/* for webkit browsers */
+  background:-moz-linear-gradient(top,#F8EE8F,#CFF1F2);
+/* for firefox 3.6+ */
+  border:5px outset #B3FCFF;
+  border-radius:8px;
+  -moz-border-radius:8px;
+/* Firefox 3.6 and earlier */
+  -webkit-box-shadow:0 -10px 30px #F0F187 inset;
+/* Saf3-4 */
+  -moz-box-shadow:0 -10px 30px #F0F187 inset;
+/* FF3.5 - 3.6 */
+  box-shadow:0 -10px 30px #F0F187 inset;
+/* Opera 10.5, IE9, FF4+, Chrome 10+ */
+  border:0px solid #C4B474;
+}
+.cloudbox p{
+  padding:.8em
+}
+.cloudbox ul{
+  padding:.8em
+}
+.leafbox {
+  background:#64B081;
+/* for non-css3 browsers */
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#64B081',endColorstr='#80EEF2');
+/* for IE */
+  background:-webkit-gradient(linear,left top,left bottom,from(#64B081),to(#80EEF2));
+/* for webkit browsers */
+  background:-moz-linear-gradient(top,#64B081,#80EEF2);
+/* for firefox 3.6+ */
+  border:.5% solid #4CCE7E;
+  color:#154D4F;
+  padding:.5% .5%;
+}
+
+.leafbox h3 {
+  font-family:'Verdana',sans-serif;
+  color:#EFCB59;
+  margin-top:0.05%;
+}
+
+.bluebox {
+  @include css-gradient(rgb(29, 139, 163),rgb(38, 60, 66));
+  border:.5% solid #4CCE7E;
+  color:#CFF1F2;
+  padding:1rem;
+  border-bottom: 5px solid $white;
+}
+
+.bluebox h3 {
+  font-family:'Verdana',sans-serif;
+  color:#EFCB59;
+  margin-top:0;
+}
+
+.sandbox {
+  background:#F8EE8F;
+/* for non-css3 browsers */
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8EE8F',endColorstr='#EFCB59');
+/* for IE */
+  background:-webkit-gradient(linear,left top,left bottom,from(#F8EE8F),to(#EFCB59));
+/* for webkit browsers */
+  background:-moz-linear-gradient(top,#F8EE8F,#EFCB59);
+/* for firefox 3.6+ */
+  border:0.5% solid #EFCB59;
+  border-radius:8px;
+  -moz-border-radius:8px;
+/* Firefox 3.6 and earlier */
+  -webkit-box-shadow:0 -10px 30px #F0F187 inset;
+/* Saf3-4 */
+  -moz-box-shadow:0 -10px 30px #F0F187 inset;
+/* FF3.5 - 3.6 */
+  box-shadow:0 -10px 30px #F0F187 inset;
+/* Opera 10.5, IE9, FF4+, Chrome 10+ */
+  border:1px solid #C4B474;
+  color:#1E92AB;
+  padding:1%;
+}
+
+.sandbox h3 {
+  color:#1E92AB;
+  margin-top:0;
+}

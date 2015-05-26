@@ -1265,6 +1265,121 @@ GENERAL STYLES
 img {
   max-width: 100%; }
 
+#social_thumbs {
+  /* you must set it to relative, so that you can use absolute position for children elements */
+  position: relative; }
+
+#sidebars #social_thumbs ul {
+  /* remove the list style and spaces*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  /* position absolute so that z-index can be defined */
+  position: absolute;
+  /* center the menu, depend on the width of you menu*/
+  left: 0px;
+  top: 0;
+  width: 100%; }
+
+#social_thumbs ul li {
+  /* give some spaces between the list items */
+  margin: 0 1%;
+  /* display the list item in single row */
+  display: inline-block;
+  width: 17%;
+  float: left; }
+
+#social_thumbs ul li img {
+  /* give some spaces between the list items */
+  max-width: 100%;
+  /* display the list item in single row */
+  display: inline-block; }
+
+/*
+.custom #badges .badge{
+  display: block;
+    margin: 60px 0 0 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+*/
+.custom #badges .badge img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block; }
+
+.custom #social_thumbs img.badge {
+  margin: 1%;
+  padding: 0;
+  height: auto;
+  display: inline-block;
+  float: left; }
+
+#screenshot {
+  /* position:absolute;  */
+  border: 1px solid #ccc;
+  background: #333;
+  padding: 10px;
+  display: none;
+  color: #fff;
+  font-size: 1.6em;
+  -webkit-animation: myanim 2s ease-in-out;
+  /* Saf5, Chrome */
+  -moz-animation: myanim 2s ease-in-out;
+  /* FF5+ */
+  -ms-animation: myanim 2s ease-in-out;
+  /* IE10pp3 */ }
+
+#screens {
+  position: absolute;
+  margin-left: -200px;
+  margin-top: -294px;
+  width: 200px;
+  height: auto;
+  -webkit-animation: myanim 2s ease-in-out;
+  /* Saf5, Chrome */
+  -moz-animation: myanim 2s  ease-in-out;
+  /* FF5+ */
+  -ms-animation: myanim 2s ease-in-out;
+  /* IE10pp3 */ }
+
+@-webkit-keyframes myanim {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+@-moz-keyframes myanim {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+@-ms-keyframes myanim {
+  0% {
+    opacity: 0.0; }
+
+  50% {
+    opacity: 0.5; }
+
+  100% {
+    opacity: 1.0; } }
+
+.custom img {
+  max-width: 100%;
+  height: auto; }
+
 .two-col {
   -webkit-column-count: 2;
   /* Chrome, Safari, Opera */
@@ -1641,14 +1756,13 @@ article {
     article th:last-child {
       border-right: 0; }
   article blockquote {
-    background-color: rgba(207, 241, 242, 0.5);
-    background-image: url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/punctuation-marks-lt-r.png);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/punctuation-marks-dk-r.png);
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: contain;
     border-left: 3px solid #2980b9;
-    box-shadow: 0.5% 0.5% 0.5% rgba(30, 146, 171, 0.5);
-    color: #9fa6b4;
+    color: #2980b9;
     font-style: italic;
     margin: 0 0 1.5em .75em;
     padding: 0 0 0 .75em; }
@@ -1954,7 +2068,7 @@ SIDEBARS & ASIDES
 .sidebar input[type="email"] {
   font-family: Verdana,sans-serif;
   padding: 0.25em;
-  max-width: 49%;
+  max-width: 75%;
   width: 100%; }
 
 .sidebar input[type="submit"] {
@@ -2068,7 +2182,7 @@ ________________________________________________________________________*/
   display: block; }
 
 .ui-accordion .ui-icon {
-  background-image: url("http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/images/222222_256x240_icons_icons.png");
+  background-image: url("http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/222222_256x240_icons_icons.png");
   height: 16px;
   margin-right: 1em;
   width: 16px;
@@ -2092,6 +2206,12 @@ ________________________________________________________________________*/
   border-width: 0;
   background-image: none;
   background-color: transparent; }
+
+.event-categories li {
+  list-style-type: none; }
+
+.su-posts .event-categories {
+  display: none; }
 
 .whatsnewdate {
   font-size: 0.925em;
@@ -2161,8 +2281,8 @@ div.mod {
 /* button styles */
 a.btn {
   display: inline-block;
-  margin: 20px;
-  padding: 0 .75rem;
+  margin: 10px 0 20px 0;
+  padding: 0;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -2287,7 +2407,7 @@ Logo animation
   transition: transform 2s ease-in-out; }
 
 #idot {
-  background: url("http://www.oasislifedesign.com/wp-content/uploads/idot.png") no-repeat scroll 0 0 transparent;
+  background: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/idot.png) no-repeat scroll 0 0 transparent;
   height: 30px;
   left: 117px;
   position: relative;
@@ -2296,7 +2416,7 @@ Logo animation
   z-index: 100; }
 
 #logo {
-  background-image: url(http://www.oasislifedesign.com/wp-content/uploads/logo.png);
+  background-image: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/logo.png);
   background-position: 0 40px;
   background-repeat: no-repeat no-repeat;
   height: 109px;
@@ -2321,29 +2441,19 @@ Logo animation
 #sun {
   cursor: pointer; }
 
-/*
-#idot {
-    position:absolute;
-    width:30px;
-    height:30px;
-    top:27px;
-    left:131px;
-    background:url(http://www.oasislifedesign.com/wp-content/uploads/idot.png) no-repeat
-}
-*/
-#slogan {
+.slogan {
+  color: #2980b9;
+  font-weight: 200;
   font-family: "La Belle Aurore", cursive;
   left: 202px;
   /*  left: 6.35em; for calligraffitti*/
-  font-weight: 200;
-  color: #1E92AB;
   position: absolute; }
 
-#slogan {
+.slogan {
   white-space: nowrap; }
 
-#slogan a:hover {
-  color: #4CCE7E; }
+.slogan a:hover {
+  color: #6cccde; }
 
 #inner:after {
   content: '';
@@ -2538,18 +2648,9 @@ article ul li,
 article > section > div > ul {
   list-style-type: disc;
   list-style-position: inside;
-  list-style-image: -moz-radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
-  /* FF3.6+ */
-  list-style-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e2ba06), color-stop(2%, #e2ba06), color-stop(40%, #efd159), color-stop(96%, rgba(248, 238, 143, 0.07)), color-stop(100%, rgba(254, 252, 234, 0)));
-  /* Chrome,Safari4+ */
-  list-style-image: -webkit-radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
-  /* Chrome10+,Safari5.1+ */
-  list-style-image: -o-radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
-  /* Opera 12+ */
-  list-style-image: -ms-radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
-  /* IE10+ */
-  list-style-image: radial-gradient(center, ellipse cover, #e2ba06 0%, #e2ba06 2%, #efd159 40%, rgba(248, 238, 143, 0.07) 96%, rgba(254, 252, 234, 0) 100%);
-  /* W3C */ }
+  background-size: 3em auto;
+  background-repeat: no-repeat;
+  list-style-image: url("http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/bullet.gif"); }
 
 .front article .widget ul, .front article .widget ul li {
   list-style-type: none;
@@ -2595,9 +2696,10 @@ li.widget:nth-child(4)
   -moz-border-radius: 2.3255814%;
   border-radius: 2.3255814%; }
 
-.sidebar input[type="text"], .sidebar input[type="email"] {
+.sidebar input[type="text"],
+.sidebar input[type="email"] {
   font-family: Verdana,sans-serif;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 0.125em;
   margin: 0;
   display: inline-block; }
 
@@ -2608,7 +2710,7 @@ li.widget:nth-child(4)
   /* clear:both; */
   float: right;
   display: inline;
-  max-width: 60%;
+  max-width: 100%;
   width: 100%; }
 
 .contact article .wpcf7-form-control-wrap input[type="textarea"] {
@@ -2866,6 +2968,177 @@ img {
   max-width: 100%; }
 
 /*-----  End of Blog styles  ------*/
+/*    Posts
+---------------------------------------------------------------*/
+.su-posts-default-loop .su-post {
+  margin-bottom: 2.5em;
+  line-height: 1.5; }
+
+.su-posts-default-loop .su-post:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.su-posts-default-loop .su-post-thumbnail {
+  float: left;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-right: 1em; }
+
+.su-posts-default-loop .su-post-thumbnail img {
+  max-width: 100px;
+  max-height: 100px; }
+
+.su-posts-default-loop h2.su-post-title {
+  clear: none;
+  margin: 0 0 0.3em 0;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+.su-posts-default-loop .su-post-meta {
+  margin-bottom: 0.7em;
+  font-size: 0.8em;
+  opacity: 0.6;
+  filter: alpha(opacity=60); }
+
+a.btn {
+  background-color: transparent; }
+
+.su-posts-default-loop .su-post-excerpt {
+  margin-bottom: 0.5em; }
+
+.su-posts-default-loop .su-post-excerpt p:last-child {
+  margin-bottom: 0; }
+
+.su-posts-default-loop .su-post-comments-link {
+  font-size: 0.9em; }
+
+.su-posts-teaser-loop .su-post {
+  margin-bottom: 1.5em;
+  line-height: 1.2; }
+
+.su-posts-teaser-loop .su-post:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.su-posts-teaser-loop .su-post-thumbnail {
+  float: left;
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 1em 0 0; }
+
+.su-posts-teaser-loop .su-post-thumbnail img {
+  display: block;
+  margin: 0;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  max-width: 100%;
+  max-height: 100%; }
+
+.su-posts-teaser-loop h2.su-post-title {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 0.9em;
+  font-weight: normal;
+  clear: none; }
+
+.cloudbox {
+  background: #CFF1F2;
+  /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8EE8F',endColorstr='#CFF1F2');
+  /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8ee8f), to(#cff1f2));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #f8ee8f, #cff1f2);
+  /* for firefox 3.6+ */
+  border: 5px outset #B3FCFF;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  /* Firefox 3.6 and earlier */
+  -webkit-box-shadow: 0 -10px 30px #F0F187 inset;
+  /* Saf3-4 */
+  -moz-box-shadow: 0 -10px 30px #F0F187 inset;
+  /* FF3.5 - 3.6 */
+  box-shadow: 0 -10px 30px #F0F187 inset;
+  /* Opera 10.5, IE9, FF4+, Chrome 10+ */
+  border: 0px solid #C4B474; }
+
+.cloudbox p {
+  padding: 0.8em; }
+
+.cloudbox ul {
+  padding: 0.8em; }
+
+.leafbox {
+  background: #64B081;
+  /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#64B081',endColorstr='#80EEF2');
+  /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#64b081), to(#80eef2));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #64b081, #80eef2);
+  /* for firefox 3.6+ */
+  border: .5% solid #4CCE7E;
+  color: #154D4F;
+  padding: .5% .5%; }
+
+.leafbox h3 {
+  font-family: 'Verdana',sans-serif;
+  color: #EFCB59;
+  margin-top: 0.05%; }
+
+.bluebox {
+  background-color: #263c42;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1d8ba3), to(#263c42));
+  background-image: -webkit-linear-gradient(top, #1d8ba3, #263c42);
+  background-image: -moz-linear-gradient(top, #1d8ba3, #263c42);
+  background-image: -o-linear-gradient(top, #1d8ba3, #263c42);
+  background-image: linear-gradient(to bottom, #1d8ba3, #263c42);
+  border: .5% solid #4CCE7E;
+  color: #CFF1F2;
+  padding: 1rem;
+  border-bottom: 5px solid white; }
+
+.bluebox h3 {
+  font-family: 'Verdana',sans-serif;
+  color: #EFCB59;
+  margin-top: 0; }
+
+.sandbox {
+  background: #F8EE8F;
+  /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8EE8F',endColorstr='#EFCB59');
+  /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8ee8f), to(#efcb59));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #f8ee8f, #efcb59);
+  /* for firefox 3.6+ */
+  border: 0.5% solid #EFCB59;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  /* Firefox 3.6 and earlier */
+  -webkit-box-shadow: 0 -10px 30px #F0F187 inset;
+  /* Saf3-4 */
+  -moz-box-shadow: 0 -10px 30px #F0F187 inset;
+  /* FF3.5 - 3.6 */
+  box-shadow: 0 -10px 30px #F0F187 inset;
+  /* Opera 10.5, IE9, FF4+, Chrome 10+ */
+  border: 1px solid #C4B474;
+  color: #1E92AB;
+  padding: 1%; }
+
+.sandbox h3 {
+  color: #1E92AB;
+  margin-top: 0; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2965,16 +3238,17 @@ you can add resource intensive styles.
   come into play. Have fun!
   
   ******************************************************************/
-  a:hover, a:hover #slogan {
+  a:hover .slogan {
     background-color: rgba(248, 238, 143, 0.5);
-    box-shadow: 0 0 10px 248, 238, 143, 0.7; }
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px rgba(248, 238, 143, 0.5); }
 
   /*=============================================
   =            Blog styles            =
   =============================================*/
   .teaser-box:nth-of-type(odd) {
-    margin-left: 0;
-    clear: both; }
+    clear: both;
+    margin-left: 0; }
 
   .teaser-box:nth-of-type(even) {
     float: right; }
@@ -2982,13 +3256,6 @@ you can add resource intensive styles.
   .featured-img img {
     max-width: 100%; }
 
-  /*-----  End of Blog styles  ------*/
-  /*********************
-  GENERAL STYLES
-  *********************/
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
   .wrap {
     width: 760px; }
 
@@ -3015,11 +3282,7 @@ you can add resource intensive styles.
         .nav ul li a {
           border-bottom: 0;
           color: #323944;
-          background-color: transparent;
-          /*
-          you can use hover styles here even though this size
-          has the possibility of being a mobile device.
-          */ }
+          background-color: transparent; }
           .nav ul li a:hover, .nav ul li a:focus {
             color: #1e92ab;
             background-color: #323944; }
@@ -3146,30 +3409,25 @@ This is for the larger monitors and possibly full screen viewers.
   
   ******************************************************************/
   .wrap {
-    width: 1200px; }
-
-  div#slogan {
-    font-size: 2.8rem;
-    top: 1rem;
-    line-height: 1; } }
+    width: 1200px; } }
 @media screen and (max-width: 522px) {
-  #slogan {
+  .slogan {
     display: none;
     visibility: hidden; } }
 @media screen and (max-width: 664px) {
-  #slogan {
+  .slogan {
     font-size: 0.95em;
     top: 1px; } }
 @media screen and (max-width: 705px) {
   /* <---------------------------------705 px or smaller breakpoint */
-  #slogan {
+  .slogan {
     font-size: 1.1em;
-    top: 18px;
+    top: 1px;
     display: block; } }
 @media screen and (min-width: 706px) {
-  #slogan {
-    font-size: 1.5em;
-    top: 1.5em;
+  .slogan {
+    font-size: 22px;
+    top: 51px;
     display: block; } }
 @media screen and (max-width: 811px) {
   /* <---------------------------------811 px or smaller breakpoint */
@@ -3184,7 +3442,14 @@ This is for the larger monitors and possibly full screen viewers.
     background: -ms-linear-gradient(top, #fed594 0%, #f7f2a7 100%);
     background: linear-gradient(top, #fed594 0%, #f7f2a7 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fed594', endColorstr='#f7f2a7',GradientType=0 ); } }
-/* <----------------------------------------------------------------------end 811 px or larger breakpoint */
+/* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
+@media screen and (min-width: 1280px) {
+  /* <---------------------------------1280 px or larger breakpoint */
+  .slogan {
+    font-size: 34px;
+    font-weight: 200;
+    top: 30px; } }
+/* <----------------------------------------------------------------------end 1280px or larger breakpoint */
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

@@ -48,7 +48,7 @@
 <div id="sun"></div>
 </div> <!-- / .logo -->
 <a href="<?php echo site_url(); ?>">
-<div id="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
+<div class="slogan"><?php echo get_bloginfo ( 'description' ); ?></div>
 </a> <!-- / .slogan -->
 		<nav role="navigation" class="nav">
 			<?php oasis_main_nav(); ?>

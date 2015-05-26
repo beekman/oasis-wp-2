@@ -3,7 +3,7 @@
 <?php if (have_posts()): ?>
     <?php while (have_posts()): ?>
         <?php if (is_page ('resources')) : ?>
-
+          <? get_template_part('includes/partials/menu-resources'); ?>
         <?php elseif (have_rows('tab_panels')): ?>
             <div class="sub-tabs cf clearfix">
                 <nav id="submenu" class="tabs beachbar">

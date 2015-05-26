@@ -83,7 +83,7 @@ RESOURCES- PUBLICATION & MUSIC
           margin-left: 5%;
         }
 
-       
+
         .services #multimedia_box {
           margin-bottom: 14em;
           padding: 0 2em 0 0;
@@ -832,7 +832,7 @@ MEDIA QUERIES- RESPONSIVE LAYOUT ELEMENTS
   #content { margin-top: 36px; }
 }
 
-#slogan {
+.slogan {
   font-family: "La Belle Aurore", cursive;
   left: 202px;
   /*  left: 6.35em; for calligraffitti*/
@@ -945,7 +945,7 @@ MEDIA QUERIES- RESPONSIVE LAYOUT ELEMENTS
   }
   // header nav { top: -29px; }
   #menu-item-555 { clear: both; }
-/*  #slogan {display: none;}
+/*  .slogan {display: none;}
   .gquote {display: none;}
   #menu-oasis-page-nav {} */
 
@@ -957,14 +957,14 @@ MEDIA QUERIES- RESPONSIVE LAYOUT ELEMENTS
 }
 
   @media screen and (max-width:664px) {
-    #slogan {
+    .slogan {
       font-size: 0.95em;
       top: 1px;
     }
   }
 
 @media screen and (max-width: 705px) { /* <---------------------------------705 px or smaller breakpoint */
-  #slogan {
+  .slogan {
     font-size: 1.1em;
     top: 18px;
     display: block;
@@ -1007,7 +1007,7 @@ MEDIA QUERIES- RESPONSIVE LAYOUT ELEMENTS
 
 @media screen and (min-width: 706px) {
 
-// #slogan {
+// .slogan {
 //     font-size: 1.5em; //24px
 //     top: 1.5em;
 //     display: block;

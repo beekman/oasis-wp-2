@@ -11,9 +11,10 @@ and other resources. You'll also notice the grid starts to
 come into play. Have fun!
 
 ******************************************************************/
-a:hover, a:hover #slogan {
-	background-color: rgba(248,238,143,0.5);
-	box-shadow: 0 0 10px (248,238,143,0.7);
+a:hover .slogan {
+  background-color: rgba(248, 238, 143, .5);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 10px rgba(248, 238, 143, .5);
 }
 
 
@@ -22,28 +23,31 @@ a:hover, a:hover #slogan {
 =============================================*/
 
 .teaser-box:nth-of-type(odd) { //the leftmost columns of the teasers
-		margin-left: 0; clear: both;
-	}
+  clear: both;
+  margin-left: 0;
+}
 .teaser-box:nth-of-type(even) { // the rightmost columns of the teasers
-		float:right;
-	}
+  float: right;
+}
 
-.featured-img img {max-width: 100%;}
+.featured-img img {
+  max-width: 100%;
+}
 
-/*-----  End of Blog styles  ------*/
+//End of Blog styles
 
-/*********************
-GENERAL STYLES
-*********************/
+//*********************
+//GENERAL STYLES
+//*********************/
 
 body {}
 
-/*********************
-LAYOUT & GRID STYLES
-*********************/
+//*********************
+//LAYOUT & GRID STYLES
+//*********************/
 
 .wrap {
-	width: 760px;
+  width: 760px;
 }
 
 /*********************
@@ -52,114 +56,111 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+#logo {}
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
 .nav {
-	border: 0;
-	ul {
-		// background:$black;
-		margin-top:0;
+  border: 0;
+  ul {
+  // background:$black;
+  margin-top:0;
 
-		li {
-			float: left;
-			position: relative;
+  li {
+   float: left;
+   position: relative;
 
-			a {
-				border-bottom: 0;
-				color: $nav-link-color;
-				background-color: transparent;
-				/*
-				you can use hover styles here even though this size
-				has the possibility of being a mobile device.
-				*/
-				&:hover, &:focus {
-					color: $nav-link-hover;
-					background-color: $nav-link-color;
-					// text-decoration: underline;
-				}
-			}
+   a {
+    border-bottom: 0;
+    color: $nav-link-color;
+    background-color: transparent;
 
-			&:first-child {}
-			&:last-child {}
-
-			.current { //active page's highlight
-				color: rgb(17, 17, 17);
-				background: none repeat scroll 0% 0% white;
-			}
-			/*
-			plan your menus and drop-downs wisely.
-			*/
-			ul.sub-menu,
-			ul.children {
-				margin-top: 0;
-				border: 1px solid #ccc;
-				border-top: 0;
-				position: absolute;
-				visibility: hidden;
-				z-index: 8999;
-
-				li {
-
-					a {
-						padding-left: 10px;
-						border-right: 0;
-						display: inline-block;
-						width: 180px;
-						border-bottom: 1px solid #ccc;
-
-						&:hover,
-						&:focus {}
-
-						&:link {}
-					}
-
-					&:first-child {}
-
-					&:last-child {
-
-						a {
-							border-bottom: 0;
-						}
-					}
-
-					/*
-					if you need to go deeper, go nuts
-					just remember deeper menus suck
-					for usability. k, bai.
-					*/
-					ul {
-						top:0;
-						left:100%;
-					}
-				}
-
-				/* highlight sub-menu current page */
-				li.current-menu-item,
-				li.current_page_item,
-				li.current_page_ancestor {
-					a {}
-				}
-			}
-
-			/* showing sub-menus */
-			&:hover > ul {
-				top: auto;
-				visibility:visible;
-			}
-
-		} /* end .menu ul li */
-
-		/* highlight current page */
-		li.current-menu-item,
-		li.current_page_item,
-		li.current_page_ancestor {
-			a {}
-		}  /* end current highlighters */
+     &:hover, &:focus {
+      color: $nav-link-hover;
+      background-color: $nav-link-color;
+		// text-decoration: underline;
 	}
+}
+
+&:first-child {}
+&:last-child {}
+
+.current { //active page's highlight
+  color: rgb(17, 17, 17);
+  background: none repeat scroll 0% 0% white;
+}
+/*
+plan your menus and drop-downs wisely.
+*/
+ul.sub-menu,
+ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: 8999;
+
+  li {
+
+    a {
+      padding-left: 10px;
+      border-right: 0;
+      display: inline-block;
+      width: 180px;
+      border-bottom: 1px solid #ccc;
+
+      &:hover,
+      &:focus {}
+
+      &:link {}
+    }
+
+    &:first-child {}
+
+    &:last-child {
+
+      a {
+        border-bottom: 0;
+      }
+    }
+
+/*
+if you need to go deeper, go nuts
+just remember deeper menus suck
+for usability. k, bai.
+*/
+ul {
+  top:0;
+  left:100%;
+}
+}
+
+/* highlight sub-menu current page */
+li.current-menu-item,
+li.current_page_item,
+li.current_page_ancestor {
+  a {}
+}
+}
+
+/* showing sub-menus */
+&:hover > ul {
+  top: auto;
+  visibility:visible;
+}
+
+} /* end .menu ul li */
+
+/* highlight current page */
+li.current-menu-item,
+li.current_page_item,
+li.current_page_ancestor {
+  a {}
+}  /* end current highlighters */
+}
 } /* end .nav */
 
 /*********************
@@ -173,22 +174,22 @@ SIDEBARS & ASIDES
 	padding-top: 20px;
 }
 
-	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
-	}
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em;
+}
 
-	.widget {
-		padding: 0 10px;
-		margin: 0;
+.widget {
+  padding: 0 10px;
+  margin: 0;
 
-		ul {
-			li {
-				margin-bottom: 0.75em;
+  ul {
+   li {
+    margin-bottom: 0.75em;
 
-				&:first-child {}
-				&:last-child {}
-				a {}
+    &:first-child {}
+    &:last-child {}
+    a {}
 				/* deep nesting */
 
 				ul {
