@@ -177,20 +177,21 @@
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/js",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/modules",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/partials",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/post-formats"
 	],
 	"file_history":
 	[
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-page.php",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/functions.php",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content.php",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-resources.php",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/js/scripts.js",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/header-blog.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_base.scss",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-services2.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/dev/oasis.sublime-workspace",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/style.scss",
 		"/Users/djbeeker/Desktop/oasis-wp-2/header.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-resources.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_768up.scss",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/header.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/pending.scss",
@@ -210,19 +211,15 @@
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_1030up.scss",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-front.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-index.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-page.php",
 		"/Users/djbeeker/github/oasis-wp-2/includes/partials/menu-resources.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/js/scripts.js",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/sidebar.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/page.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/single.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/functions.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/js/jquery.serialScroll.js",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/js/jquery.colorbox.js",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/css/jquery-ui-1.8.16.custom.css",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/post-formats/format-aside.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/deleted/taxonomy-custom_cat.php",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/header-blog.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/dev/beachbar_big.psd",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/js/sample-content/running-lrg.jpg",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/js/responsiveimgs.js",
@@ -311,8 +308,7 @@
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/legacy.less",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/plugins/post-types-oasis.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/jquery-ui-custom_oasis.less",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/style.less",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/_base.less"
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/less/style.less"
 	],
 	"find":
 	{
@@ -371,6 +367,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"rss",
+			"feed",
 			"#logo",
 			"#idot",
 			"oasislifedesign.com",
@@ -496,9 +494,7 @@
 			"bones_main_nav",
 			"bonestheme",
 			"rsblawtheme",
-			"http://www.oasislifedesign.com/wp-content/themes/thesis_182",
-			"http://www.oasislifedesign.com",
-			"endif;"
+			"http://www.oasislifedesign.com/wp-content/themes/thesis_182"
 		],
 		"highlight": true,
 		"in_selection": false,

@@ -12,5 +12,4 @@
 	<?php endwhile; ?>
 <?php endif; ?>
 
-<?=the_content()?>
-
+<?php echo the_content(); ?>

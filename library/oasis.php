@@ -132,6 +132,10 @@ function oasis_scripts_and_styles() {
     // ie-only style sheet
     wp_register_style( 'oasis-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
+ wp_register_style('meanmenu', 'http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/css/meanmenu.css', array(), '', 'all' );
+
+     wp_register_script('meanmenu',     'http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/js/libs/jquery.meanmenu.js',          array('jquery'), 1, FALSE);
+
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
@@ -145,6 +149,7 @@ function oasis_scripts_and_styles() {
     wp_enqueue_style( 'oasis-stylesheet' );
     wp_enqueue_style('oasis-ie-only');
 
+    wp_enqueue_style( 'meanmenu' );
    /* I recommend using a plugin to call jQuery
     using the google cdn. That way it stays cached
     and your site will load faster.
@@ -159,9 +164,9 @@ function oasis_scripts_and_styles() {
 	wp_enqueue_script('jquery-ui-accordion');
 
 //end legacy scripts
-
+//
+    wp_enqueue_script('meanmenu');
     wp_enqueue_script( 'oasis-js' );
-
   }
 }
 

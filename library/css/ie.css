@@ -120,24 +120,6 @@ them in here, they won't work.
 /*********************
 NAVIGATION STYLES
 *********************/
-/* .menu is clearfixed inside mixins.scss */
-.menu {
-  /* end .menu ul */ }
-  .menu ul {
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .menu ul li {
-      /*
-      plan your menus and drop-downs wisely.
-      */ }
-      .menu ul li a {
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-
-/* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -145,13 +127,14 @@ POSTS & CONTENT STYLES
 article {
   /* at this larger size, we can start to align images */ }
   article .alignleft, article img.alignleft {
-    margin-right: 1.5em;
     display: inline;
-    float: left; }
-  article .alignright, article img.alignright {
-    margin-left: 1.5em;
+    float: left;
+    margin-right: 1.5em; }
+  article .alignright,
+  article img.alignright {
     display: inline;
-    float: right; }
+    float: right;
+    margin-left: 1.5em; }
   article .aligncenter, article img.aligncenter {
     margin-right: auto;
     margin-left: auto;
@@ -159,54 +142,65 @@ article {
     clear: both; }
 
 /* end .entry-content */
-/*********************
-FOOTER STYLES
-*********************/
-/*
-check your menus here. do they look good?
-do they need tweaking?
-*/
-/* end .footer-links */
-/******************************************************************
-Site Name:
-Author:
+header nav #menu-oasis-page-nav .current-menu-item a {
+  color: orange;
+  -webkit-text-stroke: .5px #F7F1AD;
+  text-shadow: 1px 1px 1px #F7F1AD;
+  box-shadow: 0 0 10px #f8f394;
+  text-decoration: none;
+  background-color: black(0.25); }
 
-Stylesheet: Tablet & Small Desktop Stylesheet
+header nav {
+  background-color: transparent;
+  position: absolute;
+  width: auto;
+  top: 81px; }
 
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
+header nav ul {
+  color: #000;
+  background-color: transparent;
+  border-width: 0;
+  text-transform: uppercase; }
 
-******************************************************************/
-a:hover .slogan {
-  background-color: rgba(248, 238, 143, 0.5);
-  border-radius: 20px;
-  box-shadow: 0 0 10px 10px rgba(248, 238, 143, 0.5); }
+header .nav ul li a:hover,
+header .nav ul li a:active {
+  color: orange;
+  border-width: 0;
+  box-shadow: 0 0 10px #f8f394;
+  text-decoration: none;
+  background-color: black(0.35); }
 
-/*=============================================
-=            Blog styles            =
-=============================================*/
-.teaser-box:nth-of-type(odd) {
-  clear: both;
-  margin-left: 0; }
+header .nav ul li a {
+  color: #323944;
+  background-color: transparent;
+  border-width: 0; }
 
-.teaser-box:nth-of-type(even) {
-  float: right; }
-
-.featured-img img {
-  max-width: 100%; }
-
-.wrap {
-  width: 760px; }
-
-/*********************
-HEADER STYLES
-*********************/
 /*********************
 NAVIGATION STYLES
 *********************/
+.nav {
+  border-bottom: 0;
+  margin: 0;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    float: left;
+    position: relative;
+    list-style-type: none; }
+    .nav li a {
+      color: #323944;
+      display: inline-flex;
+      text-decoration: none;
+      padding: 0.6em 0.75em;
+      /*
+      remember this is for mobile ONLY, so there's no need
+      to even declare hover styles here, you can do it in
+      the style.scss file where it's relevant. We want to
+      keep this file as small as possible!
+      */ }
+
+/* end .nav */
 .nav {
   border: 0; }
   .nav ul {
@@ -266,6 +260,69 @@ NAVIGATION STYLES
         visibility: visible; }
 
 /* end .nav */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+.flex-half-reverse {
+  display: flex;
+  flex-direction: row; }
+
+.half {
+  width: 50%; }
+
+a:hover .slogan {
+  background-color: rgba(248, 238, 143, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0 10px 10px rgba(248, 238, 143, 0.5); }
+
+/*=============================================
+=            Blog styles            =
+=============================================*/
+.teaser-box:nth-of-type(odd) {
+  clear: both;
+  margin-left: 0; }
+
+.teaser-box:nth-of-type(even) {
+  float: right; }
+
+.featured-img img {
+  max-width: 100%; }
+
+.wrap {
+  width: 760px; }
+
+/*********************
+HEADER STYLES
+*********************/
+header nav {
+  background-color: transparent;
+  border-width: 0;
+  width: auto; }
+
+header .nav a:link.current-menu-item
+header .nav a:visited.current-menu-item,
+header .nav a:hover.current-menu-item {
+  color: #000;
+  text-decoration: none; }
+
 /*********************
 SIDEBARS & ASIDES
 *********************/

@@ -7,7 +7,7 @@
 	# Add special partial template names here:
 	$special = array(
 		'front',
-    'resources',
+            'resources',
 	);
 ?>
 

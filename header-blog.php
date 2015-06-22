@@ -85,7 +85,6 @@
 					<div class="clear"></div>
 				<?php
 				}
-			}
 			?>
 			</div> <!-- /.page -->
 		</div> <!-- / #nav_area -->

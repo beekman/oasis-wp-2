@@ -49,7 +49,7 @@
 		while($navigating_query->have_posts()) :
 			$navigating_query->the_post();
 			get_template_part('includes/partials/content-resource');
-		endwhile; ?>
+		endwhile;
 	wp_reset_postdata();?>
 </section> <!-- #navigating -->
 
@@ -67,7 +67,7 @@
 				$poetry_query->the_post();
 				get_template_part('includes/partials/content-resource');
 		endwhile;
-		wp_reset_postdata();?>
+		wp_reset_postdata(); ?>
 </section>
 
 <section id="audio">

@@ -305,4 +305,16 @@ function blogEmailLink() {
 
 add_shortcode('blogsignup', 'blogEmailLink');
 
-?>
+
+remove_action( 'wp_head', 'remote_login_js_loader' ); //speeds up multisite
+
+
+function oasis_wp_enqueue_scripts_styles() {
+
+# See also: `oasis_scripts_and_styles` in `library/oasis.php`.
+
+  if ( ! is_admin()) {
+  }
+}
+
+add_action('wp_enqueue_scripts', 'oasis_wp_enqueue_scripts_styles');

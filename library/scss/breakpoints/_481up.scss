@@ -26,54 +26,7 @@ them in here, they won't work.
 /*********************
 NAVIGATION STYLES
 *********************/
-ul#menu-oasis-page-nav.nav.top-nav{
 
-}
-.nav {}
-
-	/* .menu is clearfixed inside mixins.scss */
-	.menu {
-		ul {
-			li {
-				a {
-
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-					&:hover, &:focus {
-
-					}
-				}
-
-				&:first-child {}
-				&:last-child {}
-
-				/*
-				plan your menus and drop-downs wisely.
-				*/
-				ul.sub-menu,
-				ul.children {
-					li {
-						a {
-							&:hover,
-							&:focus {}
-							&:link {}
-						}
-						&:first-child {}
-						&:last-child {}
-					}
-				}
-			} /* end .menu ul li */
-
-			/* highlight current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}  /* end current highlighters */
-		} /* end .menu ul */
-	} /* end .menu */
 
 /*********************
 POSTS & CONTENT STYLES
@@ -84,16 +37,19 @@ article {
 
 
 	/* at this larger size, we can start to align images */
-	.alignleft, img.alignleft {
-		margin-right: 1.5em;
-		display: inline;
-		float: left;
+.alignleft, img.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+  .alignright,
+  img.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
 	}
-	.alignright, img.alignright {
-		margin-left: 1.5em;
-		display: inline;
-		float: right;
-	}
+
 	.aligncenter, img.aligncenter {
 		margin-right: auto;
 		margin-left: auto;
@@ -103,6 +59,214 @@ article {
 
 } /* end .entry-content */
 
+header nav #menu-oasis-page-nav .current-menu-item a {
+  color: $orange;
+  -webkit-text-stroke: .5px #F7F1AD;
+  text-shadow: 1px 1px 1px #F7F1AD;
+  box-shadow: 0 0 10px rgba(248, 243, 148, 1);
+  text-decoration: none;
+  background-color: black(0.25);
+}
+
+header nav {
+  background-color: transparent;
+  position: absolute;
+  width: auto;
+  top: 81px;
+}
+
+header nav ul {
+  color: #000;
+  background-color: transparent;
+  border-width: 0;
+  text-transform: uppercase;
+}
+header .nav ul li a:hover,
+header .nav ul li a:active {
+  color: $orange;
+  border-width: 0;
+  box-shadow: 0 0 10px rgba(248, 243, 148, 1);
+  text-decoration: none;
+  background-color: black(0.35);
+}
+header .nav ul li a {
+  color: $black;
+  background-color: transparent;
+  border-width: 0;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  border-bottom: 0;
+  margin: 0;
+
+  li {
+    float: left;
+    position: relative;
+    list-style-type: none;
+
+
+    a {
+      color: $nav-link-color;
+      display: inline-flex;
+      text-decoration: none;
+      padding: 0.6em 0.75em;
+
+
+            /*
+            remember this is for mobile ONLY, so there's no need
+            to even declare hover styles here, you can do it in
+            the style.scss file where it's relevant. We want to
+            keep this file as small as possible!
+            */
+            &:hover, &:focus {
+
+            }
+          }
+
+          &:first-child {}
+
+          &:last-child {}
+
+
+        //* http://www.alistapart.com/articles/organizing-mobile/
+        ul.sub-menu,
+        ul.children {
+
+          li {
+
+            a {
+              // padding-left: 30px;
+
+              &:hover,
+              &:focus {}
+
+              &:link {}
+
+            }
+
+            &:first-child {}
+
+            &:last-child {}
+
+          }
+
+        }
+
+    } /* end .menu li */
+
+    /* highlight current page */
+    li.current-menu-item,
+    li.current_page_item,
+    li.current_page_ancestor {
+
+      a {}
+
+    }  /* end current highlighters */
+
+} /* end .nav */
+.nav {
+  border: 0;
+  ul {
+  // background:$black;
+  margin-top:0;
+
+  li {
+   float: left;
+   position: relative;
+
+   a {
+    border-bottom: 0;
+    color: $nav-link-color;
+    background-color: transparent;
+
+     &:hover, &:focus {
+      color: $nav-link-hover;
+      background-color: $nav-link-color;
+    // text-decoration: underline;
+  }
+}
+
+&:first-child {}
+&:last-child {}
+
+.current { //active page's highlight
+  color: rgb(17, 17, 17);
+  background: none repeat scroll 0% 0% white;
+}
+/*
+plan your menus and drop-downs wisely.
+*/
+ul.sub-menu,
+ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: 8999;
+
+  li {
+
+    a {
+      padding-left: 10px;
+      border-right: 0;
+      display: inline-block;
+      width: 180px;
+      border-bottom: 1px solid #ccc;
+
+      &:hover,
+      &:focus {}
+
+      &:link {}
+    }
+
+    &:first-child {}
+
+    &:last-child {
+
+      a {
+        border-bottom: 0;
+      }
+    }
+
+/*
+if you need to go deeper, go nuts
+just remember deeper menus suck
+for usability. k, bai.
+*/
+ul {
+  top:0;
+  left:100%;
+}
+}
+
+/* highlight sub-menu current page */
+li.current-menu-item,
+li.current_page_item,
+li.current_page_ancestor {
+  a {}
+}
+}
+
+/* showing sub-menus */
+&:hover > ul {
+  top: auto;
+  visibility:visible;
+}
+
+} /* end .menu ul li */
+
+/* highlight current page */
+li.current-menu-item,
+li.current_page_item,
+li.current_page_ancestor {
+  a {}
+}  /* end current highlighters */
+}
+} /* end .nav */
 /*********************
 FOOTER STYLES
 *********************/
