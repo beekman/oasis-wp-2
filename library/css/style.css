@@ -1269,6 +1269,19 @@ GENERAL STYLES
 img {
   max-width: 100%; }
 
+.menu_title {
+  display: block;
+  position: relative;
+  float: right;
+  bottom: 1em;
+  margin-right: 2em;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 22px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700; }
+
 .half {
   width: 100%; }
 
@@ -1276,6 +1289,14 @@ img {
   display: flex;
   flex-direction: column-reverse;
   -webkit-box-orient: vertical; }
+
+.two-col {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
+  list-style-position: inside; }
 
 #social_thumbs {
   /* you must set it to relative, so that you can use absolute position for children elements */
@@ -1567,7 +1588,7 @@ h1.page-title {
 
 h2,
 .h2 {
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
@@ -1677,7 +1698,8 @@ POSTS & CONTENT STYLES
   margin: 0; }
 
 .entry-title,
-.archive-title {
+.archive-title,
+h2.recent_posts_with_excerpts {
   font-family: buda; }
 
 /* want to style individual post classes? Booya! */
@@ -3332,9 +3354,6 @@ you can add resource intensive styles.
   .flex-half-reverse {
     display: flex;
     flex-direction: row; }
-
-  .half {
-    width: 50%; }
 
   a:hover .slogan {
     background-color: rgba(248, 238, 143, 0.5);

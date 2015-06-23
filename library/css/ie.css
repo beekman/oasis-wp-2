@@ -285,9 +285,6 @@ come into play. Have fun!
   display: flex;
   flex-direction: row; }
 
-.half {
-  width: 50%; }
-
 a:hover .slogan {
   background-color: rgba(248, 238, 143, 0.5);
   border-radius: 20px;

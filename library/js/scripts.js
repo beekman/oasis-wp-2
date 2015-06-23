@@ -13,7 +13,7 @@ jQuery(function() { /*<- shortcut for document ready*/
   var poptext= '.poptext';
 
   jQuery('header nav').meanmenu({
-    meanScreenWidth:"768",
+    meanScreenWidth:"680",
     meanMenuOpen:"<span /><span /><span /><div class='menu_title'>Soulful Mentoring &amp; Coaching with Susan Grace Beekman</div>"
   });
 

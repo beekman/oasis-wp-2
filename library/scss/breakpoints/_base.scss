@@ -23,12 +23,33 @@ img {
   max-width: 100%;
 }
 
+.menu_title {
+    display: block;
+    position:relative;
+    float:right;
+    bottom:1em;
+    margin-right:2em;
+    color:#FFFFFF;
+    font-size: 16px;
+    line-height: 22px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
 .half {width: 100%;}
 
 .flex-half-reverse {
   display: flex;
   flex-direction: column-reverse;
   -webkit-box-orient: vertical; //for Safari pre-6.1
+}
+
+.two-col{
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    list-style-position: inside;
 }
 
 #social_thumbs {
@@ -483,7 +504,7 @@ a:visited {
 
     h2,
     .h2 {
-      font-size: 22px;
+      font-size: 28px;
       line-height: 1.4em;
       margin-bottom: 0.375em;
     }
@@ -625,7 +646,8 @@ a:visited {
     }
 
     .entry-title,
-    .archive-title {
+    .archive-title,
+    h2.recent_posts_with_excerpts {
       font-family: buda;
     }
 

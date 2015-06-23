@@ -31,7 +31,12 @@
 								*/
 								get_template_part( 'post-formats/format', get_post_format());
 							?>
-
+              <div class="related-post-links">
+                <h3>Want More? You Might Also Enjoy These&hellip;</h3>
+                  <div class="two-col"
+                    <?php echo the_excerpt() . oasis_related_posts(); ?>
+                  </div>
+              </div>
 						<?php endwhile; ?>
 
 						<?php else : ?>

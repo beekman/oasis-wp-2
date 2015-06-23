@@ -330,10 +330,10 @@ function oasis_related_posts() {
         $related_posts = get_posts($args);
         if($related_posts) {
 			foreach ($related_posts as $post) : setup_postdata($post); ?>
-		<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+		<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a><br><?php echo oasis_excerpt_more(); ?> </li>
 	<?php endforeach; }
 	else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'oasistheme' ) . '</li>'; ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts', 'oasistheme' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
