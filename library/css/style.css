@@ -1587,20 +1587,26 @@ h5,
 
 h1,
 .h1 {
-  font-size: 1.8rem;
-  line-height: 1.111em;
-  font-weight: normal; }
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.111em; }
 
 h1.page-title {
-  margin: 1.5rem 0 0 0;
-  font-size: 24px;
-  color: #323944; }
+  margin: 20px 0 0 0;
+  font-size: 30px;
+  color: #323944;
+  font-weight: 600;
+  letter-spacing: .25px;
+  color: #1e92ab; }
 
 h2,
 .h2 {
   font-size: 28px;
   line-height: 1.4em;
   margin-bottom: .375em; }
+
+h2.section-title {
+  font-size: 24px; }
 
 h3,
 .h3 {

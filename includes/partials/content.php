@@ -7,6 +7,7 @@
 		?>
 
 		<div id="<?=$section_slug?>">
+              <h2 class="section-title"><?=the_sub_field('section_title')?></h2>
 			<?=the_sub_field('section_content')?>
 		</div>
 	<?php endwhile; ?>

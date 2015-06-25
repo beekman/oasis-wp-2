@@ -12,15 +12,15 @@
                             <ul>
                                 <?php while (have_rows('tab_panels')): ?>
                                     <?php the_row();
-                                    $section_title = get_sub_field('section_title');
-                                    $section_slug = sanitize_title($section_title); //define tab names based on the "slugs" of the tab names. ?>
+                                    $section_title = get_sub_field('section_title'); //Get the custom field title and use it for tab titles
+                                    $section_slug = sanitize_title($section_title); //create slugs from the Section Titles. ?>
                                     <li><a href="#<?php echo $section_slug; ?>"><?php echo $section_title; ?></a></li>
                                 <?php endwhile; ?>
                             </ul>
                         </div>
                     </div>
                 </nav> <!-- /#submenu -->
-            <? #.sub-tabs clears in content ?>
+            <? #.sub-tabs are closed in includes/sections/content.php after the tab content panels ?>
         <?php elseif( get_field('beach-text') ): ?>
             <div class="beachbar">
                 <div>
