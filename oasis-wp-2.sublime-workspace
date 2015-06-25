@@ -52,9 +52,13 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "",
+		"last_filter": "s",
 		"selected_items":
 		[
+			[
+				"s",
+				"Sort Lines"
+			],
 			[
 				"rein",
 				"Indentation: Reindent Lines"
@@ -210,8 +214,9 @@
 	],
 	"file_history":
 	[
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-resources.php",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-index.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_base.scss",
+		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-resources.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/content-page.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/menu-resources.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_768up.scss",
@@ -253,7 +258,6 @@
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/post-formats/format.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/custom.css",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/library/scss/breakpoints/_1030up.scss",
-		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/includes/partials/content-index.php",
 		"/Users/djbeeker/github/oasis-wp-2/includes/partials/menu-resources.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/sidebar.php",
 		"/Users/djbeeker/Sites/webapps/bbcms/content/themes/oasis-wp-2/custom/js/jquery.serialScroll.js",
