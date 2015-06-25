@@ -318,3 +318,50 @@ function oasis_wp_enqueue_scripts_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'oasis_wp_enqueue_scripts_styles');
+
+
+
+
+// add icon and logo to Atom feeds
+add_action('atom_head','atom_feed_add_icon');
+add_action('comments_atom_head','atom_feed_add_icon');
+function atom_feed_add_icon() { ?>
+
+  <feed>
+    <icon><?php echo get_template_directory_uri(); ?>favicon.ico</icon>
+    <logo><?php echo get_template_directory_uri(); ?>/library/images/logo-feed.png</logo>
+  </feed>
+
+<?php }
+
+
+// add icon and logo to RSS feeds
+add_action('rss_head','rss_feed_add_icon');
+add_action('rss2_head','rss_feed_add_icon');
+add_action('commentsrss2_head','rss_feed_add_icon');
+function rss_feed_add_icon() { ?>
+
+  <image>
+    <url><?php echo get_template_directory_uri(); ?>/library/images/logo-feed.png</url>
+    <title><?php bloginfo_rss('name'); ?></title>
+    <link><?php bloginfo_rss('url'); ?></link>
+    <width>144</width>
+    <height>59</height>
+    <description><?php bloginfo('description'); ?></description>
+  </image>
+
+<?php }
+
+// add icon and logo to RDF feeds
+add_action('rdf_header','rdf_feed_add_icon');
+function rdf_feed_add_icon() { ?>
+
+  <image rdf:about="<?php echo get_template_directory_uri(); ?>/library/images/logo-feed.png">
+    <title><?php bloginfo_rss('name'); ?></title>
+    <url><?php echo get_template_directory_uri(); ?>/library/images/logo-feed.png</url>
+    <link><?php bloginfo_rss('url'); ?></link>
+    <description><?php bloginfo('description'); ?></description>
+  </image>
+
+<?php }
+?>

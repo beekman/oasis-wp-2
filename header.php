@@ -40,7 +40,7 @@
 	</head>
 
 <body <?php body_class(); ?>>
-
+  <div class="banner-bg"></div>
 <!-- menu -->
 <header role="banner">
 <div id="logo" onclick = "window.location.href = ' <?php echo site_url(); ?> '">

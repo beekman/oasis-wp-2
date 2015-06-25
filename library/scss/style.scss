@@ -124,6 +124,8 @@ This is for the larger monitors and possibly full screen viewers.
     .slogan {
       // display: none; visibility: hidden;
     }
+
+
 }
 
 @media screen and (max-width:664px) {
@@ -132,46 +134,63 @@ This is for the larger monitors and possibly full screen viewers.
         // top: 1px;
          // display: none; visibility: hidden;
     }
+    .banner-bg {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,0.5) 90%, rgba(250,228,94,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,0.5)), color-stop(100%,rgba(250,228,94,0)));
+    background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
+}
 }
 @media screen and (min-width: 705px) { /* <---------------------------------705 px or smaller breakpoint */
     .slogan {
-        font-size: 1.1em;
+        font-size:  23px;
         top: 54px;
         display: inline-block;
         //display: none; visibility: hidden;
     }
+
 }
 @media screen and (min-width: 706px) {
 
 .slogan {
-    font-size: 20px; //24px
+    font-size:  21px;
     top: 54px;
     // margin-left: 195px;
     //display: none; visibility: hidden;
   }
+   .banner-bg {
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,0.5) 90%, rgba(250,228,94,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,0.5)), color-stop(100%,rgba(250,228,94,0)));
+    background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    background: linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
+  }
+
 }
 
-  @media screen and (max-width: 811px) { /* <---------------------------------811 px or smaller breakpoint */
-        #header_area { /* lighter gradient for slightly wider */
-          background: rgb(254,213,148);
-          background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZDU5NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2YyYTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-          background: -moz-linear-gradient(top, rgba(254,213,148,1) 0%, rgba(247,242,167,1) 100%);
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,213,148,1)), color-stop(100%,rgba(247,242,167,1)));
-          background: -webkit-linear-gradient(top, rgba(254,213,148,1) 0%,rgba(247,242,167,1) 100%);
-          background: -o-linear-gradient(top, rgba(254,213,148,1) 0%,rgba(247,242,167,1) 100%);
-          background: -ms-linear-gradient(top, rgba(254,213,148,1) 0%,rgba(247,242,167,1) 100%);
-          background: linear-gradient(top, rgba(254,213,148,1) 0%,rgba(247,242,167,1) 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed594', endColorstr='#f7f2a7',GradientType=0 );
-        }
+@media screen and (max-width: 811px) { //811 px or smaller breakpoint */
+
   .beachbar div{
   }
       } /* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
 
 @media screen and (min-width: 1280px) { /* <---------------------------------1280 px or larger breakpoint */
 .slogan {
-font-size: 34px;
-font-weight: 200;
-top: 30px;
+  font-size: 32px;
+  font-weight: 200;
+  top: 40px;
+  padding-left: 12px;
+}
+
+.banner-bg {
+  @include css-gradient($white, lighten(#efcb59, 10%));
 }
       } /* <----------------------------------------------------------------------end 1280px or larger breakpoint */
 /*********************

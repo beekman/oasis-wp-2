@@ -15,7 +15,7 @@
     <div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
 
       <header>
-
+        <?=get_template_part('includes/partials/content', 'header')?>
       </header>
 
       <section id="content" itemprop="articleBody">

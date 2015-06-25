@@ -1,5 +1,5 @@
 <? #include for header of articles ?>
-<h1>
+<h1 class="page-title">
 <?php # Single posts or pages: ?>
 <?php if (is_front_page() && is_home()): ?>
 
@@ -43,7 +43,7 @@ Latest Posts
     <span><?=_e('Yearly Archives:', 'oasistheme')?></span>
     <?=the_time('Y')?>
 <?php elseif (is_single() || is_page()): ?>
-    <?#=the_title()?>
+    <?=the_title()?>
 <?php endif; ?>
 </h1>
 

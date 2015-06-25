@@ -14,6 +14,6 @@
 			</div>
 		</div>
 	</nav>
-</div>
+
 <? #.sub-tabs clears in content
 ?>

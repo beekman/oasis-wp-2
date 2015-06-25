@@ -34,7 +34,7 @@
               <div class="related-post-links">
                 <h3>Want More? You Might Also Enjoy These&hellip;</h3>
                   <div class="two-col"
-                    <?php echo the_excerpt() . oasis_related_posts(); ?>
+                    <?php echo oasis_related_posts(); ?>
                   </div>
               </div>
 						<?php endwhile; ?>

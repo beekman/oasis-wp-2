@@ -181,6 +181,7 @@ NAVIGATION STYLES
 .nav {
   border-bottom: 0;
   margin: 0;
+  padding: 0;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -190,9 +191,9 @@ NAVIGATION STYLES
     list-style-type: none; }
     .nav li a {
       color: #323944;
-      display: inline-flex;
       text-decoration: none;
-      padding: 0.6em 0.75em;
+      padding: 8px 7px 6px;
+      margin: 0;
       /*
       remember this is for mobile ONLY, so there's no need
       to even declare hover styles here, you can do it in
@@ -202,7 +203,8 @@ NAVIGATION STYLES
 
 /* end .nav */
 .nav {
-  border: 0; }
+  border: 0;
+  margin: 0; }
   .nav ul {
     margin-top: 0;
     /* end .menu ul li */
@@ -283,7 +285,11 @@ come into play. Have fun!
 ******************************************************************/
 .flex-half-reverse {
   display: flex;
-  flex-direction: row; }
+  display: -webkit-flex;
+  flex-direction: row;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row; }
 
 a:hover .slogan {
   background-color: rgba(248, 238, 143, 0.5);

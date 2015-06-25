@@ -14,7 +14,12 @@ and will be used across all viewports.
 // @import "css/tooltips.css";
 @import url("http://fonts.googleapis.com/css?family=Calligraffitti");
 @import url("http://fonts.googleapis.com/css?family=Buda:300");
+
 @import url("http://fonts.googleapis.com/css?family=La+Belle+Aurore");
+div#ui-id-2.ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom {
+  display: block !important;
+  visibility: visible !important;
+}
 
 /*********************
 GENERAL STYLES
@@ -23,18 +28,26 @@ img {
   max-width: 100%;
 }
 
+.banner-bg {
+  height: 125px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -500;
+}
+
 .menu_title {
-    display: block;
-    position:relative;
-    float:right;
-    bottom:1em;
-    margin-right:2em;
-    color:#FFFFFF;
-    font-size: 16px;
-    line-height: 22px;
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+  bottom: 1em;
+  color: #fff;
+  display: block;
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-right: 2em;
+  position: relative;
 }
 
 .half {width: 100%;}
@@ -43,6 +56,7 @@ img {
   display: flex;
   flex-direction: column-reverse;
   -webkit-box-orient: vertical; //for Safari pre-6.1
+  -webkit-flex-direction: column-reverse;
 }
 
 .two-col{
@@ -114,14 +128,14 @@ width: 100%;
 #screenshot {
 
   /* position:absolute;  */border: 1px solid #ccc;
+  -moz-animation: fadein 2s ease-in-out; // FF5+ */
+  -ms-animation: fadein 2s ease-in-out; // IE10pp3 */
+  -webkit-animation: fadein 2s ease-in-out; // Saf5, Chrome */
   background: #333;
-  padding: 10px;
-  display: none;
   color: #fff;
+  display: none;
   font-size: 1.6em;
-  -webkit-animation: fadein 2s ease-in-out; /* Saf5, Chrome */
-  -moz-animation: fadein 2s ease-in-out; /* FF5+ */
-  -ms-animation: fadein 2s ease-in-out; /* IE10pp3 */
+  padding: 10px;
 }
 
 #screens {
@@ -137,11 +151,11 @@ width: 100%;
 
 @-webkit-keyframes fadein {
   0% {
-    opacity: 0.0;
+    opacity: .0;
   }
 
   50% {
-    opacity: 0.5;
+    opacity: .5;
   }
 
   100% {
@@ -152,11 +166,11 @@ width: 100%;
 
 @-moz-keyframes fadein {
   0% {
-    opacity: 0.0;
+    opacity: .0;
   }
 
   50% {
-    opacity: 0.5;
+    opacity: .5;
   }
 
   100% {
@@ -167,11 +181,11 @@ width: 100%;
 
 @-ms-keyframes fadein {
   0% {
-    opacity: 0.0;
+    opacity: .0;
   }
 
   50% {
-    opacity: 0.5;
+    opacity: .5;
   }
 
   100% {
@@ -202,8 +216,8 @@ width: 100%;
 .beachbar div ul li,
 .beachbar div li {
   display: inline-block;
-  margin-right: .25rem;
   font-size: .75rem;
+  margin-right: .25rem;
 
   a {
     color: $black;
@@ -213,12 +227,12 @@ width: 100%;
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  background-color: $white;
+  color: $black;
   font-family: $sans;
   font-size: 100%;
   line-height: 1.5;
-  color: $black;
-  background-color: $white;
-  -webkit-font-smoothing: antialiased;
   position: relative;
 }
 
@@ -228,8 +242,8 @@ body {
 }
 
 .stroked {
-  border-width: 2px 4px 4px 2px;
   border-style: solid;
+  border-width: 2px 4px 4px 2px;
   padding: 3px 4px 0 4px;
 }
 
@@ -498,15 +512,16 @@ a:visited {
     }
 
     h1.page-title {
+      margin: 1.5rem 0 0 0;
       font-size: 24px;
-      color: $teal;
+      color: $black;
     }
 
     h2,
     .h2 {
       font-size: 28px;
       line-height: 1.4em;
-      margin-bottom: 0.375em;
+      margin-bottom: .375em;
     }
 
     h3,
@@ -523,7 +538,7 @@ a:visited {
 
     h5,
     .h5 {
-      font-size: 0.846em;
+      font-size: .846em;
       line-height: 1.6em;
     }
 
@@ -543,15 +558,15 @@ a:visited {
       min-height: 118px;
     }
 
-    header > .nav {
-      display: inline-block;
-      left: 190px;
+    header> .nav {
+      position: absolute;
       float: left;
-      padding: 0;
-      line-height: 1;
+      left: 190px;
+      top: 86px;
+      // padding: 11px 0 0;
     }
 
-    header nav #menu-oasis-page-nav .current-menu-item a {
+    header .nav .current-menu-item a {
       color: #1E92AB;
       -webkit-text-stroke: .5px #F7F1AD;
       text-shadow: 1px 1px 1px #F7F1AD;
@@ -565,20 +580,20 @@ a:visited {
     .beachbar a:active,
     .ui-tabs-active {
       box-shadow: 0 0 10px rgba(248, 243, 148, 1);
-      background-color: white(0.2);
+      background-color: white(.2);
       color: $black;
     }
 
     .beachbar a:hover,
     .beachbar a:active {
       box-shadow: 0 0 10px rgba(248, 243, 148, 1);
-      background-color: white(0.35);
+      background-color: white(.35);
       color: $black;
     }
 
     .beachbar .current-menu-item {
-      box-shadow: 0 0 10px rgba(248, 243, 148, 0.6);
-      background-color: white(0.35);
+      background-color: white(.35);
+      box-shadow: 0 0 10px rgba(248, 243, 148, .6);
       color: $black;
     }
 
@@ -603,7 +618,7 @@ a:visited {
     .page-navigation li {
       display: inline-block;
       float: left;
-      margin: 0 0.5rem;
+      margin: 0 .5rem;
     }
 
     /*********************
@@ -700,7 +715,7 @@ a:visited {
     }
 
     .byline .meta-gray {
-      padding-left: 0.35rem;
+      padding-left: .35rem;
     }
 
     /* Main article styles start here */
@@ -712,7 +727,7 @@ a:visited {
       }
 
       p {
-        margin: 0 0 0.75rem;
+        margin: 0 0 .75rem;
       }
 
       ul,
@@ -786,7 +801,7 @@ a:visited {
 
       blockquote {
         background-color: rgba($white, .8);
-        background-image: url(http://www.benbeekman.com/content/themes/oasis-wp-2/library/images/punctuation-marks-dk-r.png);
+        background-image: url(../images/punctuation-marks-dk-r.png);
         background-position: right bottom;
         background-repeat: no-repeat;
         background-size: contain;
@@ -810,7 +825,7 @@ a:visited {
 
       dd {
         margin-left: 0;
-        font-size: 0.9em;
+        font-size: .9em;
         color: #787878;
         margin-bottom: 1.5em;
       }
@@ -854,7 +869,7 @@ a:visited {
       pre {
         background: $black;
         color: $light-gray;
-        font-size: 0.9em;
+        font-size: .9em;
         padding: 1.5em;
         margin: 0 0 1.5em;
         border-radius: 3px;
@@ -931,7 +946,7 @@ a:visited {
       }
 
       p.wp-caption-text {
-        font-size: 0.85em;
+        font-size: .85em;
         margin: 4px 0 7px;
         text-align: center;
       }
@@ -986,11 +1001,12 @@ a:visited {
       // blue border with a white inner padding used on pics (like Sue pic on home page)
       max-width: 100%;
       background-color: #fff;
-      padding: 0.4178272928%;
-      border-width: 0.4178272928% 0.696378830083% 0.696378830083% 0.4178272928%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
+      padding: .4178272928%;
+      border-width: .4178272928% .696378830083% .696378830083% .4178272928%; /* 3px/#content 5px/#content 5px/#content 3px/#content */
       border-style: solid;
       border-color: #1E92AB;
       font-style: italic;
+      width: 100%;
     }
 
     /******************************************************************
@@ -1030,7 +1046,7 @@ a:visited {
         line-height: 1em;
         font-size: 1em;
         font-weight: normal;
-        padding: 0.75em;
+        padding: .75em;
         min-width: 1em;
         display: inline-block;
         color: $blue;
@@ -1082,7 +1098,7 @@ a:visited {
 
     /* h3 comment title */
     #comments-title {
-      padding: 0.75em;
+      padding: .75em;
       margin: 0;
       border-top: 1px solid $light-gray;
 
@@ -1133,7 +1149,7 @@ a:visited {
 
         time {
           display: block;
-          font-size: 0.9em;
+          font-size: .9em;
           font-style: italic;
 
           a {
@@ -1242,7 +1258,7 @@ a:visited {
       /* comment content */
       .comment_content {
         p {
-          margin: 0.7335em 0 1.5em;
+          margin: .7335em 0 1.5em;
           font-size: 1em;
           line-height: 1.5em;
         }
@@ -1254,7 +1270,7 @@ a:visited {
       /* comment reply link */
       .comment-reply-link {
         @extend .blue-btn;
-        font-size: 0.9em;
+        font-size: .9em;
         float: right;
 
         &:hover,
@@ -1270,7 +1286,7 @@ a:visited {
         font-style: italic;
         margin: 0 7px;
         text-decoration: none;
-        font-size: 0.9em;
+        font-size: .9em;
       }
 
     }
@@ -1282,7 +1298,7 @@ a:visited {
       font-style: italic;
       margin: 0 7px;
       text-decoration: none;
-      font-size: 0.9em;
+      font-size: .9em;
     }
 
     /******************************************************************
@@ -1310,13 +1326,13 @@ a:visited {
     }
 
     .comment-form-comment {
-      margin: 1.5em 0 0.75em;
+      margin: 1.5em 0 .75em;
     }
 
     .form-allowed-tags {
       padding: 1.5em;
       background-color: $light-gray;
-      font-size: 0.9em;
+      font-size: .9em;
     }
 
     /* comment submit button */
@@ -1344,7 +1360,7 @@ a:visited {
 
     /* allowed tags */
     #allowed_tags {
-      margin: 1.5em 10px 0.7335em 0;
+      margin: 1.5em 10px .7335em 0;
     }
 
     /* no comments */
@@ -1360,8 +1376,8 @@ a:visited {
 
     .sidebar h3 {
       line-height: 1.385em;
-      margin-bottom: 0.462em;
-      padding-top: 0.5em;
+      margin-bottom: .462em;
+      padding-top: .5em;
     }
 
     .sidebar .widget {
@@ -1384,7 +1400,7 @@ a:visited {
 
     .sidebar input[type="email"] {
       font-family: Verdana, sans-serif;
-      padding: 0.25em;
+      padding: .25em;
       max-width: 75%;
       width: 100%;
     }
@@ -1394,14 +1410,14 @@ a:visited {
     }
 
     div.sidebar {
-      -webkit-box-shadow: -2px 2px 2px #1E92AB; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -webkit-box-shadow: -2px 2px 2px #1E92AB; /* Saf3-4, iOS 4..2 - 4.2, Android 2.3+ */
       -moz-box-shadow: -2px 2px 2px #1E92AB; /* FF3.5 - 3.6 */
       box-shadow: -2px 2px 2px #1E92AB;
-      background: -webkit-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
-      background: -moz-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
-      background: -ms-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
-      background: -o-linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
-      background: linear-gradient(left, rgba(201, 247, 242, 0.32) 0%, rgba(201, 241, 242, 0.4) 72%, rgba(201, 241, 242, 0.4) 73%, rgba(201, 241, 242, 0) 100%);
+      background: -webkit-linear-gradient(left, rgba(201, 247, 242, .32) 0%, rgba(201, 241, 242, .4) 72%, rgba(201, 241, 242, .4) 73%, rgba(201, 241, 242, 0) 100%);
+      background: -moz-linear-gradient(left, rgba(201, 247, 242, .32) 0%, rgba(201, 241, 242, .4) 72%, rgba(201, 241, 242, .4) 73%, rgba(201, 241, 242, 0) 100%);
+      background: -ms-linear-gradient(left, rgba(201, 247, 242, .32) 0%, rgba(201, 241, 242, .4) 72%, rgba(201, 241, 242, .4) 73%, rgba(201, 241, 242, 0) 100%);
+      background: -o-linear-gradient(left, rgba(201, 247, 242, .32) 0%, rgba(201, 241, 242, .4) 72%, rgba(201, 241, 242, .4) 73%, rgba(201, 241, 242, 0) 100%);
+      background: linear-gradient(left, rgba(201, 247, 242, .32) 0%, rgba(201, 241, 242, .4) 72%, rgba(201, 241, 242, .4) 73%, rgba(201, 241, 242, 0) 100%);
     }
 
     .widgettitle {
@@ -1452,7 +1468,7 @@ a:visited {
       /* border-bottom: 4px solid #4CA6A8; */
       border-color: #4CA6A8;
       margin: 0 0;
-      padding: 0.05em 0 0;
+      padding: .05em 0 0;
     }
 
     .ui-accordion .ui-accordion-header {
@@ -1467,7 +1483,7 @@ a:visited {
       border-style: solid;
       display: block;
       margin: 0;
-      padding: 0.5em 0.5em 0.5em 1em;
+      padding: .5em .5em .5em 1em;
       text-decoration: none;
     }
 
@@ -1526,7 +1542,7 @@ a:visited {
       /* border-bottom: 4px solid #4CA6A8; */
       border-color: #4CA6A8;  /* border-top: 2px solid #4CA6A8; */
       margin: 0 0;
-      padding: 0.5rem 1rem;  /* padding: 0.05em .5em;; */
+      padding: .5rem 1rem;  /* padding: .05em .5em;; */
     }
 
     .ui-accordion h3 {
@@ -1546,12 +1562,12 @@ a:visited {
     }
 
     .ui-accordion .ui-icon {
-      background-image: url("http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/images/222222_256x240_icons_icons.png");
+      background-image: url(../images/222222_256x240_icons_icons.png);
       height: 16px;
       margin-right: 1em;
       width: 16px;
       display: inline-block;
-      margin-top: 0.4rem;
+      margin-top: .4rem;
     }
 
     .ui-accordion .ui-icon-triangle-1-e {
@@ -1585,24 +1601,24 @@ a:visited {
     }
 
     .whatsnewdate {
-      font-size: 0.925em;
-      color: #888;
-      text-transform: uppercase;
-      text-indent: .5em;
-      border-width: 0;
-      border-top-right-radius: 12px;
+      @include css-gradient($white, $light-blue);
       border-color: $black;
       border-style: solid;
+      border-top-right-radius: 12px;
+      border-width: 0;
+      color: #888;
+      font-size: .925em;
       padding-top: .2rem;
-      @include css-gradient($white, $light-blue);
+      text-indent: .5em;
+      text-transform: uppercase;
     }
 
     /*********************
     FOOTER STYLES
     *********************/
     .footer {
-      clear: both;
       background-color: transparent;
+      clear: both;
       color: lighten($black, 30%);
     }
 
@@ -1666,7 +1682,7 @@ a:visited {
     a.btn {
       display: inline-block;
       margin: 10px 0 20px 0;
-      padding: 0;
+      padding: 0.25rem 0.75rem;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;
@@ -1680,25 +1696,25 @@ a:visited {
     }
 
     .btn span {
-      font-size: 1.2em;
-      padding: 1em 2.2em;
-      display: inline-block;
-      padding: 10px 20px;
-      font-family: "Verdana", sans-serif;
-      line-height: 1.2em;
-      text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.8);
-      background-color: #CFF1F2;
-      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#e0f8ff));
-      background: -moz-linear-gradient(#FFFFFF, #e0f8ff) repeat scroll 0 0 transparent;
-      -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
-      border-radius: 8px;
-      -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
       -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
-      box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
-      -webkit-transition: -webkit-transform .2s ease-in-out;
       -moz-transition: -moz-transform .2s ease-in-out;
       -o-transition: -o-transform .2s ease-in-out;
+      -webkit-border-radius: 8px;
+      -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+      -webkit-transition: -webkit-transform .2s ease-in-out;
+      background-color: #CFF1F2;
+      background: -moz-linear-gradient(#FFFFFF, #e0f8ff) repeat scroll 0 0 transparent;
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#e0f8ff));
+      border-radius: 8px;
+      box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+      display: inline-block;
+      font-family: "Verdana", sans-serif;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      padding: 10px 20px;
+      padding: 1em 2.2em;
+      text-shadow: 0 -1px 1px rgba(255, 255, 255, .8);
       transition: transform .2s ease-in-out;
     }
 
@@ -1784,9 +1800,9 @@ a:visited {
       height: 100px;    /* background: transparent url(http://www.oasislifedesign.com/wp-content/themes/thesis_182/custom/template/i_glow.png) no-repeat scroll center center; */
 
       /* fallback */
-      background: -webkit-radial-gradient(50% 50%, circle contain, rgba(248, 162, 31, 0.75) 0%, rgba(248, 212, 63, 1) 13%, rgba(248, 201, 43, 1) 16%, rgba(248, 238, 143, 0.85) 36%, rgba(250, 228, 94, 0.5) 44%, rgba(250, 236, 128, 0.25) 58%, rgba(250, 236, 128, 0) 76%, rgba(250, 236, 128, 0) 100%) !important;
-      background: -moz-radial-gradient(50% 50%, circle contain, rgba(248, 162, 31, 0.75), rgba(248, 162, 31, 0.75) 10%, rgba(248, 212, 63, 1) 13%, rgba(248, 201, 43, 1) 16%, rgba(248, 238, 143, 0.85) 36%, rgba(250, 228, 94, 0.5) 44%, rgba(250, 236, 128, 0.25) 58%, rgba(250, 236, 128, 0) 76%, rgba(250, 236, 128, 0));
-      overflow: visible;    /* background-image: -moz-radial-gradient( 50% 50% 0deg, circle cover, rgba(253, 250, 46, 1.00) rgba(232, 229, 67, 0.00) ,9% rgba(230, 189, 0, 1.00),11% rgba(236, 175, 53, 1.00),13% rgba(243, 255, 152, 1.00),23% rgba(255, 251, 67, 0.63),48% rgba(255, 246, 66, 0.00)); */
+      background: -webkit-radial-gradient(50% 50%, circle contain, rgba(248, 162, 31, .75) 0%, rgba(248, 212, 63, 1) 13%, rgba(248, 201, 43, 1) 16%, rgba(248, 238, 143, .85) 36%, rgba(250, 228, 94, .5) 44%, rgba(250, 236, 128, .25) 58%, rgba(250, 236, 128, 0) 76%, rgba(250, 236, 128, 0) 100%) !important;
+      background: -moz-radial-gradient(50% 50%, circle contain, rgba(248, 162, 31, .75), rgba(248, 162, 31, .75) 10%, rgba(248, 212, 63, 1) 13%, rgba(248, 201, 43, 1) 16%, rgba(248, 238, 143, .85) 36%, rgba(250, 228, 94, .5) 44%, rgba(250, 236, 128, .25) 58%, rgba(250, 236, 128, 0) 76%, rgba(250, 236, 128, 0));
+      overflow: visible;    /* background-image: -moz-radial-gradient( 50% 50% 0deg, circle cover, rgba(253, 250, 46, 1.00) rgba(232, 229, 67, .00) ,9% rgba(230, 189, 0, 1.00),11% rgba(236, 175, 53, 1.00),13% rgba(243, 255, 152, 1.00),23% rgba(255, 251, 67, .63),48% rgba(255, 246, 66, .00)); */
     }
 
     #sun:hover {
@@ -1826,7 +1842,7 @@ a:visited {
       height: 109px;
       left: 14px;
       margin: 0;
-      top: 0;
+      top: -3px;
       width: 190px;
       position: relative;
       float: left;
@@ -1838,7 +1854,7 @@ a:visited {
       background-repeat: repeat;
       background-image: url(../images/beachbar.png);
       width: 100%;
-      padding: 0.25rem 0.75rem;
+      padding: .25rem .75rem;
       background-size: cover;
     }
 
@@ -1884,13 +1900,13 @@ a:visited {
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       transform: rotate(45deg);
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
     }
 
     #inner {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 6px rgba(0, 0, 0, .6);
       width: 200px;
       position: relative;
       margin: 20px;
@@ -1932,10 +1948,10 @@ a:visited {
       -moz-border-radius-bottomright: 6px;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
-      -webkit-transition: width 0.3s linear, background 0.2s ease;
-      -moz-transition: width 0.3s linear, background 0.2s ease;
-      -o-transition: width 0.3s linear, background 0.2s ease;
-      transition: width 0.3s linear, background 0.2s ease;
+      -webkit-transition: width .3s linear, background .2s ease;
+      -moz-transition: width .3s linear, background .2s ease;
+      -o-transition: width .3s linear, background .2s ease;
+      transition: width .3s linear, background .2s ease;
     }
 
     ol.cat li a img {
@@ -2131,8 +2147,8 @@ a:visited {
     /*  removes bullet from testimonials slider */
     .sidebar h3 {
       line-height: 1.385em;
-      margin-bottom: 0.462em;
-      padding-top: 0.5em;
+      margin-bottom: .462em;
+      padding-top: .5em;
     }
 
     .sidebar input[type="text"] {
@@ -2157,7 +2173,7 @@ a:visited {
     .sidebar input[type="text"],
     .sidebar input[type="email"] {
       font-family: Verdana, sans-serif;
-      padding: 0.25em 0.125em;
+      padding: .25em .125em;
       margin: 0;
       display: inline-block;
     }
@@ -2196,11 +2212,11 @@ a:visited {
     }
 
     input[type="submit"] {
-      -moz-transition: -moz-box-shadow 0.2s ease-in-out 0s;
+      -moz-transition: -moz-box-shadow .2s ease-in-out 0s;
       border-radius: 8px 8px 8px 8px;
-      box-shadow: 0 8px 0 #1A74A1, 0 15px 20px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 0 #1A74A1, 0 15px 20px rgba(0, 0, 0, .35);
       display: inline-block;
-      margin: 0.5em 0 1em 1.2em;
+      margin: .5em 0 1em 1.2em;
       color: #009DBB;
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#e0f8ff));
       background: -moz-linear-gradient(#FFFFFF, #e0f8ff) repeat scroll 0 0 transparent;
@@ -2301,11 +2317,11 @@ a:visited {
 
     @-webkit-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2316,11 +2332,11 @@ a:visited {
 
     @-moz-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2331,11 +2347,11 @@ a:visited {
 
     @-ms-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2364,13 +2380,13 @@ a:visited {
     /*-----  End of Blog styles  ------*/
     .schedule .wpdevbk blockquote {
       background-image: none;
-      padding-top: 0.5rem;
+      padding-top: .5rem;
     }
 
     .bigbold {
       font-size: 1.15em;
       font-weight: 600;
-      letter-spacing: 0.25px;
+      letter-spacing: .25px;
       color: rgb(30, 146, 171);
     }
 
@@ -2471,11 +2487,11 @@ a:visited {
 
     @-webkit-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2486,11 +2502,11 @@ a:visited {
 
     @-moz-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2501,11 +2517,11 @@ a:visited {
 
     @-ms-keyframes screenshotreveal {
       0% {
-        opacity: 0.0;
+        opacity: .0;
       }
 
       50% {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       100% {
@@ -2541,7 +2557,7 @@ a:visited {
     }
 
     .teaser-box {
-      font-size: 0.75rem;
+      font-size: .75rem;
 
       //12px
       h3 {
@@ -2551,7 +2567,7 @@ a:visited {
     }
 
     .featured-post p {
-      font-size: 0.875rem;
+      font-size: .875rem;
 
       //14px
       h3 {
@@ -2598,15 +2614,15 @@ a:visited {
 
     .su-posts-default-loop h2.su-post-title {
       clear: none;
-      margin: 0 0 0.3em 0;
+      margin: 0 0 .3em 0;
       font-size: 1.2em;
       font-weight: bold;
     }
 
     .su-posts-default-loop .su-post-meta {
-      margin-bottom: 0.7em;
-      font-size: 0.8em;
-      opacity: 0.6;
+      margin-bottom: .7em;
+      font-size: .8em;
+      opacity: .6;
       filter: alpha(opacity=60);
     }
 
@@ -2615,7 +2631,7 @@ a:visited {
     }
 
     .su-posts-default-loop .su-post-excerpt {
-      margin-bottom: 0.5em
+      margin-bottom: .5em
     }
 
     .su-posts-default-loop .su-post-excerpt p:last-child {
@@ -2623,7 +2639,7 @@ a:visited {
     }
 
     .su-posts-default-loop .su-post-comments-link {
-      font-size: 0.9em
+      font-size: .9em
     }
 
     .su-posts-teaser-loop {
@@ -2665,7 +2681,7 @@ a:visited {
       margin: 0;
       padding: 0;
       border: none;
-      font-size: 0.9em;
+      font-size: .9em;
       font-weight: normal;
       clear: none;
     }
@@ -2680,7 +2696,7 @@ a:visited {
       -moz-border-radius: 8px;/* Firefox 3.6 and earlier */
       -webkit-box-shadow: 0 -10px 30px #F0F187 inset;/* Saf3-4 */
       -moz-box-shadow: 0 -10px 30px #F0F187 inset;/* FF3.5 - 3.6 */
-      box-shadow: 0 -10px 30px #F0F187 inset;/* Opera 10.5, IE9, FF4+, Chrome 10+ */
+      box-shadow: 0 -10px 30px #F0F187 inset;/* Opera 1.5, IE9, FF4+, Chrome 10+ */
       border: 0px solid #C4B474;
     }
 
@@ -2705,7 +2721,7 @@ a:visited {
     .leafbox h3 {
       font-family: 'Verdana', sans-serif;
       color: #EFCB59;
-      margin-top: 0.05%;
+      margin-top: .05%;
     }
 
     .bluebox {
@@ -2727,12 +2743,12 @@ a:visited {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8EE8F', endColorstr='#EFCB59');/* for IE */
       background: -webkit-gradient(linear, left top, left bottom, from(#F8EE8F), to(#EFCB59));/* for webkit browsers */
       background: -moz-linear-gradient(top, #F8EE8F, #EFCB59);/* for firefox 3.6+ */
-      border: 0.5% solid #EFCB59;
+      border: .5% solid #EFCB59;
       border-radius: 8px;
       -moz-border-radius: 8px;/* Firefox 3.6 and earlier */
       -webkit-box-shadow: 0 -10px 30px #F0F187 inset;/* Saf3-4 */
       -moz-box-shadow: 0 -10px 30px #F0F187 inset;/* FF3.5 - 3.6 */
-      box-shadow: 0 -10px 30px #F0F187 inset;/* Opera 10.5, IE9, FF4+, Chrome 10+ */
+      box-shadow: 0 -10px 30px #F0F187 inset;/* Opera 1.5, IE9, FF4+, Chrome 10+ */
       border: 1px solid #C4B474;
       color: #1E92AB;
       padding: 1%;
@@ -2742,3 +2758,5 @@ a:visited {
       color: #1E92AB;
       margin-top: 0;
     }
+
+

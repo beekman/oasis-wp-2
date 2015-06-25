@@ -101,6 +101,7 @@ NAVIGATION STYLES
 .nav {
   border-bottom: 0;
   margin: 0;
+  padding: 0;
 
   li {
     float: left;
@@ -110,9 +111,9 @@ NAVIGATION STYLES
 
     a {
       color: $nav-link-color;
-      display: inline-flex;
       text-decoration: none;
-      padding: 0.6em 0.75em;
+      padding: 8px 7px 6px;
+      margin: 0;
 
 
             /*
@@ -169,6 +170,7 @@ NAVIGATION STYLES
 } /* end .nav */
 .nav {
   border: 0;
+  margin: 0;
   ul {
   // background:$black;
   margin-top:0;
