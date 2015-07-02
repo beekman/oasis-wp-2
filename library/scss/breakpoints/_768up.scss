@@ -12,12 +12,14 @@ come into play. Have fun!
 
 ******************************************************************/
 .flex-half-reverse {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  -moz-box-orient: horizontal;
-  -webkit-box-orient: horizontal; //for Safari pre-6.1
+  display: flex;
+
   -webkit-flex-direction: row;
+  flex-direction: row;
+
+    -webkit-box-orient: horizontal; //for Safari pre-6.1
+  -moz-box-orient: horizontal;
 }
 
 .half {

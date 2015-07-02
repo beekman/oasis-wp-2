@@ -284,12 +284,12 @@ come into play. Have fun!
 
 ******************************************************************/
 .flex-half-reverse {
-  display: flex;
   display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
   flex-direction: row;
-  -moz-box-orient: horizontal;
   -webkit-box-orient: horizontal;
-  -webkit-flex-direction: row; }
+  -moz-box-orient: horizontal; }
 
 a:hover .slogan {
   background-color: rgba(248, 238, 143, 0.5);
