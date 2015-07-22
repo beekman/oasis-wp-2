@@ -22,22 +22,22 @@ the whole project.
 *********************/
 
 // normalize: http://necolas.github.io/normalize.css/
-@import "partials/normalize";
+@import 'partials/normalize';
 
 // Sass variables
-@import "partials/variables";
+@import 'partials/variables';
 
 // typography
-@import "partials/typography";
+@import 'partials/typography';
 
 // Sass functions
-@import "partials/functions";
+@import 'partials/functions';
 
 // import mixins
-@import "partials/mixins";
+@import 'partials/mixins';
 
 // the grid
-@import "partials/grid";
+@import 'partials/grid';
 
 /*********************
 IMPORTING MODULES
@@ -48,13 +48,13 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 *********************/
 
 // alert boxes
-@import "modules/alerts";
+@import 'modules/alerts';
 
 // buttons
-@import "modules/buttons";
+@import 'modules/buttons';
 
 // forms (inputs & labels)
-@import "modules/forms";
+@import 'modules/forms';
 
 //***oasis legacy styling (from Thesis 1.82)***
 // @import "legacy";
@@ -67,7 +67,7 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 *********************/
 
 // styles in base.scss
-@import "breakpoints/base";
+@import 'breakpoints/base';
 
 /*********************
 LARGER MOBILE DEVICES
@@ -77,9 +77,8 @@ tweeners.
 *********************/
 @media only screen and (min-width: 481px) {
 	// styles in 481up.scss
-	@import "breakpoints/481up";
-
-} // end of media query
+	@import 'breakpoints/481up';
+	} // end of media query
 
 /*********************
 TABLET & SMALLER LAPTOPS
@@ -88,11 +87,9 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 768px) {
-
 	// styles in 768up.scss
-	@import "breakpoints/768up";
-
-} // end of media query
+	@import 'breakpoints/768up';
+	} // end of media query
 
 /*********************
 DESKTOP
@@ -101,98 +98,88 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 1030px) {
-
 	// styles in 1030up.scss
-	@import "breakpoints/1030up";
-
-} // end of media query
+	@import 'breakpoints/1030up';
+	} // end of media query
 
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 *********************/
 @media only screen and (min-width: 1240px) {
-
 	// styles in 1240up.scss
-	@import "breakpoints/1240up";
+	@import 'breakpoints/1240up';
+	} // end of media query
 
 
-} // end of media query
+@media screen and (max-width: 555px) {
+	.slogan {
+		// display: none; visibility: hidden;
+		}
 
 
-@media screen and (max-width: 600px) {
-    .slogan {
-      // display: none; visibility: hidden;
-    }
+	}
 
-
+@media screen and (max-width:580px) {
+	.slogan {
+		font-size: .95em;
+		// top: 1px;
+		// display: none; visibility: hidden;
+		}
 }
+@media screen and (max-width:705px) {
+	.banner-bg {
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+		background:    -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,.5) 90%, rgba(250,228,94,0) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,.5)), color-stop(100%,rgba(250,228,94,0)));
+		background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:      -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:     -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:         linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
+		}
+	}
 
-@media screen and (max-width:664px) {
-    .slogan {
-        font-size: 0.95em;
-        // top: 1px;
-         // display: none; visibility: hidden;
-    }
-    .banner-bg {
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background: -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,0.5) 90%, rgba(250,228,94,0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,0.5)), color-stop(100%,rgba(250,228,94,0)));
-    background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
-}
-}
-@media screen and (min-width: 705px) { /* <---------------------------------705 px or smaller breakpoint */
-    .slogan {
-        font-size:  23px;
-        top: 54px;
-        display: inline-block;
-        //display: none; visibility: hidden;
-    }
-
-}
 @media screen and (min-width: 706px) {
 
-.slogan {
-    font-size:  21px;
-    top: 54px;
-    // margin-left: 195px;
-    //display: none; visibility: hidden;
-  }
-   .banner-bg {
-        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-    background: -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,0.5) 90%, rgba(250,228,94,0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,0.5)), color-stop(100%,rgba(250,228,94,0)));
-    background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    background: linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,0.5) 90%,rgba(250,228,94,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
-  }
+	.slogan {
+		font-size:  21px;
+		top: 54px;
+		}
 
-}
+	.banner-bg {
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+		background:    -moz-linear-gradient(top,  rgba(239,203,89,1) 0%, rgba(244,214,91,1) 39%, rgba(250,228,94,.5) 90%, rgba(250,228,94,0) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,203,89,1)), color-stop(39%,rgba(244,214,91,1)), color-stop(90%,rgba(250,228,94,.5)), color-stop(100%,rgba(250,228,94,0)));
+		background: -webkit-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:      -o-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:     -ms-linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		background:         linear-gradient(top,  rgba(239,203,89,1) 0%,rgba(244,214,91,1) 39%,rgba(250,228,94,.5) 90%,rgba(250,228,94,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 );
+		}
 
-@media screen and (max-width: 811px) { //811 px or smaller breakpoint */
+	}
 
-  .beachbar div{
-  }
-      } /* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
 
-@media screen and (min-width: 1280px) { /* <---------------------------------1280 px or larger breakpoint */
-.slogan {
-  font-size: 32px;
-  font-weight: 200;
-  top: 40px;
-  padding-left: 12px;
-}
+@media screen and (min-width: 811px) { //811 px or smaller breakpoint */
+	.slogan {
+		font-size:  24px;
+		top: 51px;
+	}
+} /* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
 
-.banner-bg {
-  @include css-gradient($white, lighten(#efcb59, 10%));
-}
-      } /* <----------------------------------------------------------------------end 1280px or larger breakpoint */
+@media screen and (min-width: 960px) { /* <---------------------------------960 px or larger breakpoint */
+	.slogan {
+		font-size: 32px;
+		font-weight: 200;
+		padding-left: 12px;
+		top: 40px;
+		}
+
+	.banner-bg {
+		@include css-gradient($white, lighten(#efcb59, 10%));
+		}
+	} /* <----------------------------------------------------------------------end 960px or larger breakpoint */
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
@@ -200,13 +187,11 @@ other displays with a 2x resolution. You can also create a media
 query for retina AND a certain size if you want. Go Nuts.
 *********************/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min--moz-device-pixel-ratio: 1.5),
-       only screen and (min-device-pixel-ratio: 1.5) {
-
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
 	// styles in 2x.scss
-	@import "breakpoints/2x";
-
-} // end of media query
+	@import 'breakpoints/2x';
+	} // end of media query
 
 /*********************
 PRINT STYLESHEET
@@ -215,8 +200,6 @@ sense to print at the bottom. Things like nav, ads, and forms should
 be set to display none.
 *********************/
 @media print {
-
 	// styles in print.scss
-	@import "partials/print";
-
-}
+	@import 'partials/print';
+	}

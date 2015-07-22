@@ -1559,10 +1559,9 @@ h1,
 h1.page-title {
   margin: 20px 0 0 0;
   font-size: 30px;
-  color: #323944;
+  color: #1e92ab;
   font-weight: 600;
-  letter-spacing: .25px;
-  color: #1e92ab; }
+  letter-spacing: .25px; }
 
 h2,
 .h2 {
@@ -1587,6 +1586,10 @@ h5,
 .h5 {
   font-size: .846em;
   line-height: 1.6em; }
+
+.about h1.page-title {
+  display: none;
+  visibility: hidden; }
 
 /*********************
 HEADER STYLES
@@ -3463,10 +3466,10 @@ This is for the larger monitors and possibly full screen viewers.
   ******************************************************************/
   .wrap {
     width: 1220px; } }
-@media screen and (max-width: 664px) {
+@media screen and (max-width: 580px) {
   .slogan {
-    font-size: 0.95em; }
-
+    font-size: .95em; } }
+@media screen and (max-width: 705px) {
   .banner-bg {
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmY2I1OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM5JSIgc3RvcC1jb2xvcj0iI2Y0ZDY1YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZTQ1ZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
     background: -moz-linear-gradient(top, #efcb59 0%, #f4d65b 39%, rgba(250, 228, 94, 0.5) 90%, rgba(250, 228, 94, 0) 100%);
@@ -3476,12 +3479,6 @@ This is for the larger monitors and possibly full screen viewers.
     background: -ms-linear-gradient(top, #efcb59 0%, #f4d65b 39%, rgba(250, 228, 94, 0.5) 90%, rgba(250, 228, 94, 0) 100%);
     background: linear-gradient(top, #efcb59 0%, #f4d65b 39%, rgba(250, 228, 94, 0.5) 90%, rgba(250, 228, 94, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 ); } }
-@media screen and (min-width: 705px) {
-  /* <---------------------------------705 px or smaller breakpoint */
-  .slogan {
-    font-size: 23px;
-    top: 54px;
-    display: inline-block; } }
 @media screen and (min-width: 706px) {
   .slogan {
     font-size: 21px;
@@ -3496,14 +3493,18 @@ This is for the larger monitors and possibly full screen viewers.
     background: -ms-linear-gradient(top, #efcb59 0%, #f4d65b 39%, rgba(250, 228, 94, 0.5) 90%, rgba(250, 228, 94, 0) 100%);
     background: linear-gradient(top, #efcb59 0%, #f4d65b 39%, rgba(250, 228, 94, 0.5) 90%, rgba(250, 228, 94, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efcb59', endColorstr='#00fae45e',GradientType=0 ); } }
+@media screen and (min-width: 811px) {
+  .slogan {
+    font-size: 24px;
+    top: 51px; } }
 /* <----------------------------------------------------------------------end 811 px or smaller breakpoint */
-@media screen and (min-width: 1280px) {
-  /* <---------------------------------1280 px or larger breakpoint */
+@media screen and (min-width: 960px) {
+  /* <---------------------------------960 px or larger breakpoint */
   .slogan {
     font-size: 32px;
     font-weight: 200;
-    top: 40px;
-    padding-left: 12px; }
+    padding-left: 12px;
+    top: 40px; }
 
   .banner-bg {
     background-color: #f3da88;
@@ -3512,7 +3513,7 @@ This is for the larger monitors and possibly full screen viewers.
     background-image: -moz-linear-gradient(top, white, #f3da88);
     background-image: -o-linear-gradient(top, white, #f3da88);
     background-image: linear-gradient(to bottom, white, #f3da88); } }
-/* <----------------------------------------------------------------------end 1280px or larger breakpoint */
+/* <----------------------------------------------------------------------end 960px or larger breakpoint */
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

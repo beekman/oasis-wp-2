@@ -8,7 +8,7 @@
 				'orderby'            => 'name',
 				'order'              => 'ASC',
 				'style'              => 'list',
-				'show_count'         => 0,
+				'show_count'         => 0
 				'hide_empty'         => 1,
 				'use_desc_for_title' => 0,
 				'child_of'           => 0,

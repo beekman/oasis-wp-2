@@ -132,7 +132,7 @@ function oasis_scripts_and_styles() {
     // ie-only style sheet
     wp_register_style( 'oasis-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
- wp_register_style('meanmenu', 'http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/css/meanmenu.css', array(), '', 'all' );
+    wp_register_style('meanmenu', 'http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/css/meanmenu.css', array(), '', 'all' );
 
      wp_register_script('meanmenu',     'http://www.oasislifedesign.com/content/themes/oasis-wp-2/library/js/libs/jquery.meanmenu.js',          array('jquery'), 1, FALSE);
 
