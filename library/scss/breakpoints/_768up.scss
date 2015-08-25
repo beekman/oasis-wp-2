@@ -11,29 +11,42 @@ and other resources. You'll also notice the grid starts to
 come into play. Have fun!
 
 ******************************************************************/
+.abs-right {
+	position: absolute;
+	right: 0;
+}
+
+article {
+	padding: 10px 1.5em 0;
+}
+
+h1.page-title {
+	font-size: 30px;
+}
+
 .flex-half-reverse {
-  display: -webkit-flex;
-  display: flex;
+	display: -webkit-flex;
+	display: flex;
 
-  -webkit-flex-direction: row;
-  flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
 
-    -webkit-box-orient: horizontal; //for Safari pre-6.1
-  -moz-box-orient: horizontal;
+	-webkit-box-orient: horizontal; //for Safari pre-6.1
+	-moz-box-orient: horizontal;
 }
 
 .half {
-  // width: 50%;
+	// width: 50%;
 }
 a:hover .slogan {
-  background-color: rgba(248, 238, 143, .5);
-  border-radius: 20px;
-  box-shadow: 0 0 10px 10px rgba(248, 238, 143, .5);
+	background-color: rgba(248, 238, 143, .5);
+	border-radius: 20px;
+	box-shadow: 0 0 10px 10px rgba(248, 238, 143, .5);
 }
 
 .beachbar>div {
-  // min-height: 0px;
-  // padding-left: 0;
+	// min-height: 0px;
+	// padding-left: 0;
 }
 
 /*=============================================
@@ -41,15 +54,15 @@ a:hover .slogan {
 =============================================*/
 
 .teaser-box:nth-of-type(odd) { //the leftmost columns of the teasers
-  clear: both;
-  margin-left: 0;
+	clear: both;
+	margin-left: 0;
 }
 .teaser-box:nth-of-type(even) { // the rightmost columns of the teasers
-  float: right;
+	float: right;
 }
 
 .featured-img img {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 //End of Blog styles
@@ -65,7 +78,7 @@ body {}
 //*********************/
 
 .wrap {
-  width: 760px;
+	width: 760px;
 }
 
 /*********************
@@ -74,17 +87,17 @@ HEADER STYLES
 
 
 header nav {
-  background-color: transparent;
-  border-width: 0;
-  width: auto;
+	background-color: transparent;
+	border-width: 0;
+	width: auto;
 }
 
 
 header .nav a:link.current-menu-item
 header .nav a:visited.current-menu-item,
 header .nav a:hover.current-menu-item {
-  color: #000;
-  text-decoration: none;
+	color: #000;
+	text-decoration: none;
 }
 .header {}
 
@@ -104,21 +117,21 @@ SIDEBARS & ASIDES
 }
 
 .widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em;
+	border-bottom: 2px solid #444;
+	margin-bottom: 0.75em;
 }
 
 .widget {
-  padding: 0 10px;
-  margin: 0;
+	padding: 0 10px;
+	margin: 0;
 
-  ul {
-   li {
-    margin-bottom: 0.75em;
+	ul {
+	 li {
+		margin-bottom: 0.75em;
 
-    &:first-child {}
-    &:last-child {}
-    a {}
+		&:first-child {}
+		&:last-child {}
+		a {}
 				/* deep nesting */
 
 				ul {

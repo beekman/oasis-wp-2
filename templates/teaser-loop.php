@@ -10,7 +10,6 @@
 				?>
 				<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <section class="entry-content cf">
-      <div class="alignright"><?=the_post_thumbnail( 'thumb' )?></div>
   <h2 class="entry-title">
     <a
     href="<?=the_permalink()?>"
@@ -20,7 +19,7 @@
     <?=the_title()?>
     </a>
   </h2>
-
+<div class="alignright"><?=the_post_thumbnail( 'small' )?></div>
   <?php the_content("More..."); ?>
   </section>
 </article>

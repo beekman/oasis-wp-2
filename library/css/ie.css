@@ -283,6 +283,16 @@ and other resources. You'll also notice the grid starts to
 come into play. Have fun!
 
 ******************************************************************/
+.abs-right {
+  position: absolute;
+  right: 0; }
+
+article {
+  padding: 10px 1.5em 0; }
+
+h1.page-title {
+  font-size: 30px; }
+
 .flex-half-reverse {
   display: -webkit-flex;
   display: flex;

@@ -50,7 +50,7 @@ if(is_singular('post')) : ?>
       <?php if (has_post_thumbnail()): ?>
         <? global $more; ?>
         <?php if ($more): ?>
-          <div class="t-1of2 d-1of2 m-all">
+          <div class="t-1of3 d-1of3 m-all">
             <?php $thumb_size = 'medium';
           ?></div><?php
         else:
