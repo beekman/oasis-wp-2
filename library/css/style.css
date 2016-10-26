@@ -29,6 +29,17 @@ HTML5 display definitions
 @import url("http://fonts.googleapis.com/css?family=Calligraffitti");
 @import url("http://fonts.googleapis.com/css?family=Buda:300");
 @import url("http://fonts.googleapis.com/css?family=La+Belle+Aurore");
+
+.calendar-container
+{
+    position: relative;
+
+    overflow: hidden;
+
+    height: 0;
+    padding-bottom: 75%;
+}
+
 article,
 aside,
 details,
